@@ -64,11 +64,11 @@ public class InscriptionController {
         }
     }
     private void createSerializedProfile(Orthophoniste orthophoniste) throws ExceptionCompteExistant ,ExceptionCreationImpossible{
-        File file = new File("./src/main/resources/com/orthofluent/orthofluent/UsersInformation/" + orthophoniste.getUsername() + ".ser");
+        File file = new File("src/main/resources/com/orthofluent/orthofluent/UserInformation/" + orthophoniste.getUsername() + ".ser");
         if (file.exists()) {
             throw new ExceptionCompteExistant("un profile ave ce nom d'utilisateur existe deja");
         } else {
-            try (FileOutputStream fileOutputStream = new FileOutputStream("./src/main/resources/com/orthofluent/orthofluent/UsersInformation/" + orthophoniste.getUsername() + ".ser");
+            try (FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/com/orthofluent/orthofluent/UserInformation/" + orthophoniste.getUsername() + ".ser");
 
                  ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
                 // Write the user object to the file

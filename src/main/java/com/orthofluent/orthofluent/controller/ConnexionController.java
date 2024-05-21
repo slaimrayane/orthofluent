@@ -58,7 +58,7 @@ public class ConnexionController {
     private Orthophoniste authentifier(String username,String password) {
 
             //creating the path to the user file
-            String filename = "./src/main/resources/com/orthofluent/orthofluent/UsersInformation/"+ username + ".ser";
+            String filename = "src/main/resources/com/orthofluent/orthofluent/UserInformation/"+ username + ".ser";
             File file = new File(filename);
 
             if (file.exists()) {
