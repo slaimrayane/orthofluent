@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="226.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/smt2.png" />
+                  <Image url="@../assets/smt2.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="55.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue!" textAlignment="CENTER">
@@ -47,17 +47,17 @@
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/userIcon.png" />
+            <Image url="@../assets/userIcon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/email.png" />
+            <Image url="@../assets/email.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/password.png" />
+            <Image url="@../assets/password.png" />
          </image>
       </ImageView>
       <Text fill="#76c2af" layoutX="343.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connexion" textAlignment="CENTER">

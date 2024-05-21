@@ -1,16 +1,8 @@
 package com.orthofluent.orthofluent.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.MenuItem;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class HomeController extends BaseController{
-
+public class CompteController extends BaseController{
 
     @FXML
     private void initialize() {
@@ -26,9 +18,4 @@ public class HomeController extends BaseController{
         patientAdulteItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/PatientAdulte.fxml",patientAdulteItem));
         compteItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Compte.fxml",compteItem));
     }
-
-
-
-
-
 }
