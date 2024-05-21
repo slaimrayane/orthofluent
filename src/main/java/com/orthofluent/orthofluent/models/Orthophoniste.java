@@ -1,6 +1,9 @@
 package com.orthofluent.orthofluent.models;
 
-import java.io.Serializable;
+import com.orthofluent.orthofluent.models.exceptions.ExceptionDateInvalide;
+import com.orthofluent.orthofluent.models.exceptions.ExceptionDatePrise;
+
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +13,7 @@ import java.util.Scanner;
 public class Orthophoniste implements Serializable {
     private String nom;
     private String prenom;
+    private String username;
     private String adresse;
     private int numTel;
     private String AdresseMail;
@@ -26,6 +30,7 @@ public class Orthophoniste implements Serializable {
     public Orthophoniste(String nom, String prenom, String adresse, int numTel, String AdresseMail, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
+        this.username=nom+"_"+prenom;
         this.adresse = adresse;
         this.numTel = numTel;
         this.AdresseMail = AdresseMail;
@@ -52,6 +57,12 @@ public class Orthophoniste implements Serializable {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+    public String getUsername(){
+        return username;
+    }
+    public void setUsername(String username){
+        this.username=username;
     }
 
     public String getAdresse() {
@@ -95,7 +106,7 @@ public class Orthophoniste implements Serializable {
     }
 
     // Les methodes
-    public void CreerPatient(DossierPatient dossierPatient) { 
+        public void CreerPatient(DossierPatient dossierPatient) {
         this.dossierPatientMap.put(dossierPatient.getNumeroDossier(), dossierPatient);
         }
 
@@ -317,12 +328,12 @@ public class Orthophoniste implements Serializable {
             return false;
         }
         Orthophoniste ortho = (Orthophoniste) obj;
-        return (this.nom.equals(ortho.nom) && this.prenom.equals(ortho.prenom)); //If the objects are the same stance
+        return (this.username==ortho.getUsername()); //If the objects are the same stance
     }
 
     @Override
     public int hashCode() {
-        return this.AdresseMail.hashCode();
+        return this.username.hashCode();
     }
 
 
@@ -331,17 +342,35 @@ public class Orthophoniste implements Serializable {
         return "Orthophoniste [AdresseMail=" + AdresseMail + ", adresse=" + adresse + ", motDePasse=" + motDePasse + ", nom=" + nom + ", numTel=" + numTel + ", prenom=" + prenom + "]";
     }
 
-
-
-
-}
-class ExceptionDateInvalide extends Exception {
-    public ExceptionDateInvalide(String message) {
-        super(message);
+        public static void saveOrthophoniste(Orthophoniste orthophoniste) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(orthophoniste.getUsername() + ".ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(orthophoniste);
+            out.close();
+            fileOut.close();
+            System.out.println("Profile saved successfully!");
+        } catch (IOException e) {
+            System.out.println("Failed to save profile: " + e.getMessage());
+        }
     }
-}
-class ExceptionDatePrise extends Exception {
-    public ExceptionDatePrise(String message) {
-        super(message);
+
+
+    public static Orthophoniste loadOrthophoniste(String username) {
+        try {
+            FileInputStream fileIn = new FileInputStream(username + ".ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            Orthophoniste orthophoniste = (Orthophoniste) in.readObject();
+            in.close();
+            fileIn.close();
+            return orthophoniste;
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Failed to load profile: " + e.getMessage());
+            return null;
+        }
     }
+
+
+
 }
+

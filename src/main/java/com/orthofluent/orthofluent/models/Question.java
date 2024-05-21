@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.enumerations.QuestionType;
+
 import java.io.Serializable;
 
 public abstract class Question implements Serializable {

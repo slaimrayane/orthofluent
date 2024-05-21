@@ -1,7 +1,9 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.enumerations.Capacite;
+import com.orthofluent.orthofluent.models.interfaces.Score;
+
 import java.io.Serializable;
-import java.security.SecureRandomParameters;
 import java.util.ArrayList;
 import java.util.List;
 

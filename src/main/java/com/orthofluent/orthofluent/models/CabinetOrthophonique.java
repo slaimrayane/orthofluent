@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.exceptions.ExceptionCompteExistant;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +13,7 @@ public class CabinetOrthophonique{
         this.orthophonistes = orthophonistes;
     }
     public CabinetOrthophonique(){
-        this.orthophonistes = new HashSet<Orthophoniste>();
+        this.orthophonistes = new HashSet<>();
     }
 
     public Set<Orthophoniste> getOrthophonistes() {
@@ -107,10 +109,5 @@ public class CabinetOrthophonique{
     }
 
 
-}
-class ExceptionCompteExistant extends Exception{
-    public ExceptionCompteExistant(String message) {
-        super(message);
-    }
 }
 

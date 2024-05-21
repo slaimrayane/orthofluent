@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.enumerations.Thematique;
+
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
