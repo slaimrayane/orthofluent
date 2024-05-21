@@ -1,0 +1,21 @@
+.root {
+    -fx-background-color: #070000;
+}
+.label{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #efefef;
+    -fx-font-family: Impact;
+    -fx-alignment: center;
+}
+#title{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fbfbfb;
+
+}
+#description{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;}
+}

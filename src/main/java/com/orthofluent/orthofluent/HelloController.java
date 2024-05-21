@@ -1,19 +1,18 @@
 package com.orthofluent.orthofluent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
-
-import javafx.event.ActionEvent;
 
 public class HelloController {
-    public void up(ActionEvent event) {
-        System.out.println("up");
-    }
-        public void down(ActionEvent event) {
-        System.out.println("down");
-    }
-        public void left(ActionEvent event) {
-        System.out.println("left");
-    }
-        public void right(ActionEvent event) {
-        System.out.println("right");
+     @FXML
+    private Button myButton;
+
+    @FXML
+    private Label myLabel;
+
+    @FXML
+    private void handleButtonClick() {
+        myLabel.setVisible(true);
     }
 }
