@@ -1,9 +1,10 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestExercise extends Test implements Score {
+public class TestExercise extends Test implements Score , Serializable {
     private List<Exercise> exercice = new ArrayList<>();
     private float x;
 

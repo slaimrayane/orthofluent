@@ -1,13 +1,15 @@
 package com.orthofluent.orthofluent.models;
 
-public enum Thematique {
+import java.io.Serializable;
+
+public enum Thematique implements Serializable {
     DeveloppementLangageEnfants,
     ReeducationDeDyslexie,
-    CommunicationAlternativeAméliorée,
+    CommunicationAlternativeAmelioree,
     TroublesDeglutition,
     TroublesArticulatoires,
     CommunicationSocialePragmatique,
-    PréventionInterventionPrécoce,
+    PreventionInterventionPrecoce,
     TroublesDeVoix,
     FluenceVerbale
 }

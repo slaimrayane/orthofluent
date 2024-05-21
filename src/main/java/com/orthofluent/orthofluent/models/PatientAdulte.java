@@ -1,7 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.Date;
-public class PatientAdulte extends Patient{
+public class PatientAdulte extends Patient implements Serializable {
     private String profession;
     private String diplome;
     private String telephoneSecondaire;

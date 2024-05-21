@@ -1,11 +1,13 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+
 //lazem neqlebha map pour ajouter les patients
-public class Atelier extends RendezVous {
+public class Atelier extends RendezVous implements Serializable {
     private Set<Integer> numeroDossier;
     // private String thematique;
     private Thematique thematique; // Here i used l'énumération in case m9n3atekch radha string

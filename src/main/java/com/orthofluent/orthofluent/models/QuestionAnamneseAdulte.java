@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
-public class QuestionAnamneseAdulte extends QuestionAnamnese{
+import java.io.Serializable;
+
+public class QuestionAnamneseAdulte extends QuestionAnamnese implements Serializable {
 
 }

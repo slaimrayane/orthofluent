@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public class Objectif{
+import java.io.Serializable;
+
+public class Objectif implements Serializable {
     private String nom;
     private Terme terme;
 

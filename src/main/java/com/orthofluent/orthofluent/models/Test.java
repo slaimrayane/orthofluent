@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public abstract class Test {
+import java.io.Serializable;
+
+public abstract class Test implements Serializable {
     private CompteRendu compteRendu;
     private String nom;
     private Capacite capacite;

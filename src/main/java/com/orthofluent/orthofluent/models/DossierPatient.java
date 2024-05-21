@@ -1,7 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.List;
-public class DossierPatient implements Comparable<DossierPatient> {
+public class DossierPatient implements Comparable<DossierPatient> , Serializable {
     private Patient patient;
     private String numeroDossier;
     private List<BilanOrthophonique> bilansOrthophoniques;

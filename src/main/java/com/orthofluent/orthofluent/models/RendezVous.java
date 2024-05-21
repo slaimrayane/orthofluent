@@ -1,9 +1,10 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public abstract class RendezVous implements Comparable<RendezVous>{
+public abstract class RendezVous implements Comparable<RendezVous>, Serializable {
     private Duration duree;
     private String observation;
     private LocalDateTime date;

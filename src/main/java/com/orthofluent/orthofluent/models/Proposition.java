@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public class Proposition {
+import java.io.Serializable;
+
+public class Proposition implements Serializable {
     private String enonce;
     private boolean correcte;
     

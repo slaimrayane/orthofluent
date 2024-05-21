@@ -1,8 +1,9 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.TreeSet;
 
-public class Agenda {
+public class Agenda implements Serializable {
     private TreeSet<RendezVous> RendezvousSet;
 
     public Agenda(){

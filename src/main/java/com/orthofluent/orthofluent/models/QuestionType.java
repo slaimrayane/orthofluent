@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
-public enum QuestionType {
+import java.io.Serializable;
+
+public enum QuestionType implements Serializable {
     LIBRE, QCU, QCM
 }

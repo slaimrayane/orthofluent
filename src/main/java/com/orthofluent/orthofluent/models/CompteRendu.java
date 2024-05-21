@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public class CompteRendu {
+import java.io.Serializable;
+
+public class CompteRendu implements Serializable {
     private String conclusion;
 }
 //score ikoun frl compte rendu

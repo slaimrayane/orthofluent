@@ -1,8 +1,9 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Reponse {
+public class Reponse implements Serializable {
     private List<Proposition> propositions;
 
     public Reponse(List<Proposition> propositions) {

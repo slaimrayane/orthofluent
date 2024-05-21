@@ -1,7 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.Date;
-public class PatientEnfant extends Patient{
+public class PatientEnfant extends Patient implements Serializable {
     private String classEtude;
     private String telephoneparent;
 // Constructor

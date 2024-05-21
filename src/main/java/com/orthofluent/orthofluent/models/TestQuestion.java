@@ -1,10 +1,12 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
+import java.security.SecureRandomParameters;
 import java.util.ArrayList;
 import java.util.List;
 
 //nzido une methode qui affiche la liste des question ..win?
-public class TestQuestion extends Test implements Score {
+public class TestQuestion extends Test implements Score, Serializable {
     private List<Question> questions = new ArrayList<>();
     private float x;
 

@@ -1,11 +1,11 @@
 package com.orthofluent.orthofluent.models;
 
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 public class CabinetOrthophonique{
     private Set<Orthophoniste> orthophonistes;
+    private static CabinetOrthophonique instance = null;
 
     public CabinetOrthophonique(Set<Orthophoniste> orthophonistes) {
         this.orthophonistes = orthophonistes;
@@ -32,7 +32,7 @@ public class CabinetOrthophonique{
 
     public void afficherOrthophonistes(){
         for (Orthophoniste orthophoniste : orthophonistes) {
-            System.out.println(orthophoniste);
+            System.out.println(orthophoniste.toString());
         }
     }
 
@@ -49,22 +49,10 @@ public class CabinetOrthophonique{
         }
     }
 
-    public void creerCompte(){
+    public void creerCompte(String nom, String prenom, String adresse, int numTel, String adresseMail, String motDePasse){
 
-        Orthophoniste orthophoniste = new Orthophoniste();
-        try(Scanner scanner = new Scanner(System.in)){
-            System.out.println("Entrez le nom de l'orthophoniste");
-            orthophoniste.setNom(scanner.nextLine());
-            System.out.println("Entrez le prenom de l'orthophoniste");
-            orthophoniste.setPrenom(scanner.nextLine());
-            System.out.println("Entrez l'adresse de l'orthophoniste");
-            orthophoniste.setAdresse(scanner.nextLine());
-            System.out.println("Entrez le numero de telephone de l'orthophoniste");
-            orthophoniste.setNumTel(scanner.nextInt());
-            System.out.println("Entrez l'adresse mail de l'orthophoniste");
-            orthophoniste.setAdresseMail(scanner.nextLine());
-            System.out.println("Entrez le mot de passe de l'orthophoniste");
-            orthophoniste.setMotDePasse(scanner.nextLine());
+        Orthophoniste orthophoniste = new Orthophoniste(nom, prenom, adresse, numTel, adresseMail, motDePasse);
+        try{
             if(chercherOrthophoniste(orthophoniste.getAdresseMail()) != null){
                 throw new ExceptionCompteExistant("Un compte avec cette adresse mail existe deja");
             }
@@ -111,6 +99,13 @@ public class CabinetOrthophonique{
         }
         return null;
     }
+        public static CabinetOrthophonique getInstance() {
+        if (instance == null) {
+            instance = new CabinetOrthophonique();
+        }
+        return instance;
+    }
+
 
 }
 class ExceptionCompteExistant extends Exception{

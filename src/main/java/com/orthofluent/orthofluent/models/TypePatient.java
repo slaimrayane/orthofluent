@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public enum TypePatient {
+import java.io.Serializable;
+
+public enum TypePatient implements Serializable {
         ENFANT,
         ADULTE   
 }

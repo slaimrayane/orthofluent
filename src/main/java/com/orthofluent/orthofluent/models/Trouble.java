@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public enum Trouble {
+import java.io.Serializable;
+
+public enum Trouble implements Serializable {
         Deglutition,
         NeuroDeveloppement,
         Cognitif

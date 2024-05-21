@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignIn">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controllers.ConnexionController">
    <children>
       <Pane prefHeight="400.0" prefWidth="226.0" style="-fx-background-color: #76C2AF;">
          <children>
@@ -36,10 +36,9 @@
             </Text>
          </children>
       </Pane>
-      <PasswordField layoutX="306.0" layoutY="265.0" prefHeight="27.0" prefWidth="198.0" promptText="Password" style="-fx-border-color: #76C2AF;" />
-      <TextField layoutX="306.0" layoutY="174.0" prefHeight="27.0" prefWidth="198.0" promptText="Nom" style="-fx-border-color: #76C2AF;" />
-      <TextField layoutX="306.0" layoutY="222.0" prefHeight="27.0" prefWidth="198.0" promptText="Email" style="-fx-border-color: #76C2AF;" />
-      <Button layoutX="372.0" layoutY="322.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Connexion" textFill="WHITE" />
+      <PasswordField fx:id="passwordField" layoutX="306.0" layoutY="239.0" prefHeight="27.0" prefWidth="198.0" promptText="Password" style="-fx-border-color: #76C2AF;" />
+      <TextField fx:id="emailField" layoutX="306.0" layoutY="191.0" prefHeight="27.0" prefWidth="198.0" promptText="Email" style="-fx-border-color: #76C2AF;" />
+      <Button fx:id="connexionButton" layoutX="372.0" layoutY="322.0" mnemonicParsing="false" onAction="#HandleConnexion" style="-fx-background-color: #76C2AF;" text="Connexion" textFill="WHITE" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Desktop/sign%20in%20final.png" />

@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
-public enum Capacite {
+import java.io.Serializable;
+
+public enum Capacite implements Serializable {
     LANGAGE, MEMOIRE, ATTENTION, RAISONNEMENT, GESTION_EMOTIONS
 }

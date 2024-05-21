@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public abstract class Question {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable {
     private String enonce;
     private QuestionType type;
 

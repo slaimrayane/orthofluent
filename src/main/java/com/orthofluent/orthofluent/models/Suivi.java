@@ -1,9 +1,10 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Set;
-public class Suivi extends RendezVous{
+public class Suivi extends RendezVous implements Serializable {
 private String numDossierPatient;
 private boolean presentiel;
 private Set<Objectif> objectifs;

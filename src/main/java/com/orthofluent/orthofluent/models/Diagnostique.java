@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public class Diagnostique{
+import java.io.Serializable;
+
+public class Diagnostique implements Serializable {
     
     
 }

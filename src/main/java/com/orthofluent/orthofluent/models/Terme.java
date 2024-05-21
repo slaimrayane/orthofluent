@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
-public enum Terme {
+import java.io.Serializable;
+
+public enum Terme implements Serializable {
     longTerme, courtTerme, moyenTerme
 }

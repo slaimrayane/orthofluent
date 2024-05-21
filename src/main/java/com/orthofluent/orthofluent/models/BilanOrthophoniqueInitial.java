@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
-public class BilanOrthophoniqueInitial extends BilanOrthophonique{
+import java.io.Serializable;
+
+public class BilanOrthophoniqueInitial extends BilanOrthophonique implements Serializable {
     private Anamnese anamnese;
 // constructor
     public BilanOrthophoniqueInitial(Anamnese anamnese,EpreuveClinique epreuveClinique, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique){

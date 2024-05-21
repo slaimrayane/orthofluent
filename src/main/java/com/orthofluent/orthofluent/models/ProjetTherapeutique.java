@@ -1,5 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
-public class ProjetTherapeutique{
+import java.io.Serializable;
+
+public class ProjetTherapeutique implements Serializable {
 
 }

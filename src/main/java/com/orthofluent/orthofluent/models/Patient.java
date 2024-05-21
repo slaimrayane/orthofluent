@@ -1,9 +1,10 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public abstract class  Patient {
+public abstract class Patient implements Serializable {
 	private String nom;
     private int age;
     private String addresse;

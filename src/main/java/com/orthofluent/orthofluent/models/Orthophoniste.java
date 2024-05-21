@@ -1,12 +1,13 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 //hna dossierPatirnt w patient map yak?
-public class Orthophoniste{
+public class Orthophoniste implements Serializable {
     private String nom;
     private String prenom;
     private String adresse;

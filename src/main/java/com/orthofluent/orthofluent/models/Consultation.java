@@ -1,8 +1,9 @@
 package com.orthofluent.orthofluent.models;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
-public abstract class Consultation extends RendezVous{
+public abstract class Consultation extends RendezVous implements Serializable {
     //might change this to just patient but i am not sure
     //kaoutar if you pass here send a message we need to talk about this
     //also wesh hkayet attribut calendrier j'arrive pas a capter comment on va l'utiliser
