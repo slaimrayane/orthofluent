@@ -42,7 +42,7 @@
       <Button fx:id="connexionButton" layoutX="372.0" layoutY="322.0" mnemonicParsing="false" onAction="#HandleConnexion" style="-fx-background-color: #76C2AF;" text="Connexion" textFill="WHITE" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="324.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/sign%20in%20final.png" />
+            <Image url="@../assets/signInFinal.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">

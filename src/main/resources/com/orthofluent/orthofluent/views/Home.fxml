@@ -97,7 +97,7 @@
                      </items>
                   </MenuButton>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
+                  <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
                </children>
             </VBox>
          </children>
