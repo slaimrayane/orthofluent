@@ -2,12 +2,15 @@ package com.orthofluent.orthofluent.models;
 
 import com.orthofluent.orthofluent.models.exceptions.ExceptionDateInvalide;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionDatePrise;
+import com.orthofluent.orthofluent.models.exceptions.ExceptionDossierExistant;
 
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 //hna dossierPatirnt w patient map yak?
 public class Orthophoniste implements Serializable {
@@ -18,6 +21,7 @@ public class Orthophoniste implements Serializable {
     private int numTel;
     private String AdresseMail;
     private String motDePasse;
+    private int patientCounter;
     private com.orthofluent.orthofluent.models.Agenda agenda;
     private Map<String,DossierPatient> dossierPatientMap;
 
@@ -35,11 +39,13 @@ public class Orthophoniste implements Serializable {
         this.numTel = numTel;
         this.AdresseMail = AdresseMail;
         this.motDePasse = motDePasse;
-        this.dossierPatientMap = new HashMap<>();
+        dossierPatientMap = new HashMap<>();
+        patientCounter = 0;
     }
 
     public Orthophoniste() {
-        this.dossierPatientMap=new HashMap<>();
+        dossierPatientMap=new HashMap<>();
+        patientCounter=0;
     }
 
 // Getters and Setters
@@ -58,6 +64,18 @@ public class Orthophoniste implements Serializable {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+    public int getPatientCounter() {
+        return patientCounter;
+    }
+    public int setPatientCounter(int patientCounter) {
+        return this.patientCounter=patientCounter;
+    }
+    public void incrementPatientCounter(){
+        patientCounter++;
+    }
+
+
     public String getUsername(){
         return username;
     }
@@ -106,11 +124,7 @@ public class Orthophoniste implements Serializable {
     }
 
     // Les methodes
-        public void CreerPatient(DossierPatient dossierPatient) {
-        this.dossierPatientMap.put(dossierPatient.getNumeroDossier(), dossierPatient);
-        }
-
-        public void ProgrammerConsultationAdulte() {
+    public void ProgrammerConsultationAdulte() {
             ConsultationAdulte rendezvous = new ConsultationAdulte();
             System.out.println("Programmer Consultation Adulte");
             try (Scanner scanner = new Scanner(System.in)) {
@@ -140,8 +154,8 @@ public class Orthophoniste implements Serializable {
                 System.out.println("Erreur lors de la saisie de la date");
             }
 
-        }
-        public void ProgrammerConsultationEnfant() {
+    }
+    public void ProgrammerConsultationEnfant() {
             ConsultationAdulte rendezvous = new ConsultationAdulte();
             System.out.println("Programmer Consultation Adulte");
             try (Scanner scanner = new Scanner(System.in)) {
@@ -170,8 +184,8 @@ public class Orthophoniste implements Serializable {
             catch (Exception e) {
                 System.out.println("Erreur lors de la saisie de la date");
             }
-        }
-        public void ProgrammerSuivi(){
+    }
+    public void ProgrammerSuivi(){
             Suivi rendezvous = new Suivi();
             System.out.println("Programmer Consultation Adulte");
             try (Scanner scanner = new Scanner(System.in)) {
@@ -191,7 +205,7 @@ public class Orthophoniste implements Serializable {
 
 
                 if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmée avec succès");
+                    System.out.println("Consultation programmee avec succès");
                 } else {
                     throw new ExceptionDatePrise("La date de la consultation est déjà prise");
                 }
@@ -202,17 +216,42 @@ public class Orthophoniste implements Serializable {
             catch (Exception e) {
                 System.out.println("Erreur lors de la saisie de la date");
             }
-        }
-        public void ProgrammerAtelier(){
-        }
+    }
+    public void ProgrammerAtelier(){
+    }
 
-        public void ModifierPatient() {
+    //a revoir apres la logique de la BO
+    public void initialiserPatient(PatientEnfant patientEnfant)throws ExceptionDossierExistant{
+        DossierPatient dossierPatient = new DossierPatient(patientEnfant,String.valueOf(patientCounter++));
+        ajouterDossierPatient(dossierPatient);
+    }
 
-        }
+    public void initialiserPatient(PatientAdulte patientAdulte) throws ExceptionDossierExistant{
+        DossierPatient dossierPatient = new DossierPatient(patientAdulte,String.valueOf(patientCounter++));
+        ajouterDossierPatient(dossierPatient);
+    }
 
-        public void creerQuestion() {
 
-        }
+public void ajouterDossierPatient(DossierPatient dossierPatient) throws ExceptionDossierExistant {
+    if (dossierPatientMap.containsKey(dossierPatient.getNumeroDossier())) {
+        throw new ExceptionDossierExistant("Le dossier patient existe déjà");
+    }
+        dossierPatientMap.put(dossierPatient.getNumeroDossier(), dossierPatient);
+
+}
+    public List<PatientEnfant> getPatientsEnfants(){
+            return dossierPatientMap.values().stream().filter(DossierPatient::isEnfant).map(dossier -> (PatientEnfant) dossier.getPatient()).collect(Collectors.toList());
+    }
+    public List<PatientAdulte> getPatientsAdultes(){
+        return dossierPatientMap.values().stream().filter(DossierPatient::isAdulte).map(dossier -> (PatientAdulte) dossier.getPatient()).collect(Collectors.toList());
+    }
+    public void ModifierPatient() {
+
+    }
+
+    public void creerQuestion() {
+
+    }
 
         public void modifierQuestion() {
 
@@ -258,6 +297,7 @@ public class Orthophoniste implements Serializable {
         public void CreerAnamnese() {
 
         }
+
 
         public void ModifierAnamnese() {
 
@@ -318,6 +358,7 @@ public class Orthophoniste implements Serializable {
         public void afficherPatients(){
 
         }
+
 // Interface
     @Override
     public boolean equals(Object obj) {

@@ -11,4 +11,7 @@ public class Anamnese implements Serializable {
         this.questionAnamnese = questionAnamnese;
     }
 
+    public static class Objectif {
+
+    }
 }

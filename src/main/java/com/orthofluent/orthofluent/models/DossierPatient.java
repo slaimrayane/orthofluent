@@ -137,4 +137,10 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
     }
 
 
+    public boolean isEnfant() {
+        return this.patient.isEnfant();
+    }
+    public boolean isAdulte() {
+        return this.patient.isAdulte();
+    }
 }

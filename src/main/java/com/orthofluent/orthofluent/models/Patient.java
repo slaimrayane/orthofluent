@@ -107,5 +107,19 @@ public String toString() {
     return "Patient{nom=" + this.nom + ", age=" + this.age + ", addresse=" + this.addresse + ", prenom=" + this.prenom + ", dateNaissance=" + this.dateNaissance + ", telephone=" + this.telephone + "}";   
 
 }
+
+    public boolean isEnfant() {
+        if(typePatient==TypePatient.ENFANT){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isAdulte() {
+        if(typePatient==TypePatient.ADULTE){
+            return true;
+        }
+        return false;
+    }
 }
 
