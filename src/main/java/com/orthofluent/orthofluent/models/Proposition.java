@@ -1,29 +1,23 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
-
+//cette classe represente les organe de la reponse
 public class Proposition implements Serializable {
-    private String enonce;
-    private boolean correcte;
+    private String propositionText;
+
     
-    public Proposition(String enonce, boolean correcte) {
-        this.enonce = enonce;
-        this.correcte = correcte;
+    public Proposition(String propositionText) {
+        this.propositionText = propositionText;
+    }
+    public Proposition() {
     }
     
-    public String getEnonce() {
-        return enonce;
+    public String getPropositionText() {
+        return propositionText;
+    }
+    public void setPropositionText(String propositionText) {
+        this.propositionText = propositionText;
     }
     
-    public boolean isCorrecte() {
-        return correcte;
-    }
-    
-    public void setEnonce(String enonce) {
-        this.enonce = enonce;
-    }
-    
-    public void setCorrecte(boolean correcte) {
-        this.correcte = correcte;
-    }
+
 }

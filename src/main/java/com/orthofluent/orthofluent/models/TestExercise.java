@@ -1,13 +1,13 @@
 package com.orthofluent.orthofluent.models;
 
 import com.orthofluent.orthofluent.models.enumerations.Capacite;
-import com.orthofluent.orthofluent.models.interfaces.Score;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestExercise extends Test implements Score, Serializable {
+public class TestExercise extends Test implements  Serializable {
     private List<Exercise> exercice = new ArrayList<>();
     private float x;
 
@@ -17,11 +17,7 @@ public class TestExercise extends Test implements Score, Serializable {
         this.exercice = exercice;
     }
 
-    public void LancerTest() {
+ public  void evaluerTest(String conclusion, String remarque){
 
-    };
-
-    public float CalcScore() {
-        return x;
-    }
+ }
 }
