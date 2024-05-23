@@ -22,21 +22,24 @@ public class TestQuestion extends Test implements  Serializable {
         questionsSet = new HashSet<>();
     }
 
-    public void evaluerTest(String Conclusion, String Remarque) {
+    @Override
+    public void evaluerTest(String conclusion, String remarque) {
+        float totalScore = 0;
         for (Question question : questionsSet) {
-           getCompteRendu().setScore(getCompteRendu().getScore()+question.getNote());
+            totalScore += question.getNote();
+            getCompteRendu().ajouterScore(question, question.getNote());
         }
-        getCompteRendu().setConclusion(Conclusion);
-        getCompteRendu().setRemarque(Remarque);
-    };
+        getCompteRendu().setScore(totalScore);
+        getCompteRendu().setConclusion(conclusion);
+        getCompteRendu().setRemarque(remarque);
+    }
 
-    public void EvaluerQuestion(Question question,Boolean valuation){
-       for (Question q : questionsSet){
-           if (q.equals(question)){
-               q.setReponse(valuation);
-               q.evaluer();
-           }
-       }
+    public void EvaluerQuestion(Question question,int note) {
+        for (Question q : questionsSet){
+            if (q.equals(question)){
+                q.setNote(note);
+            }
+        }
     }
 
     public void ajouterQuestion(Question question){

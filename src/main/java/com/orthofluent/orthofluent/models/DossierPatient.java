@@ -1,29 +1,41 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 public class DossierPatient implements Comparable<DossierPatient> , Serializable {
     private Patient patient;
     private String numeroDossier;
-    private List<BilanOrthophonique> bilansOrthophoniques;
-    private List<RendezVous> rendezVous;
-    private List<FicheSuivi> fichesSuivi;
+    private Set<BilanOrthophonique> bilansOrthophoniquesSet;
+    private Set<RendezVous> rendezVousSet;
+    private Set<FicheSuivi> fichesSuiviSet;
 
 // CONSTRUCTOR
-    public DossierPatient(Patient patient, String numeroDossier, List<BilanOrthophonique> bilansOrthophoniques, List<RendezVous> rendezVous, List<FicheSuivi> fichesSuivi){
+    public DossierPatient(Patient patient, String numeroDossier, Set<BilanOrthophonique> bilansOrthophoniquesSet, Set<RendezVous> rendezVousSet, Set<FicheSuivi> fichesSuiviSet){
         this.patient = patient;
         this.numeroDossier = numeroDossier;
-        this.bilansOrthophoniques = bilansOrthophoniques;
-        this.rendezVous = rendezVous;
-        this.fichesSuivi = fichesSuivi;
+        this.bilansOrthophoniquesSet = bilansOrthophoniquesSet;
+        this.rendezVousSet = rendezVousSet;
+        this.fichesSuiviSet = fichesSuiviSet;
     }
     
     public DossierPatient(Patient patient, String numeroDossier){
         this.patient = patient;
         this.numeroDossier = numeroDossier;
+        bilansOrthophoniquesSet= new HashSet<>();
+        rendezVousSet= new HashSet<>();
+        fichesSuiviSet= new HashSet<>();
+
     }
     public DossierPatient(){
+        bilansOrthophoniquesSet= new HashSet<>();
+        rendezVousSet= new HashSet<>();
+        fichesSuiviSet= new HashSet<>();
     }
+
 // GETTERS AND SETTERS
     public Patient getPatient(){
         return this.patient;
@@ -33,16 +45,16 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
         return this.numeroDossier;
     }
 
-    public List<BilanOrthophonique> getBilansOrthophoniques(){
-        return this.bilansOrthophoniques;
+    public Set<BilanOrthophonique> getBilansOrthophoniquesSet(){
+        return this.bilansOrthophoniquesSet;
     }
 
-    public List<RendezVous> getRendezVous(){
-        return this.rendezVous;
+    public Set<RendezVous> getRendezVousSet(){
+        return this.rendezVousSet;
     }
 
-    public List<FicheSuivi> getFichesSuivi(){
-        return this.fichesSuivi;
+    public Set<FicheSuivi> getFichesSuiviSet(){
+        return this.fichesSuiviSet;
     }
 
     public void setPatient(Patient patient){
@@ -53,71 +65,78 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
         this.numeroDossier = numeroDossier;
     }
 
-    public void setBilansOrthophoniques(List<BilanOrthophonique> bilansOrthophoniques){
-        this.bilansOrthophoniques = bilansOrthophoniques;
+    public void setBilansOrthophoniquesSet(Set<BilanOrthophonique> bilansOrthophoniquesSet){
+        this.bilansOrthophoniquesSet = bilansOrthophoniquesSet;
     }
 
-    public void setRendezVous(List<RendezVous> rendezVous){
-        this.rendezVous = rendezVous;
+    public void setRendezVousSet(Set<RendezVous> rendezVousSet){
+        this.rendezVousSet = rendezVousSet;
     }
 
-    public void setFichesSuivi(List<FicheSuivi> fichesSuivi){
-        this.fichesSuivi = fichesSuivi;
+    public void setFichesSuiviSet(Set<FicheSuivi> fichesSuiviSet){
+        this.fichesSuiviSet = fichesSuiviSet;
     }
+
 // ADD, REMOVE AND CLEAR METHODS
-    public void addBilanOrthophonique(BilanOrthophonique bilanOrthophonique){
-        this.bilansOrthophoniques.add(bilanOrthophonique);
+    public void ajouterBilanOrthophonique(BilanOrthophonique bilanOrthophonique){
+        this.bilansOrthophoniquesSet.add(bilanOrthophonique);
     }
 
-    public void addRendezVous(RendezVous rendezVous){
-        this.rendezVous.add(rendezVous);
+    public void supprimerBilanOrthophonique(BilanOrthophonique bilanOrthophonique){
+        this.bilansOrthophoniquesSet.remove(bilanOrthophonique);
     }
 
-    public void addFicheSuivi(FicheSuivi ficheSuivi){
-        this.fichesSuivi.add(ficheSuivi);
+    public void ajouterRendezVous(RendezVous rendezVous){
+        this.rendezVousSet.add(rendezVous);
     }
 
-    public void removeBilanOrthophonique(BilanOrthophonique bilanOrthophonique){
-        this.bilansOrthophoniques.remove(bilanOrthophonique);
+    public void supprimerRendezVous(RendezVous rendezVous){
+        this.rendezVousSet.remove(rendezVous);
     }
 
-    public void removeRendezVous(RendezVous rendezVous){
-        this.rendezVous.remove(rendezVous);
+    public void ajouterFicheSuivi(FicheSuivi ficheSuivi){
+        this.fichesSuiviSet.add(ficheSuivi);
     }
 
-    public void removeFicheSuivi(FicheSuivi ficheSuivi){
-        this.fichesSuivi.remove(ficheSuivi);
+    public void supprimerFicheSuivi(FicheSuivi ficheSuivi){
+        this.fichesSuiviSet.remove(ficheSuivi);
     }
 
-    public void removeBilanOrthophonique(int index){
-        this.bilansOrthophoniques.remove(index);
-    }
-
-    public void removeRendezVous(int index){
-        this.rendezVous.remove(index);
-    }
-
-    public void removeFicheSuivi(int index){
-        this.fichesSuivi.remove(index);
-    }
-
-    public void clearBilanOrthophoniques(){
-        this.bilansOrthophoniques.clear();
+    public void clearBilansOrthophoniques(){
+        this.bilansOrthophoniquesSet.clear();
     }
 
     public void clearRendezVous(){
-        this.rendezVous.clear();
+        this.rendezVousSet.clear();
     }
 
     public void clearFichesSuivi(){
-        this.fichesSuivi.clear();
+        this.fichesSuiviSet.clear();
+    }
+    public void clearAll(){
+        this.bilansOrthophoniquesSet.clear();
+        this.rendezVousSet.clear();
+        this.fichesSuiviSet.clear();
+    }
+
+    public List<BilanOrthophonique> getBilansOrthophoniques(){
+        return new ArrayList<>(bilansOrthophoniquesSet);
+    }
+
+    public List<RendezVous> getRendezVous(){
+        return new ArrayList<>(rendezVousSet);
+    }
+
+    public List<FicheSuivi> getFichesSuivi(){
+        return new ArrayList<>(fichesSuiviSet);
     }
 
 
 
+    // TOSTRING, EQUALS, HASHCODE AND COMPARETO METHODS
     @Override
     public String toString(){
-        return "DossierPatient{patient=" + this.patient + ", numeroDossier=" + this.numeroDossier + ", bilansOrthophoniques=" + this.bilansOrthophoniques + ", rendezVous=" + this.rendezVous + ", fichesSuivi=" + this.fichesSuivi + "}";
+        return "DossierPatient{patient=" + this.patient + ", numeroDossier=" + this.numeroDossier +  "}";
     }
 
     @Override
