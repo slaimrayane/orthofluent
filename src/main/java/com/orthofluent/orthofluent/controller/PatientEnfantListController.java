@@ -40,7 +40,7 @@ public class PatientEnfantListController extends PatientListController{
     private ObservableList<PatientEnfant> patientEnfantObservableList = FXCollections.observableArrayList();
 
     @FXML
-    public void initialize(){
+    public void initialize() {
 
 
         nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
@@ -71,8 +71,14 @@ public class PatientEnfantListController extends PatientListController{
         //clickable button
         homeNavigation();
 
-        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterPatientEnfant.fxml",ajouterToggleButton));
+        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterPatientEnfant.fxml", ajouterToggleButton));
 
+        supprimerToggleButton.setOnAction(event -> {
+            PatientEnfant selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
+            if (selectedPatient != null) {
+                patientEnfantObservableList.remove(selectedPatient);
+                // Here you can also add the code to delete the patient from the database
+            }
+        });
     }
-
 }

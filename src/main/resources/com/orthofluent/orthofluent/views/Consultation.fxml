@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +21,7 @@
 
 <AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
-        <MenuBar layoutY="-7.0" prefHeight="63.0" prefWidth="798.0" style="-fx-background-color: #E8E5E5;">
+        <MenuBar layoutY="-2.0" prefHeight="54.0" prefWidth="816.0" style="-fx-background-color: #E8E5E5;">
             <menus>
                 <Menu mnemonicParsing="false" text="Accueil">
                     <items>
@@ -30,40 +31,27 @@
                         <Region prefHeight="200.0" prefWidth="43.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="&#10;Agenda">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="376.0" />
-                    </graphic>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Déconnexion">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                    <graphic>
-                        <Region prefHeight="200.0" prefWidth="0.0" />
+                        <Region prefHeight="50.0" prefWidth="552.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
         <ImageView fitHeight="54.0" fitWidth="115.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/my%20logo.png" />
+                <Image url="@images/logo.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="45.0" fitWidth="54.0" layoutX="748.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="753.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/logoutout.png" />
+                <Image url="@images/logoutout.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="56.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="52.0" prefHeight="507.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
                     <children>
@@ -102,18 +90,18 @@
                 </VBox>
             </children>
         </HBox>
-        <TableView layoutX="189.0" layoutY="125.0" prefHeight="390.0" prefWidth="603.0">
+        <TableView layoutX="189.0" layoutY="178.0" prefHeight="356.0" prefWidth="615.0">
             <columns>
-                <TableColumn prefWidth="286.4000244140625" text="Rendez vous">
+                <TableColumn prefWidth="292.0" text="Rendez vous">
                     <columns>
                         <TableColumn prefWidth="72.79997253417969" text="Nom" />
                         <TableColumn prefWidth="73.60003662109375" text="Prénom" />
                         <TableColumn prefWidth="55.20001220703125" text="age" />
-                        <TableColumn minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
+                        <TableColumn fx:id="suppr" minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
                     </columns>
                 </TableColumn>
-                <TableColumn prefWidth="168.0" text="Date" />
-                <TableColumn prefWidth="135.2000732421875" text="Durée" />
+                <TableColumn prefWidth="219.99990844726562" text="Date" />
+                <TableColumn prefWidth="98.4000244140625" text="Durée" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />
@@ -122,15 +110,30 @@
                 <ColorAdjust />
             </effect>
         </TableView>
-        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="399.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="401.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/consult.png" />
+                <Image url="@images/check.png" />
             </image>
         </ImageView>
-        <Text fill="#848484" fontSmoothingType="LCD" layoutX="440.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultation" textAlignment="CENTER" wrappingWidth="127.9674072265625">
+        <Text fontSmoothingType="LCD" layoutX="440.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultation" textAlignment="CENTER" wrappingWidth="127.9674072265625">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
+      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation" layoutX="712.0" layoutY="140.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="ModifierConsultation" fx:id="ModifierConsultation" layoutX="636.0" layoutY="140.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="AjouterConsultation" fx:id="AjouterConsultation" layoutX="568.0" layoutY="140.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
     </children>
 </AnchorPane>

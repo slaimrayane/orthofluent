@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,9 +19,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
-        <MenuBar layoutY="-7.0" prefHeight="63.0" prefWidth="798.0" style="-fx-background-color: #E8E5E5;">
+        <MenuBar layoutY="-7.0" prefHeight="54.0" prefWidth="798.0" style="-fx-background-color: #E8E5E5;">
             <menus>
                 <Menu mnemonicParsing="false" text="Accueil">
                     <items>
@@ -30,44 +31,31 @@
                         <Region prefHeight="200.0" prefWidth="43.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="&#10;Agenda">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="376.0" />
-                    </graphic>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Déconnexion">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                    <graphic>
-                        <Region prefHeight="200.0" prefWidth="0.0" />
+                        <Region prefHeight="50.0" prefWidth="542.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
-        <ImageView fitHeight="54.0" fitWidth="115.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="47.0" fitWidth="51.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/my%20logo.png" />
+                <Image url="@com/example/demo/images/logo.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="45.0" fitWidth="54.0" layoutX="748.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="753.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/logoutout.png" />
+                <Image url="@com/example/demo/images/logoutout.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="56.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="48.0" prefHeight="510.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
                     <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="47.0" prefWidth="206.0" text="Rendez vous" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="47.0" prefWidth="183.0" text="Rendez vous" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Consultation" />
                                 <MenuItem mnemonicParsing="false" text="Suivi" />
@@ -102,7 +90,7 @@
                 </VBox>
             </children>
         </HBox>
-        <TableView layoutX="189.0" layoutY="125.0" prefHeight="390.0" prefWidth="603.0">
+        <TableView layoutX="189.0" layoutY="154.0" prefHeight="390.0" prefWidth="603.0">
             <columns>
                 <TableColumn prefWidth="294.3999481201172" text="Informations Patient">
                     <columns>
@@ -123,15 +111,30 @@
                 <ColorAdjust />
             </effect>
         </TableView>
-        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="400.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="422.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/check.png" />
+                <Image url="@com/example/demo/images/check.png" />
             </image>
         </ImageView>
-        <Text fill="#848484" fontSmoothingType="LCD" layoutX="412.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suivi" textAlignment="CENTER" wrappingWidth="127.9674072265625">
+        <Text fontSmoothingType="LCD" layoutX="433.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suivi" textAlignment="CENTER" wrappingWidth="127.9674072265625">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
+      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation" layoutX="706.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation1" layoutX="630.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation11" layoutX="561.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </ToggleButton>
     </children>
 </AnchorPane>
