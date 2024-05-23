@@ -2,7 +2,7 @@
 welcome to Orthofluent, an all java management software for orthophonist this project was made as a part of our final project for oop module
 
 ## TO DO
-- fix fxml error by adding the file used whithin the local machine(INTERMEDIAIRE)(done)
+- redifine compare equals and hashcode for a lot of attrbut in Orthophoniste
 - implement the integration logic for the first pages(inscription, connexion , appointement booking)(URGENT)(2/3)
 - fix the code by importing the used classes rather than using the absolute adresse(PAS IMPORTANT)
 - finish the rest of the backend logic implementation(URGENT)
