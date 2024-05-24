@@ -86,16 +86,11 @@
                 </VBox>
             </children>
         </HBox>
-        <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un patient adulte a votre liste des patient" textAlignment="CENTER" wrappingWidth="393.56744384765625">
+        <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier les informations de votre patient" textAlignment="CENTER" wrappingWidth="393.56744384765625">
             <font>
                 <Font name="Arial" size="14.0" />
             </font>
         </Text>
-        <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="378.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@com/example/demo/images/userIcon.png" />
-            </image>
-        </ImageView>
         <Text layoutX="290.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
             <font>
                 <Font size="14.0" />
@@ -106,7 +101,7 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="294.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
+        <Text layoutX="301.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
             <font>
                 <Font size="14.0" />
             </font>
@@ -116,7 +111,7 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="266.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse">
+        <Text layoutX="277.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse">
             <font>
                 <Font size="14.0" />
             </font>
@@ -126,12 +121,12 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="258.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profession">
+        <Text layoutX="210.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone parent">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="264.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diplome">
+        <Text layoutX="232.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classe d'étude">
             <font>
                 <Font size="14.0" />
             </font>
@@ -141,17 +136,17 @@
         <TextField layoutX="327.0" layoutY="307.0" prefHeight="27.0" prefWidth="246.0" promptText="date de naissance--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <TextField layoutX="327.0" layoutY="346.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="age--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="388.0" prefHeight="27.0" prefWidth="246.0" promptText="adresse--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="426.0" prefHeight="27.0" prefWidth="246.0" promptText="profession--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="465.0" prefHeight="27.0" prefWidth="246.0" promptText="diplome--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <Text fontSmoothingType="LCD" layoutX="439.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Adulte" textAlignment="CENTER" wrappingWidth="127.9674072265625">
+        <TextField layoutX="327.0" layoutY="388.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone2--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField layoutX="327.0" layoutY="426.0" prefHeight="27.0" prefWidth="246.0" promptText="adresse--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField layoutX="327.0" layoutY="465.0" prefHeight="27.0" prefWidth="246.0" promptText="classe--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <Text fontSmoothingType="LCD" layoutX="439.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Enfant" textAlignment="CENTER" wrappingWidth="127.9674072265625">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
         <ImageView fitHeight="232.0" fitWidth="281.0" layoutX="579.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/adulte.png" />
+                <Image url="@images/enfant.png" />
             </image>
         </ImageView>
         <Button layoutX="538.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />

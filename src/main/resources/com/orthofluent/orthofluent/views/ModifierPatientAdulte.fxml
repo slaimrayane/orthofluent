@@ -86,7 +86,7 @@
                 </VBox>
             </children>
         </HBox>
-        <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un patient adulte a votre liste des patient" textAlignment="CENTER" wrappingWidth="393.56744384765625">
+        <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier les informations de votre patient" textAlignment="CENTER" wrappingWidth="393.56744384765625">
             <font>
                 <Font name="Arial" size="14.0" />
             </font>

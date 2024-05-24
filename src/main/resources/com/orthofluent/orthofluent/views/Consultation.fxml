@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ConsultationController">
     <children>
         <MenuBar layoutY="-2.0" prefHeight="54.0" prefWidth="816.0" style="-fx-background-color: #E8E5E5;">
             <menus>
@@ -90,18 +90,19 @@
                 </VBox>
             </children>
         </HBox>
-        <TableView layoutX="189.0" layoutY="178.0" prefHeight="356.0" prefWidth="615.0">
+        <TableView id="TabConsultation" fx:id="TabConsultation" layoutX="189.0" layoutY="178.0" prefHeight="356.0" prefWidth="615.0">
             <columns>
                 <TableColumn prefWidth="292.0" text="Rendez vous">
                     <columns>
-                        <TableColumn prefWidth="72.79997253417969" text="Nom" />
-                        <TableColumn prefWidth="73.60003662109375" text="Prénom" />
-                        <TableColumn prefWidth="55.20001220703125" text="age" />
-                        <TableColumn fx:id="suppr" minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
+                        <TableColumn id="TabNom" fx:id="TabNom" prefWidth="72.79997253417969" text="Nom" />
+                        <TableColumn id="TabPrenom" fx:id="TabPrenom" prefWidth="73.60003662109375" text="Prénom" />
+                        <TableColumn id="TabAge" fx:id="TabAge" prefWidth="55.20001220703125" text="age" />
+                        <TableColumn id="TabType" fx:id="TabType" minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
                     </columns>
                 </TableColumn>
-                <TableColumn prefWidth="219.99990844726562" text="Date" />
-                <TableColumn prefWidth="98.4000244140625" text="Durée" />
+                <TableColumn id="TabDate" fx:id="TabDate" prefWidth="107.19985961914062" text="Date" />
+                <TableColumn id="TabDurée" fx:id="TabDurée" prefWidth="75.99993896484375" text="Durée" />
+            <TableColumn id="TabObservation" fx:id="TabObservation" prefWidth="135.20000000000005" text="Observation" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />
@@ -130,7 +131,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </ToggleButton>
-      <ToggleButton id="AjouterConsultation" fx:id="AjouterConsultation" layoutX="568.0" layoutY="140.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Ajouter">
+      <ToggleButton id="AjoutConsultation" fx:id="AjoutConsultation" layoutX="568.0" layoutY="140.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Ajouter">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
