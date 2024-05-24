@@ -13,7 +13,7 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
     private Set<RendezVous> rendezVousSet;
     private Set<FicheSuivi> fichesSuiviSet;
 
-// CONSTRUCTOR
+    // CONSTRUCTOR
     public DossierPatient(Patient patient, String numeroDossier, Set<BilanOrthophonique> bilansOrthophoniquesSet, Set<RendezVous> rendezVousSet, Set<FicheSuivi> fichesSuiviSet){
         this.patient = patient;
         this.numeroDossier = numeroDossier;
@@ -36,7 +36,7 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
         fichesSuiviSet= new HashSet<>();
     }
 
-// GETTERS AND SETTERS
+    // GETTERS AND SETTERS
     public Patient getPatient(){
         return this.patient;
     }
@@ -77,7 +77,7 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
         this.fichesSuiviSet = fichesSuiviSet;
     }
 
-// ADD, REMOVE AND CLEAR METHODS
+    // ADD, REMOVE AND CLEAR METHODS
     public void ajouterBilanOrthophonique(BilanOrthophonique bilanOrthophonique){
         this.bilansOrthophoniquesSet.add(bilanOrthophonique);
     }
@@ -159,6 +159,7 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
     public boolean isEnfant() {
         return this.patient.isEnfant();
     }
+
     public boolean isAdulte() {
         return this.patient.isAdulte();
     }
