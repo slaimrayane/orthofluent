@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="your.package.MyController">
+    <TableView fx:id="tableView" layoutY="50" prefHeight="200" prefWidth="300" editable="true">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" />
+            <TableColumn fx:id="ageColumn" text="Age" />
+        </columns>
+    </TableView>
+</AnchorPane>

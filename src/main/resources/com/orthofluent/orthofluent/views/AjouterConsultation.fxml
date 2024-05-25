@@ -16,50 +16,45 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <MenuBar layoutY="-7.0" prefHeight="60.0" prefWidth="820.0" style="-fx-background-color: #E8E5E5;">
+        <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
-                <Menu mnemonicParsing="false" text="Accueil">
+                <Menu mnemonicParsing="false" text="&#10;Accueil">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                     <graphic>
-                        <Region prefHeight="200.0" prefWidth="43.0" />
+                        <Region prefHeight="200.0" prefWidth="66.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Mon compte">
+                <Menu mnemonicParsing="false" text="&#10;Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="550.0" />
+                        <Region prefHeight="50.0" prefWidth="566.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
-        <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logo.png" />
+                <Image url="@images/logoFinal.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="42.0" fitWidth="60.0" layoutX="758.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@images/logoutout.png" />
-            </image>
-        </ImageView>
-        <HBox layoutX="-1.0" layoutY="52.0" prefHeight="495.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="486.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
             <children>
-                <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
+                <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
                     <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" text="Rendez vous" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Consultation" />
                                 <MenuItem mnemonicParsing="false" text="Suivi" />
                                 <MenuItem mnemonicParsing="false" text="Atelier" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" text="Gestion tests" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="QCM" />
                                 <MenuItem mnemonicParsing="false" text="QCU" />
@@ -69,34 +64,35 @@
                                 <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Adulte" />
                                 <MenuItem mnemonicParsing="false" text="Enfant" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" text="Parametres" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Mon compte" />
                                 <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
                             </items>
                         </MenuButton>
                         <Region prefHeight="200.0" prefWidth="200.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
                     </children>
                 </VBox>
             </children>
         </HBox>
-        <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un rendez vous " textAlignment="CENTER" wrappingWidth="393.56744384765625">
+        <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/iconUser.png" />
+            </image>
+        </ImageView>
+        <Text fontSmoothingType="LCD" layoutX="320.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un rendez vous " textAlignment="CENTER" wrappingWidth="393.56744384765625">
             <font>
                 <Font name="Arial" size="14.0" />
             </font>
         </Text>
-        <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="378.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@com/example/demo/images/userIcon.png" />
-            </image>
-        </ImageView>
+
         <Text layoutX="290.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
             <font>
                 <Font size="14.0" />
@@ -131,9 +127,9 @@
         <TextField layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="246.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <TextField layoutX="327.0" layoutY="307.0" prefHeight="27.0" prefWidth="246.0" promptText="adulte/enfant--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="age--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <Text fontSmoothingType="LCD" layoutX="439.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultation" textAlignment="CENTER" wrappingWidth="127.9674072265625">
+        <Text fontSmoothingType="LCD" layoutX="407.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultation" textAlignment="CENTER" wrappingWidth="219.96734619140625">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="33.0" />
             </font>
         </Text>
         <ImageView fitHeight="232.0" fitWidth="281.0" layoutX="579.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
@@ -141,12 +137,7 @@
                 <Image url="@images/consultation.png" />
             </image>
         </ImageView>
-        <Button layoutX="523.0" layoutY="499.0" mnemonicParsing="false"  style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="393.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@images/check.png" />
-            </image>
-        </ImageView>
+        <Button layoutX="523.0" layoutY="499.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
       <DatePicker layoutX="328.0" layoutY="347.0" prefHeight="26.0" prefWidth="246.0" promptText="date--" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" />
       <TextField layoutX="328.0" layoutY="387.0" prefHeight="27.0" prefWidth="246.0" promptText="heure--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
       <TextField layoutX="328.0" layoutY="424.0" prefHeight="46.0" prefWidth="246.0" promptText="observation--" style="-fx-border-color: #76C2AF;" />

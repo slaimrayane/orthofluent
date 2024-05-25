@@ -18,78 +18,78 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.AtelierListController">
+<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
-        <MenuBar layoutY="-7.0" prefHeight="54.0" prefWidth="802.0" style="-fx-background-color: #E8E5E5;">
+        <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
-                <Menu mnemonicParsing="false" text="Accueil">
+                <Menu mnemonicParsing="false" text="&#10;Accueil">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                     <graphic>
-                        <Region prefHeight="200.0" prefWidth="43.0" />
+                        <Region prefHeight="200.0" prefWidth="66.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Mon compte">
+                <Menu mnemonicParsing="false" text="&#10;Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="528.0" />
+                        <Region prefHeight="50.0" prefWidth="566.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
-        <ImageView fitHeight="54.0" fitWidth="51.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../assets/logo.png" />
+                <Image url="@images/logoFinal.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="754.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../assets/logoutout.png" />
-            </image>
-        </ImageView>
-        <HBox layoutX="-1.0" layoutY="46.0" prefHeight="512.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="500.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
             <children>
-                <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
+                <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
                     <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="47.0" prefWidth="206.0" text="Rendez vous" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
                             <items>
-                                <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
-                                <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
-                                <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
+                                <MenuItem mnemonicParsing="false" text="Consultation" />
+                                <MenuItem mnemonicParsing="false" text="Suivi" />
+                                <MenuItem mnemonicParsing="false" text="Atelier" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" text="Gestion tests" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
                             <items>
-                                <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
-                                <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
-                                <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
-                        <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
-                        <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
+                                <MenuItem mnemonicParsing="false" text="QCM" />
+                                <MenuItem mnemonicParsing="false" text="QCU" />
+                                <MenuItem mnemonicParsing="false" text="Questions libres" />
+                                <MenuItem mnemonicParsing="false" text="Exercices" />
+                                <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
+                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
                             <items>
-                                <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
-                                <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
+                                <MenuItem mnemonicParsing="false" text="Adulte" />
+                                <MenuItem mnemonicParsing="false" text="Enfant" />
                             </items>
                         </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" text="Parametres" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
                             <items>
-                                <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                                <MenuItem mnemonicParsing="false" text="Mon compte" />
                                 <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
                             </items>
                         </MenuButton>
-                        <Region fx:id="AccueilMenu" prefHeight="200.0" prefWidth="200.0" />
-                        <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
                     </children>
                 </VBox>
             </children>
         </HBox>
-        <TableView layoutX="189.0" layoutY="125.0" prefHeight="390.0" prefWidth="603.0">
+        <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/iconUser.png" />
+            </image>
+        </ImageView>
+        <TableView layoutX="190.0" layoutY="182.0" prefHeight="364.0" prefWidth="622.0">
             <columns>
                 <TableColumn prefWidth="286.4000244140625" text="Informations patients">
                     <columns>
@@ -109,15 +109,13 @@
                 <ColorAdjust />
             </effect>
         </TableView>
-        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="400.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../assets/Atelier.png" />
-            </image>
-        </ImageView>
-        <Text fill="#848484" fontSmoothingType="LCD" layoutX="439.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atelier en groupe" textAlignment="CENTER" wrappingWidth="183.20000000000005">
+        <Text fontSmoothingType="LCD" layoutX="355.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atelier de groupe" textAlignment="CENTER" wrappingWidth="336.00004882812505">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="33.0" />
             </font>
         </Text>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="725.0" layoutY="148.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer" textAlignment="CENTER" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="653.0" layoutY="148.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Modifier" textAlignment="CENTER" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="586.0" layoutY="148.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Ajouter" textAlignment="CENTER" />
     </children>
 </AnchorPane>

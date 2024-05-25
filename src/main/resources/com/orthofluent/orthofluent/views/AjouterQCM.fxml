@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
@@ -17,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="602.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
+        <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="827.0" style="-fx-background-color: #CDD5D8;">
             <menus>
                 <Menu mnemonicParsing="false" text="&#10;Accueil">
                     <items>
@@ -44,7 +43,7 @@
                 <Image url="@images/logoFinal.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="486.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="542.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
                     <children>
@@ -88,59 +87,48 @@
                 <Image url="@images/iconUser.png" />
             </image>
         </ImageView>
-        <Text fontSmoothingType="LCD" layoutX="326.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre rendez vous " textAlignment="CENTER" wrappingWidth="393.56744384765625">
-            <font>
-                <Font name="Arial" size="14.0" />
-            </font>
-        </Text>
-
-        <Text layoutX="290.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+        <Text layoutX="245.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Propositions">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="270.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="204.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro du dossier">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="244.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thématique">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="291.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="286.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <TextField layoutX="327.0" layoutY="183.0" prefHeight="27.0" prefWidth="246.0" promptText="nom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="246.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="numéro du dossier--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <Text fontSmoothingType="LCD" layoutX="350.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atelier de groupe" textAlignment="CENTER" wrappingWidth="345.56744384765625">
+        <Text fontSmoothingType="LCD" layoutX="340.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un QCM" textAlignment="CENTER" wrappingWidth="336.7674560546875">
             <font>
                 <Font name="System Bold" size="33.0" />
             </font>
         </Text>
-        <ImageView fitHeight="247.0" fitWidth="240.0" layoutX="579.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="232.0" fitWidth="239.0" layoutX="588.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/AjouterAtelier.png" />
+                <Image url="@images/quest.png" />
             </image>
         </ImageView>
-        <Button layoutX="523.0" layoutY="449.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <DatePicker layoutX="328.0" layoutY="347.0" prefHeight="26.0" prefWidth="246.0" promptText="date--" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" />
-        <TextField layoutX="328.0" layoutY="387.0" prefHeight="27.0" prefWidth="246.0" promptText="heure--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <ButtonBar layoutX="191.0" layoutY="65.0" prefHeight="40.0" prefWidth="200.0" />
-        <TextField layoutX="327.0" layoutY="309.0" prefHeight="27.0" prefWidth="246.0" promptText="thématique--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <Button layoutX="369.0" layoutY="455.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <TextField layoutX="326.0" layoutY="228.0" prefHeight="35.0" prefWidth="390.0" style="-fx-border-color: #76C2AF;" />
+        <Text layoutX="253.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+      <CheckBox layoutX="328.0" layoutY="302.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+         <graphic>
+            <TextField prefHeight="27.0" prefWidth="230.0" promptText="Proposition1--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+         </graphic>
+      </CheckBox>
+      <CheckBox layoutX="328.0" layoutY="375.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+         <graphic>
+            <TextField prefHeight="25.0" prefWidth="221.0" promptText="Proposition3--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+         </graphic>
+      </CheckBox>
+      <CheckBox layoutX="328.0" layoutY="338.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+         <graphic>
+            <TextField prefHeight="27.0" prefWidth="307.0" promptText="Proposition2--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+         </graphic>
+      </CheckBox>
+      <Text layoutX="320.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intégrez des QCM variés pour une évaluation complète!" wrappingWidth="376.7999267578125">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Text>
+
     </children>
 </AnchorPane>

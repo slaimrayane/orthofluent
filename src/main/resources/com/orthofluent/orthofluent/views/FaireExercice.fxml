@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root accessibleRole="CHECK_BOX" prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
@@ -44,9 +45,9 @@
                 <Image url="@images/logoFinal.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="486.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
             <children>
-                <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
+                <VBox alignment="TOP_CENTER" prefHeight="504.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
                     <children>
                         <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
                             <items>
@@ -88,59 +89,25 @@
                 <Image url="@images/iconUser.png" />
             </image>
         </ImageView>
-        <Text fontSmoothingType="LCD" layoutX="326.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre rendez vous " textAlignment="CENTER" wrappingWidth="393.56744384765625">
-            <font>
-                <Font name="Arial" size="14.0" />
-            </font>
-        </Text>
+        <TableView cache="true" layoutX="194.0" layoutY="151.0" prefHeight="356.0" prefWidth="614.0">
+            <columns>
+                <TableColumn prefWidth="409.60011291503906" sortable="false" text="Exercice" />
+                <TableColumn prefWidth="111.9998779296875" text="Note" />
+                <TableColumn prefWidth="96.79998779296875" text="Score" />
+            </columns>
+            <cursor>
+                <Cursor fx:constant="DISAPPEAR" />
+            </cursor>
+            <effect>
+                <ColorAdjust />
+            </effect>
+        </TableView>
 
-        <Text layoutX="290.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="270.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="204.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro du dossier">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="244.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thématique">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="291.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="286.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <TextField layoutX="327.0" layoutY="183.0" prefHeight="27.0" prefWidth="246.0" promptText="nom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="246.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="numéro du dossier--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <Text fontSmoothingType="LCD" layoutX="350.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atelier de groupe" textAlignment="CENTER" wrappingWidth="345.56744384765625">
+        <Text fontSmoothingType="LCD" layoutX="376.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercices" textAlignment="CENTER" wrappingWidth="255.16748046875">
             <font>
                 <Font name="System Bold" size="33.0" />
             </font>
         </Text>
-        <ImageView fitHeight="247.0" fitWidth="240.0" layoutX="579.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@images/AjouterAtelier.png" />
-            </image>
-        </ImageView>
-        <Button layoutX="523.0" layoutY="449.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <DatePicker layoutX="328.0" layoutY="347.0" prefHeight="26.0" prefWidth="246.0" promptText="date--" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" />
-        <TextField layoutX="328.0" layoutY="387.0" prefHeight="27.0" prefWidth="246.0" promptText="heure--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <ButtonBar layoutX="191.0" layoutY="65.0" prefHeight="40.0" prefWidth="200.0" />
-        <TextField layoutX="327.0" layoutY="309.0" prefHeight="27.0" prefWidth="246.0" promptText="thématique--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="707.0" layoutY="517.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" stylesheets="@styles.css" text="Résultat" textAlignment="CENTER" textFill="WHITE" />
     </children>
-</AnchorPane>
+</fx:root>
