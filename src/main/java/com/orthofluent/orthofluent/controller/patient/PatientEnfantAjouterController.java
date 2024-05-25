@@ -1,6 +1,7 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.patient;
 
 
+import com.orthofluent.orthofluent.controller.BaseController;
 import com.orthofluent.orthofluent.models.PatientEnfant;
 import com.orthofluent.orthofluent.models.enumerations.TypePatient;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionCreationImpossible;

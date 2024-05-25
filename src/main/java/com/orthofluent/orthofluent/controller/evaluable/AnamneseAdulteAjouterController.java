@@ -1,7 +1,7 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.evaluable;
 
-
-import com.orthofluent.orthofluent.models.QuestionAnamneseEnfant;
+import com.orthofluent.orthofluent.controller.BaseController;
+import com.orthofluent.orthofluent.models.QuestionAnamneseAdulte;
 import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionCreationImpossible;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionQuestionAnamneseExistante;
@@ -19,7 +19,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AnamneseEnfantAjouterController extends BaseController {
+
+public class AnamneseAdulteAjouterController extends BaseController {
     @FXML
     private ComboBox<TypeQuestionAnamnese> typeQuestionAnamneseComboBox;
     @FXML
@@ -38,9 +39,9 @@ public class AnamneseEnfantAjouterController extends BaseController {
         private void addQuestionAnamneseAdulte() throws ExceptionCreationImpossible {
         TypeQuestionAnamnese typeQuestionAnamnese = typeQuestionAnamneseComboBox.getValue();
         String enonce = enonceTextField.getText();
-        QuestionAnamneseEnfant questionAnamneseEnfant = new QuestionAnamneseEnfant(typeQuestionAnamnese, enonce);
+        QuestionAnamneseAdulte questionAnamneseAdulte = new QuestionAnamneseAdulte(typeQuestionAnamnese, enonce);
         try {
-            DataManager.getInstance().getOrthophoniste().ajouterQuestionAnamnese(questionAnamneseEnfant);
+            DataManager.getInstance().getOrthophoniste().ajouterQuestionAnamnese(questionAnamneseAdulte);
         } catch (ExceptionQuestionAnamneseExistante e) {
             e.printStackTrace();
             throw new ExceptionCreationImpossible("Erreur lors de l'ajout de la question d'anamnese");
@@ -50,7 +51,7 @@ public class AnamneseEnfantAjouterController extends BaseController {
     private void handleConfirmeButton() {
         try {
             addQuestionAnamneseAdulte();
-            Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QuestAnamneseEnfant.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QuestAnamneseAdulte.fxml"));
             Stage stage = (Stage) confirmButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (ExceptionCreationImpossible e) {

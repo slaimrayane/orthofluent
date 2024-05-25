@@ -1,6 +1,7 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.patient;
 
 
+import com.orthofluent.orthofluent.controller.ListController;
 import com.orthofluent.orthofluent.models.PatientEnfant;
 import com.orthofluent.orthofluent.services.DataManager;
 
@@ -17,7 +18,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.property.ReadOnlyStringWrapper;
 
 
-public class PatientEnfantListController extends ListController{
+public class PatientEnfantListController extends ListController {
     @FXML
     private TableColumn<PatientEnfant, String> dateNaissanceColumn;
     @FXML

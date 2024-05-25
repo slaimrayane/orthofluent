@@ -1,5 +1,6 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.patient;
 
+import com.orthofluent.orthofluent.controller.ListController;
 import com.orthofluent.orthofluent.models.PatientAdulte;
 import com.orthofluent.orthofluent.services.DataManager;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -14,7 +15,7 @@ import javafx.util.Callback;
 
 import java.text.SimpleDateFormat;
 
-public class PatientAdulteListController extends ListController{
+public class PatientAdulteListController extends ListController {
     @FXML
     protected TableView<PatientAdulte> patientTableView;
 

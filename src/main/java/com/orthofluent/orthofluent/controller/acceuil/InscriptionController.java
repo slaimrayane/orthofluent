@@ -1,4 +1,4 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.acceuil;
 
 
 

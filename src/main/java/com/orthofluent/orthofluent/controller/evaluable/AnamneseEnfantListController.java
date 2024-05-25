@@ -1,6 +1,8 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.evaluable;
 
-import com.orthofluent.orthofluent.models.QuestionAnamneseAdulte;
+
+import com.orthofluent.orthofluent.controller.ListController;
+import com.orthofluent.orthofluent.models.QuestionAnamneseEnfant;
 import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
 import com.orthofluent.orthofluent.services.DataManager;
 import javafx.collections.FXCollections;
@@ -12,15 +14,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AnamneseAdulteListController extends ListController{
+public class AnamneseEnfantListController extends ListController {
     @FXML
-    private TableColumn<QuestionAnamneseAdulte, String> enonceColumn;
+    private TableColumn<QuestionAnamneseEnfant, String> enonceColumn;
     @FXML
-    private TableColumn<QuestionAnamneseAdulte, TypeQuestionAnamnese> typeQuestionColumn;
+    private TableColumn<QuestionAnamneseEnfant, TypeQuestionAnamnese> typeQuestionColumn;
     @FXML
-    protected TableView<QuestionAnamneseAdulte> questionAnamneseAdulteTableView;
+    protected TableView<QuestionAnamneseEnfant> questionAnamneseEnfantTableView;
 
-    private ObservableList<QuestionAnamneseAdulte> questionAnamneseAdulteObservableList = FXCollections.observableArrayList();
+    private ObservableList<QuestionAnamneseEnfant> questionAnamneseEnfantObservableList = FXCollections.observableArrayList();
 
     @FXML
     private Button ajouterButton;
@@ -30,7 +32,7 @@ public class AnamneseAdulteListController extends ListController{
     public void initialize() {
         enonceColumn.setCellValueFactory(new PropertyValueFactory<>("enonce"));
         typeQuestionColumn.setCellValueFactory(new PropertyValueFactory<>("typeQuestionAnamnese"));
-        typeQuestionColumn.setCellFactory(column -> new TableCell<QuestionAnamneseAdulte, TypeQuestionAnamnese>() {
+        typeQuestionColumn.setCellFactory(column -> new TableCell<QuestionAnamneseEnfant, TypeQuestionAnamnese>() {
         @Override
         protected void updateItem(TypeQuestionAnamnese item, boolean empty) {
             super.updateItem(item, empty);
@@ -43,16 +45,16 @@ public class AnamneseAdulteListController extends ListController{
             }
     }
 });
-        questionAnamneseAdulteObservableList.addAll(DataManager.getInstance().getOrthophoniste().getQuestionsAnamneseAdulte());
-        questionAnamneseAdulteTableView.setItems(questionAnamneseAdulteObservableList);
+        questionAnamneseEnfantObservableList.addAll(DataManager.getInstance().getOrthophoniste().getQuestionsAnamneseEnfant());
+        questionAnamneseEnfantTableView.setItems(questionAnamneseEnfantObservableList);
 
         homeNavigation();
-        ajouterButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseAdulte.fxml", ajouterButton));
+        ajouterButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseEnfant.fxml", ajouterButton));
 
         supprimerButton.setOnAction(event -> {
-            QuestionAnamneseAdulte selectedItem = questionAnamneseAdulteTableView.getSelectionModel().getSelectedItem();
+            QuestionAnamneseEnfant selectedItem = questionAnamneseEnfantTableView.getSelectionModel().getSelectedItem();
             if (selectedItem != null) {
-                questionAnamneseAdulteObservableList.remove(selectedItem);
+                questionAnamneseEnfantObservableList.remove(selectedItem);
                 // Here you can also add the code to delete the patient from the database
                 DataManager.getInstance().getOrthophoniste().supprimerQuestionAnamnese(selectedItem);
             }

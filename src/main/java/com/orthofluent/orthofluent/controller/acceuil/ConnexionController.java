@@ -1,4 +1,4 @@
-package com.orthofluent.orthofluent.controller;
+package com.orthofluent.orthofluent.controller.acceuil;
 
 
 import com.orthofluent.orthofluent.models.Orthophoniste;
