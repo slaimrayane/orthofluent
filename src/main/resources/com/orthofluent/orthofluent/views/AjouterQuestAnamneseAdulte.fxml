@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
@@ -15,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.AnamneseAdulteAjouterController">
     <children>
         <MenuBar layoutY="-7.0" prefHeight="60.0" prefWidth="820.0" style="-fx-background-color: #E8E5E5;">
             <menus>
@@ -39,52 +42,52 @@
         </MenuBar>
         <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logo.png" />
+                <Image url="@../assets/logo.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="42.0" fitWidth="60.0" layoutX="758.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoutout.png" />
+                <Image url="@../assets/logoutout.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="52.0" prefHeight="495.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
-                    <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" text="Rendez vous" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Consultation" />
-                                <MenuItem mnemonicParsing="false" text="Suivi" />
-                                <MenuItem mnemonicParsing="false" text="Atelier" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" text="Gestion tests" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="QCM" />
-                                <MenuItem mnemonicParsing="false" text="QCU" />
-                                <MenuItem mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Adulte" />
-                                <MenuItem mnemonicParsing="false" text="Enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" text="Parametres" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Mon compte" />
-                                <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
-                            </items>
-                        </MenuButton>
-                        <Region prefHeight="200.0" prefWidth="200.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
-                    </children>
-                </VBox>
-            </children>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" text="Rendez vous" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
+                        <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
+                        <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" text="Gestion tests" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
+                        <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
+                        <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
+                        <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
+                        <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
+                        <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
+                        <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" text="Parametres" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                        <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
+                     </items>
+                  </MenuButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Déconnexion" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </VBox>
+         </children>
         </HBox>
         <Text fontSmoothingType="LCD" layoutX="286.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter des questions afin d'améliorer votre questionnaire anamnese!" textAlignment="CENTER" wrappingWidth="432.76739501953125">
             <font>
@@ -96,11 +99,6 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <Text layoutX="266.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
         <Text fontSmoothingType="LCD" layoutX="344.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter questions anamnese adulte" textAlignment="CENTER" wrappingWidth="316.7674560546875">
             <font>
                 <Font name="System Bold" size="18.0" />
@@ -108,13 +106,12 @@
         </Text>
         <ImageView fitHeight="232.0" fitWidth="239.0" layoutX="573.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/quest.png" />
+                <Image url="@../assets/quest.png" />
             </image>
         </ImageView>
-        <Button layoutX="525.0" layoutY="489.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
         <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="304.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/questions.png" />
+                <Image url="@../assets/questions.png" />
             </image>
         </ImageView>
       <Text layoutX="324.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assurer vous que la question portera sur :&#10;-L'histoire de la maladie du patient&#10;-Son suivi médical" wrappingWidth="271.41326904296875" />
@@ -122,14 +119,22 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <TextField layoutX="327.0" layoutY="250.0" prefHeight="26.0" prefWidth="246.0" promptText="catégorie--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-      <TextField layoutX="327.0" layoutY="300.0" prefHeight="74.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />
-      <TextField layoutX="327.0" layoutY="398.0" prefHeight="60.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />
       <Text layoutX="282.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Énoncé">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
+      <ComboBox fx:id="typeQuestionAnamneseComboBox" layoutX="344.0" layoutY="249.0" prefWidth="150.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="La structure familiale du patient" />
+               <String fx:value="Dynamique familiale" />
+               <String fx:value="Dynamique familiale" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <TextField fx:id="enonceTextField" layoutX="337.0" layoutY="309.0" prefHeight="74.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />
+      <Button fx:id="confirmButton" layoutX="538.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleConfirmeButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
         
     </children>
 </AnchorPane>

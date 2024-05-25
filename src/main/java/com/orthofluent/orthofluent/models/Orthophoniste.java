@@ -301,8 +301,12 @@ public class Orthophoniste implements Serializable {
 
 
     //Question anamnese
-    public void ajouterQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
-        questionsAnamneseSet.add(questionAnamnese);
+    public void ajouterQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese) throws ExceptionQuestionAnamneseExistante{
+        if (questionsAnamneseSet.contains(questionAnamnese)) {
+            throw new ExceptionQuestionAnamneseExistante("Question already exists");
+        } else {
+            questionsAnamneseSet.add(questionAnamnese);
+        }
     }
     public void ajouterQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese) throws ExceptionQuestionAnamneseExistante {
         if (questionsAnamneseSet.contains(questionAnamnese)) {
