@@ -64,7 +64,7 @@
                                 <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
                                 <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
                                 <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
+                                <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
                                 <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
                                 <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
                             </items>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 import javafx.scene.control.ToggleButton;
@@ -53,6 +54,9 @@ public class BaseController {
     @FXML
     protected Button DeconnexionButton;
 
+    @FXML
+    protected Menu AccueilMenu;
+
     protected void navigateTo(String fxmlPath,MenuItem menuItem) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
@@ -80,6 +84,18 @@ public class BaseController {
             e.printStackTrace();
         }
     }
+
+    protected void navigateTo(String fxmlPath, Menu menu) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Stage stage = (Stage) menu.getParentPopup().getOwnerWindow().getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     protected void homeNavigation(){
         consultationItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Consultation.fxml",consultationItem));
         suiviItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Suivi.fxml",suiviItem));
@@ -87,12 +103,14 @@ public class BaseController {
         qcmItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/QCM.fxml",qcmItem));
         qcuItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/QCU.fxml",qcuItem));
         questionLibreItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/QuestLibres.fxml",questionLibreItem));
+        exerciseItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Exercices.fxml",exerciseItem));
         anamneseEnfantItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/QuestAnamneseEnfant.fxml",anamneseEnfantItem));
         anamneseAdulteItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/QuestAnamneseAdulte.fxml",anamneseAdulteItem));
         patientEnfantItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/PatientEnfant.fxml",patientEnfantItem));
         patientAdulteItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/PatientAdulte.fxml",patientAdulteItem));
         compteItem.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Compte.fxml",compteItem));
         DeconnexionButton.setOnAction(event -> HandleDeconnexionButton());
+       // AccueilMenu.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/Home.fxml",AccueilMenu));
     }
     protected void HandleDeconnexionButton(){
         saveEverything();

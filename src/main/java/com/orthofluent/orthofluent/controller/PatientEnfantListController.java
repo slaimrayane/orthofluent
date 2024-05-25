@@ -17,7 +17,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.property.ReadOnlyStringWrapper;
 
 
-public class PatientEnfantListController extends PatientListController{
+public class PatientEnfantListController extends ListController{
     @FXML
     private TableColumn<PatientEnfant, String> dateNaissanceColumn;
     @FXML
@@ -78,6 +78,7 @@ public class PatientEnfantListController extends PatientListController{
             if (selectedPatient != null) {
                 patientEnfantObservableList.remove(selectedPatient);
                 // Here you can also add the code to delete the patient from the database
+                DataManager.getInstance().getOrthophoniste().supprimerDossierPatient(selectedPatient);
             }
         });
     }
