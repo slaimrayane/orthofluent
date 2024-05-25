@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="542.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <MenuBar layoutY="-7.0" prefHeight="63.0" prefWidth="798.0" style="-fx-background-color: #E8E5E5;">
+        <MenuBar layoutY="-7.0" prefHeight="60.0" prefWidth="820.0" style="-fx-background-color: #E8E5E5;">
             <menus>
                 <Menu mnemonicParsing="false" text="Accueil">
                     <items>
@@ -30,44 +27,31 @@
                         <Region prefHeight="200.0" prefWidth="43.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="&#10;Agenda">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="376.0" />
-                    </graphic>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Déconnexion">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                    <graphic>
-                        <Region prefHeight="200.0" prefWidth="0.0" />
+                        <Region prefHeight="50.0" prefWidth="550.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
-        <ImageView fitHeight="54.0" fitWidth="115.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/my%20logo.png" />
+                <Image url="@images/logo.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="45.0" fitWidth="54.0" layoutX="748.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="42.0" fitWidth="60.0" layoutX="758.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/logoutout.png" />
+                <Image url="@images/logoutout.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="56.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="52.0" prefHeight="495.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
                     <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="47.0" prefWidth="206.0" text="Rendez vous" textAlignment="RIGHT">
+                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" text="Rendez vous" textAlignment="RIGHT">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Consultation" />
                                 <MenuItem mnemonicParsing="false" text="Suivi" />
@@ -81,7 +65,7 @@
                                 <MenuItem mnemonicParsing="false" text="Questions libres" />
                                 <MenuItem mnemonicParsing="false" text="Exercices" />
                                 <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
-                        <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
+                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
                             </items>
                         </MenuButton>
                         <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient" textAlignment="RIGHT">
@@ -102,27 +86,50 @@
                 </VBox>
             </children>
         </HBox>
-        <TableView layoutX="189.0" layoutY="125.0" prefHeight="390.0" prefWidth="603.0">
-            <columns>
-                <TableColumn prefWidth="454.40000915527344" text="Questions libres" />
-                <TableColumn prefWidth="148.0" text="Note" />
-            </columns>
-            <cursor>
-                <Cursor fx:constant="DISAPPEAR" />
-            </cursor>
-            <effect>
-                <ColorAdjust />
-            </effect>
-        </TableView>
-        <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="372.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../../../Desktop/check.png" />
-            </image>
-        </ImageView>
-        <Text fill="#848484" fontSmoothingType="LCD" layoutX="399.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quesstions libres " textAlignment="CENTER" wrappingWidth="202.367431640625">
+        <Text fontSmoothingType="LCD" layoutX="286.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter des questions afin d'améliorer votre questionnaire anamnese!" textAlignment="CENTER" wrappingWidth="432.76739501953125">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="264.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catégorie">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="266.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text fontSmoothingType="LCD" layoutX="344.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter questions anamnese adulte" textAlignment="CENTER" wrappingWidth="316.7674560546875">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
+        <ImageView fitHeight="232.0" fitWidth="239.0" layoutX="573.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/quest.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="525.0" layoutY="489.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="304.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/questions.png" />
+            </image>
+        </ImageView>
+      <Text layoutX="324.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assurer vous que la question portera sur :&#10;-L'histoire de la maladie du patient&#10;-Son suivi médical" wrappingWidth="271.41326904296875" />
+      <Text layoutX="325.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarque:" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <TextField layoutX="327.0" layoutY="250.0" prefHeight="26.0" prefWidth="246.0" promptText="catégorie--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+      <TextField layoutX="327.0" layoutY="300.0" prefHeight="74.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />
+      <TextField layoutX="327.0" layoutY="398.0" prefHeight="60.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />
+      <Text layoutX="282.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Énoncé">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+        
     </children>
 </AnchorPane>

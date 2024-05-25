@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root accessibleRole="CHECK_BOX" prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QCM">
+<fx:root accessibleRole="CHECK_BOX" prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
         <MenuBar layoutY="-7.0" prefHeight="63.0" prefWidth="798.0" style="-fx-background-color: #E8E5E5;">
             <menus>
@@ -30,40 +30,27 @@
                         <Region prefHeight="200.0" prefWidth="43.0" />
                     </graphic>
                 </Menu>
-                <Menu mnemonicParsing="false" text="&#10;Agenda">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Mon compte">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                     <graphic>
-                        <Region prefHeight="50.0" prefWidth="376.0" />
-                    </graphic>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Déconnexion">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                    <graphic>
-                        <Region prefHeight="200.0" prefWidth="0.0" />
+                        <Region prefHeight="50.0" prefWidth="553.0" />
                     </graphic>
                 </Menu>
             </menus>
         </MenuBar>
         <ImageView fitHeight="54.0" fitWidth="115.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/my%20logo.png" />
+                <Image url="@com/example/demo/images/logo.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="45.0" fitWidth="54.0" layoutX="748.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Desktop/logoutout.png" />
+                <Image url="@com/example/demo/images/logoutout.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="56.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
+        <HBox layoutX="-1.0" layoutY="57.0" prefHeight="501.0" prefWidth="183.0" style="-fx-background-color: #D8D0D0;">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="502.0" prefWidth="184.0">
                     <children>
@@ -102,7 +89,7 @@
                 </VBox>
             </children>
         </HBox>
-        <TableView cache="true" layoutX="189.0" layoutY="125.0" prefHeight="390.0" prefWidth="603.0">
+        <TableView cache="true" layoutX="189.0" layoutY="154.0" prefHeight="390.0" prefWidth="603.0">
             <columns>
                 <TableColumn prefWidth="464.80003356933594" sortable="false" text="Questions/Propositions" />
                 <TableColumn prefWidth="136.8000366210938" text="Note" />
@@ -119,10 +106,18 @@
                 <Image url="@../../../../../Desktop/check.png" />
             </image>
         </ImageView>
-        <Text fill="#848484" fontSmoothingType="LCD" layoutX="372.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Questions anamnese adulte" textAlignment="CENTER" wrappingWidth="277.5673828125">
+        <Text fontSmoothingType="LCD" layoutX="352.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Questions anamnese adulte" textAlignment="CENTER" wrappingWidth="277.5673828125">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Text>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="574.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Ajouter" textAlignment="CENTER" textFill="WHITE" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="712.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Supprimer" textAlignment="CENTER" textFill="WHITE" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="641.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Modifier" textAlignment="CENTER" textFill="WHITE" />
+      <ImageView fitHeight="47.0" fitWidth="45.0" layoutX="329.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@com/example/demo/images/questions.png" />
+         </image>
+      </ImageView>
     </children>
 </fx:root>

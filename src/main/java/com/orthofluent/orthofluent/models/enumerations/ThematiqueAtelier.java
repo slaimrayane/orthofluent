@@ -2,7 +2,7 @@ package com.orthofluent.orthofluent.models.enumerations;
 
 
 
-public enum Thematique {
+public enum ThematiqueAtelier {
     DeveloppementLangageEnfants,
     ReeducationDeDyslexie,
     CommunicationAlternativeAmelioree,
@@ -13,3 +13,4 @@ public enum Thematique {
     TroublesDeVoix,
     FluenceVerbale
 }
+

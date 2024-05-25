@@ -23,7 +23,7 @@
     <children>
         <MenuBar layoutY="-7.0" prefHeight="57.0" prefWidth="802.0" style="-fx-background-color: #E8E5E5;">
             <menus>
-                <Menu mnemonicParsing="false" text="Accueil">
+                <Menu fx:id="AccueilMenu" mnemonicParsing="false" text="Accueil">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
@@ -67,7 +67,7 @@
                                 <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
                                 <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
                                 <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
+                                <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
                                 <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
                                 <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
                             </items>

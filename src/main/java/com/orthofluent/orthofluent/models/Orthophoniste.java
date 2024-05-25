@@ -6,10 +6,7 @@ import com.orthofluent.orthofluent.models.exceptions.ExceptionDossierExistant;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 //hna dossierPatirnt w patient map yak?
@@ -24,6 +21,9 @@ public class Orthophoniste implements Serializable {
     private int patientCounter;
     private com.orthofluent.orthofluent.models.Agenda agenda;
     private Map<String,DossierPatient> dossierPatientMap;
+    private Set<QuestionAnamnese> questionsAnamneseSet;
+    private Set<Question> questionsSet;
+
 
   //  private Test test; // pcq kayan des methodes hna ta3 changement de questions ecq but i'm still not
                        // sure ida ysraw hna wla f la classe test >>TLFATLI!!
@@ -41,11 +41,15 @@ public class Orthophoniste implements Serializable {
         this.motDePasse = motDePasse;
         dossierPatientMap = new HashMap<>();
         patientCounter = 0;
+        questionsAnamneseSet = new HashSet<>();
+        questionsSet = new HashSet<>();
     }
 
     public Orthophoniste() {
         dossierPatientMap=new HashMap<>();
         patientCounter=0;
+        questionsAnamneseSet = new HashSet<>();
+        questionsSet = new HashSet<>();
     }
 
 // Getters and Setters
@@ -122,6 +126,32 @@ public class Orthophoniste implements Serializable {
     public void setAgenda(com.orthofluent.orthofluent.models.Agenda agenda) {
         this.agenda = agenda;
     }
+
+    public Map<String, DossierPatient> getDossierPatientMap() {
+        return dossierPatientMap;
+    }
+
+    public void setDossierPatientMap(Map<String, DossierPatient> dossierPatientMap) {
+        this.dossierPatientMap = dossierPatientMap;
+    }
+
+    public Set<QuestionAnamnese> getQuestionsAnamneseSet() {
+        return questionsAnamneseSet;
+    }
+
+    public void setQuestionsAnamneseSet(Set<QuestionAnamnese> questionsAnamneseSet) {
+        this.questionsAnamneseSet = questionsAnamneseSet;
+    }
+
+    public Set<Question> getQuestionsSet() {
+        return questionsSet;
+    }
+
+    public void setQuestionsSet(Set<Question> questionsSet) {
+        this.questionsSet = questionsSet;
+    }
+
+
 
     // Les methodes
     public void ProgrammerConsultationAdulte() {
@@ -219,7 +249,6 @@ public class Orthophoniste implements Serializable {
     }
     public void ProgrammerAtelier(){
     }
-
     //a revoir apres la logique de la BO
     public void initialiserPatient(PatientEnfant patientEnfant)throws ExceptionDossierExistant{
         DossierPatient dossierPatient = new DossierPatient(patientEnfant,String.valueOf(patientCounter++));
@@ -232,7 +261,7 @@ public class Orthophoniste implements Serializable {
     }
 
 
-public void ajouterDossierPatient(DossierPatient dossierPatient) throws ExceptionDossierExistant {
+    public void ajouterDossierPatient(DossierPatient dossierPatient) throws ExceptionDossierExistant {
     if (dossierPatientMap.containsKey(dossierPatient.getNumeroDossier())) {
         throw new ExceptionDossierExistant("Le dossier patient existe déjà");
     }
@@ -245,17 +274,98 @@ public void ajouterDossierPatient(DossierPatient dossierPatient) throws Exceptio
     public List<PatientAdulte> getPatientsAdultes(){
         return dossierPatientMap.values().stream().filter(DossierPatient::isAdulte).map(dossier -> (PatientAdulte) dossier.getPatient()).collect(Collectors.toList());
     }
-    public void ModifierPatient() {
 
+    public void supprimerDossierPatient(String numeroDossier){
+        dossierPatientMap.remove(numeroDossier);
     }
 
-    public void creerQuestion() {
-
+    public void supprimerDossierPatient(DossierPatient dossierPatient){
+        dossierPatientMap.remove(dossierPatient.getNumeroDossier());
     }
 
-        public void modifierQuestion() {
+    public void supprimerDossierPatient(Patient patient){
+        dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patient));
+    }
 
+    public void supprimerDossierPatient(PatientEnfant patientEnfant){
+        dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientEnfant));
+    }
+
+        public void supprimerDossierPatient(PatientAdulte patientAdulte) {
+            dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientAdulte));
         }
+    public void modifierPatient() {
+
+    }
+
+
+    //Question anamnese
+    public void ajouterQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
+        questionsAnamneseSet.add(questionAnamnese);
+    }
+    public void ajouterQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese){
+        questionsAnamneseSet.add(questionAnamnese);
+    }
+
+    public void supprimerQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese){
+        questionsAnamneseSet.remove(questionAnamnese);
+    }
+    public void supprimerQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
+        questionsAnamneseSet.remove(questionAnamnese);
+    }
+    public List<QuestionAnamneseAdulte> getQuestionsAnamneseAdulte(){
+           return questionsAnamneseSet.stream().filter(QuestionAnamneseAdulte.class::isInstance).map(QuestionAnamneseAdulte.class::cast).collect(Collectors.toList());
+    }
+    public List<QuestionAnamneseEnfant> getQuestionsAnamneseEnfant(){
+           return questionsAnamneseSet.stream().filter(QuestionAnamneseEnfant.class::isInstance).map(QuestionAnamneseEnfant.class::cast).collect(Collectors.toList());
+    }
+    public List<QuestionAnamnese> getQuestionsAnamnese(){
+        return new ArrayList<>(questionsAnamneseSet);
+    }
+
+    public void ajouterQuestion(Question question){
+        questionsSet.add(question);
+    }
+    public void ajouterQuestion(QCM question){
+        questionsSet.add(question);
+    }
+    public void ajouterQuestion(QCU question){
+        questionsSet.add(question);
+    }
+    public void ajouterQuestion(QuestionLibre question){
+        questionsSet.add(question);
+    }
+
+    public void supprimerQuestion(Question question){
+        questionsSet.remove(question);
+    }
+    public void supprimerQuestion(QCM question){
+        questionsSet.remove(question);
+    }
+    public void supprimerQuestion(QCU question){
+        questionsSet.remove(question);
+    }
+    public void supprimerQuestion(QuestionLibre question){
+        questionsSet.remove(question);
+    }
+
+    public List<Question> getQuestions(){
+        return new ArrayList<>(questionsSet);
+    }
+    public List<QCM> getQCM(){
+        return questionsSet.stream().filter(QCM.class::isInstance).map(QCM.class::cast).collect(Collectors.toList());
+    }
+    public List<QCU> getQCU(){
+        return questionsSet.stream().filter(QCU.class::isInstance).map(QCU.class::cast).collect(Collectors.toList());
+    }
+    public List<QuestionLibre> getQuestionsLibres() {
+        return questionsSet.stream().filter(QuestionLibre.class::isInstance).map(QuestionLibre.class::cast).collect(Collectors.toList());
+    }
+
+
+
+
+
 
         public void AfficherAgenda() {
 

@@ -1,17 +1,18 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class BilanOrthophoniqueInitial extends BilanOrthophonique implements Serializable {
     private Anamnese anamnese;
-// constructor
-    public BilanOrthophoniqueInitial(Anamnese anamnese,EpreuveClinique epreuveClinique, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique){
-        super(epreuveClinique, diagnostique, projetTherapeutique);
+
+    public BilanOrthophoniqueInitial(List<EpreuveClinique> epreuvesCliniquesList, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique,Anamnese anamnese){
+        super(epreuvesCliniquesList, diagnostique, projetTherapeutique);
         this.anamnese = anamnese;
-    }   
+    }
+
     public BilanOrthophoniqueInitial(){
     }
-// getters and setters
 
     public Anamnese getAnamnese(){
         return this.anamnese;
