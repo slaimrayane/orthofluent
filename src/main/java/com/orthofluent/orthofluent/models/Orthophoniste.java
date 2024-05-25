@@ -3,6 +3,7 @@ package com.orthofluent.orthofluent.models;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionDateInvalide;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionDatePrise;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionDossierExistant;
+import com.orthofluent.orthofluent.models.exceptions.ExceptionQuestionAnamneseExistante;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -303,8 +304,12 @@ public class Orthophoniste implements Serializable {
     public void ajouterQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
         questionsAnamneseSet.add(questionAnamnese);
     }
-    public void ajouterQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese){
-        questionsAnamneseSet.add(questionAnamnese);
+    public void ajouterQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese) throws ExceptionQuestionAnamneseExistante {
+        if (questionsAnamneseSet.contains(questionAnamnese)) {
+            throw new ExceptionQuestionAnamneseExistante("Question already exists");
+        } else {
+            questionsAnamneseSet.add(questionAnamnese);
+        }
     }
 
     public void supprimerQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese){
