@@ -40,7 +40,7 @@
         </MenuBar>
         <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoFinal.png" />
+                <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="61.0" prefHeight="486.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
@@ -49,35 +49,35 @@
                     <children>
                         <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Consultation" />
-                                <MenuItem mnemonicParsing="false" text="Suivi" />
-                                <MenuItem mnemonicParsing="false" text="Atelier" />
+                                <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
+                                <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
+                                <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
                             </items>
                         </MenuButton>
                         <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="QCM" />
-                                <MenuItem mnemonicParsing="false" text="QCU" />
-                                <MenuItem mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
+                                <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
+                                <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
+                                <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
+                                <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
+                                <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
+                                <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
                             </items>
                         </MenuButton>
                         <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Adulte" />
-                                <MenuItem mnemonicParsing="false" text="Enfant" />
+                                <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
+                                <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
                             </items>
                         </MenuButton>
                         <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Mon compte" />
-                                <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
+                                <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                                <MenuItem fx:id="ressourcePedagogiqueItem" mnemonicParsing="false" text="Ressources pédagogiques" />
                             </items>
                         </MenuButton>
                         <Region prefHeight="200.0" prefWidth="200.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
+                        <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
                     </children>
                 </VBox>
             </children>
@@ -128,7 +128,7 @@
         </Text>
         <ImageView fitHeight="247.0" fitWidth="240.0" layoutX="579.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/AjouterAtelier.png" />
+                <Image url="@../images/AjouterAtelier.png" />
             </image>
         </ImageView>
         <Button layoutX="523.0" layoutY="449.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
@@ -137,7 +137,7 @@
       <TextField layoutX="327.0" layoutY="309.0" prefHeight="27.0" prefWidth="246.0" promptText="thématique--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
       <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/iconUser.png" />
+            <Image url="@../images/iconUser.png" />
          </image>
       </ImageView>
     </children>

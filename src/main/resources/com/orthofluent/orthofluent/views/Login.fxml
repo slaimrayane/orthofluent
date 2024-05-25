@@ -34,7 +34,7 @@
             </Text>
             <ImageView fitHeight="224.0" fitWidth="318.0" layoutX="1.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/smt2.png" />
+                  <Image url="@../images/smt2.png" />
                </image>
             </ImageView>
             <Button id="Connexion" fx:id="Connexion1" layoutX="76.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleConnexion" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Connexion" textFill="#76c2af" />

@@ -42,7 +42,7 @@
         </MenuBar>
         <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoFinal.png" />
+                <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="61.0" prefHeight="486.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
@@ -86,7 +86,7 @@
         </HBox>
         <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/iconUser.png" />
+                <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>0
         <Text fontSmoothingType="LCD" layoutX="286.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre question d'anamnese pour enfants" textAlignment="CENTER" wrappingWidth="432.76739501953125">
@@ -111,13 +111,13 @@
         </Text>
         <ImageView fitHeight="232.0" fitWidth="239.0" layoutX="573.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/quest.png" />
+                <Image url="@../images/quest.png" />
             </image>
         </ImageView>
         <Button layoutX="538.0" layoutY="485.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
         <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="350.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/questions.png" />
+                <Image url="@../images/questions.png" />
             </image>
         </ImageView>
         <TextField layoutX="327.0" layoutY="290.0" prefHeight="74.0" prefWidth="246.0" style="-fx-border-color: #76C2AF;" />

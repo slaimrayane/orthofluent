@@ -39,7 +39,7 @@
         </MenuBar>
         <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoFinal.png" />
+                <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="61.0" prefHeight="540.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
@@ -83,7 +83,7 @@
         </HBox>
         <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/iconUser.png" />
+                <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
         <Text fontSmoothingType="LCD" layoutX="306.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier les informations de votre patient" textAlignment="CENTER" wrappingWidth="393.56744384765625">
@@ -147,7 +147,7 @@
         </Text>
         <ImageView fitHeight="232.0" fitWidth="281.0" layoutX="579.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/adulte.png" />
+                <Image url="@../images/adulte.png" />
             </image>
         </ImageView>
         <Button layoutX="538.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />

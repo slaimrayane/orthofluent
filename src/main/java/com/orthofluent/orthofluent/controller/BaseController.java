@@ -50,6 +50,8 @@ public class BaseController {
     //parametres component
     @FXML
     protected MenuItem compteItem;
+    @FXML
+    protected MenuItem ressourcePedagogiqueItem;
 
     @FXML
     protected Button DeconnexionButton;

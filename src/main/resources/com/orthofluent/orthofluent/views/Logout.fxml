@@ -24,7 +24,7 @@
       <Button layoutX="202.0" layoutY="288.0" mnemonicParsing="false" styleClass="animated-button2" stylesheets="@styles.css" text="Inscription" />
       <ImageView fitHeight="258.0" fitWidth="320.0" layoutX="294.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/deconnexion.png" />
+            <Image url="@../images/deconnexion.png" />
          </image>
       </ImageView>
    </children>

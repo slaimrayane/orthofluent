@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="226.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/smt2.png" />
+                  <Image url="@../images/smt2.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="55.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue!" textAlignment="CENTER">
@@ -42,12 +42,12 @@
       <Button id="Connexion" fx:id="Connexion" layoutX="372.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleConnexion" style="-fx-background-color: #76C2AF;" text="Connexion" textFill="WHITE" />
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/email.png" />
+            <Image url="@../images/email.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="26.0" layoutX="274.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/password.png" />
+            <Image url="@../images/password.png" />
          </image>
       </ImageView>
       <Text fill="#76c2af" layoutX="353.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connexion" textAlignment="CENTER">
