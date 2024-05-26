@@ -13,11 +13,26 @@ import javafx.scene.control.TableView;
 public class AtelierListController extends ListController {
     @FXML
     private TableView<Atelier> atelierTableView;
+    @FXML
+    private TableColumn<Atelier, String> dateColumn;
+    @FXML
+    private TableColumn<Atelier, String> heureColumn;
+    @FXML
+    private TableColumn<Atelier, String> thematiqueColumn;
+    @FXML
+    private TableColumn<Atelier, String> patientNameColumn;
+    @FXML
+    private TableColumn<Atelier, String> patientPrenomColumn;
+    @FXML
+    private TableColumn<Atelier, String> NumeroDossierColumn;
+
+
 
     private ObservableList<Atelier> atelierObservableList = FXCollections.observableArrayList();
     @FXML
     public void initialize() {
         homeNavigation();
+        atelierObservableList.addAll(DataManager.getInstance().getOrthophoniste().getAteliers());
         ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterAtelier.fxml", ajouterToggleButton));
         modifierToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/ModifierAtelier.fxml", modifierToggleButton));
         supprimerToggleButton.setOnAction(event -> {

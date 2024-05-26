@@ -1,6 +1,8 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class Agenda implements Serializable {
@@ -59,6 +61,34 @@ public class Agenda implements Serializable {
     }
     public void setRendezvousSet(TreeSet<RendezVous> rendezvousSet) {
         RendezvousSet = rendezvousSet;
+    }
+
+    public List<Atelier> getAtelierList(){
+        List<Atelier> atelierList = new ArrayList<>();
+        for (RendezVous rendezVous : RendezvousSet) {
+            if (rendezVous instanceof Atelier) {
+                atelierList.add((Atelier) rendezVous);
+            }
+        }
+        return atelierList;
+    }
+    public List<Consultation> getConsultationList(){
+        List<Consultation> consultationList = new ArrayList<>();
+        for (RendezVous rendezVous : RendezvousSet) {
+            if (rendezVous instanceof Consultation) {
+                consultationList.add((Consultation) rendezVous);
+            }
+        }
+        return consultationList;
+    }
+    public List<Suivi> getSuiviList(){
+        List<Suivi> suiviList = new ArrayList<>();
+        for (RendezVous rendezVous : RendezvousSet) {
+            if (rendezVous instanceof Suivi) {
+                suiviList.add((Suivi) rendezVous);
+            }
+        }
+        return suiviList;
     }
 
 

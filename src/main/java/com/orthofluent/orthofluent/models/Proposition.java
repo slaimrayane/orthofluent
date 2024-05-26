@@ -1,7 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
-//cette classe represente les organe de la reponse
+//cette classe represente les organes de la reponse
 public class Proposition implements Serializable {
     private String propositionText;
 
@@ -17,6 +17,10 @@ public class Proposition implements Serializable {
     }
     public void setPropositionText(String propositionText) {
         this.propositionText = propositionText;
+    }
+    @Override
+    public String toString() {
+        return propositionText;
     }
     
 

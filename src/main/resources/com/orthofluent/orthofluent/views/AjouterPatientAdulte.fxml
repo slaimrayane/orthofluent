@@ -149,7 +149,7 @@
                 <Image url="@../images/adulte.png" />
             </image>
         </ImageView>
-        <Button fx:id="confirmeButton" layoutX="544.0" layoutY="543.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <Button fx:id="confirmerButton" layoutX="544.0" layoutY="543.0" mnemonicParsing="false" onAction="#handleConfirmerButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
       <DatePicker fx:id="dateNaissancePicker" layoutX="326.0" layoutY="308.0" prefHeight="25.0" prefWidth="246.0" />
       <Text layoutX="256.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone">
          <font>

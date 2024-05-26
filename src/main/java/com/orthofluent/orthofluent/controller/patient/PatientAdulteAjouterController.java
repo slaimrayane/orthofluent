@@ -39,8 +39,7 @@ public class PatientAdulteAjouterController extends AjoutModifierController {
     @FXML
     private TextField telephoneSecondaireField;
 
-    @FXML
-    private Button confirmeButton;
+
 
     @FXML
     private void initialize() {
@@ -66,11 +65,11 @@ public class PatientAdulteAjouterController extends AjoutModifierController {
         }
     }
     @FXML
-    private void handleConfirmeButton() {
+    private void handleConfirmerButton() {
         try {
             addPatientAdulte();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/PatientAdulte.fxml"));
-            Stage stage = (Stage) confirmeButton.getScene().getWindow();
+            Stage stage = (Stage) confirmerButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (ExceptionCreationImpossible e) {
             e.printStackTrace();

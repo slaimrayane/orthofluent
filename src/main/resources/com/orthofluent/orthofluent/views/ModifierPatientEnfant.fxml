@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
@@ -131,14 +132,13 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="327.0" layoutY="183.0" prefHeight="27.0" prefWidth="246.0" promptText="nom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="246.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="307.0" prefHeight="27.0" prefWidth="246.0" promptText="date de naissance--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="346.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="age--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="388.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone2--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="426.0" prefHeight="27.0" prefWidth="246.0" promptText="adresse--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="465.0" prefHeight="27.0" prefWidth="246.0" promptText="classe--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="nomField" layoutX="327.0" layoutY="183.0" prefHeight="27.0" prefWidth="246.0" promptText="nom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="prenomField" layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="246.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="telephoneField" layoutX="327.0" layoutY="346.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="ageField" layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="246.0" promptText="age--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="telephoneParentField" layoutX="327.0" layoutY="388.0" prefHeight="27.0" prefWidth="246.0" promptText="Telephone2--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="adresseField" layoutX="327.0" layoutY="426.0" prefHeight="27.0" prefWidth="246.0" promptText="adresse--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="classEtudeField" layoutX="327.0" layoutY="465.0" prefHeight="27.0" prefWidth="246.0" promptText="classe--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <Text fontSmoothingType="LCD" layoutX="366.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Enfant" textAlignment="CENTER" wrappingWidth="272.767333984375">
             <font>
                 <Font name="System Bold" size="33.0" />
@@ -149,6 +149,7 @@
                 <Image url="@../images/enfant.png" />
             </image>
         </ImageView>
-        <Button layoutX="538.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <Button fx:id="confirmerButton" layoutX="538.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleConfirmerButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+      <DatePicker fx:id="dateNaissancePicker" layoutX="327.0" layoutY="307.0" prefHeight="25.0" prefWidth="246.0" />
     </children>
 </AnchorPane>

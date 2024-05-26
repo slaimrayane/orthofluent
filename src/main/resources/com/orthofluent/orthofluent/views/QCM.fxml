@@ -90,10 +90,12 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView cache="true" layoutX="188.0" layoutY="193.0" prefHeight="356.0" prefWidth="622.0">
+        <TableView fx:id="qcmTableView" cache="true" layoutX="188.0" layoutY="193.0" prefHeight="356.0" prefWidth="622.0">
             <columns>
-                <TableColumn prefWidth="501.59999084472656" sortable="false" text="Questions/Propositions" />
-                <TableColumn prefWidth="120.0" text="Note" />
+                <TableColumn fx:id="questionColumn" prefWidth="111.33332824707031" sortable="false" text="Questions" />
+            <TableColumn fx:id="proposition1Column" prefWidth="100.66668701171875" sortable="false" text="Proposition 1" />
+            <TableColumn fx:id="proposition2Column" prefWidth="85.3333740234375" sortable="false" text="Proposition 2" />
+            <TableColumn fx:id="proposition3Column" prefWidth="85.3333740234375" sortable="false" text="Proposition 3" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

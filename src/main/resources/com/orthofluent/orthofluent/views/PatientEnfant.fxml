@@ -90,16 +90,16 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView layoutX="189.0" layoutY="181.0" prefHeight="363.0" prefWidth="620.0">
+        <TableView fx:id="patientTableView" layoutX="189.0" layoutY="181.0" prefHeight="363.0" prefWidth="620.0">
             <columns>
-                <TableColumn prefWidth="62.4000244140625" text="Nom" />
-                <TableColumn prefWidth="70.40000915527344" text="Prénom" />
-                <TableColumn prefWidth="40.79998779296875" text="Age" />
-                <TableColumn prefWidth="64.0" text="Date de naissance" />
-                <TableColumn text="Adresse" />
-                <TableColumn prefWidth="78.39996337890625" text="Téléphone" />
-                <TableColumn prefWidth="72.0" text="Téléphone parents" />
-                <TableColumn prefWidth="56.7999267578125" text="Classe d'étude" />
+                <TableColumn fx:id="nomColumn" prefWidth="62.4000244140625" text="Nom" />
+                <TableColumn fx:id="prenomColumn" prefWidth="70.40000915527344" text="Prénom" />
+                <TableColumn fx:id="ageColumn" prefWidth="40.79998779296875" text="Age" />
+                <TableColumn fx:id="dateNaissanceColumn" prefWidth="64.0" text="Date de naissance" />
+                <TableColumn fx:id="adresseColumn" text="Adresse" />
+                <TableColumn fx:id="telephonePremierColumn" prefWidth="78.39996337890625" text="Téléphone" />
+                <TableColumn fx:id="telephoneSecondColumn" prefWidth="72.0" text="Téléphone parents" />
+                <TableColumn fx:id="classeEtudeColumn" prefWidth="56.7999267578125" text="Classe d'étude" />
                 <TableColumn prefWidth="92.79998779296875" text="Dossier" />
             </columns>
             <cursor>

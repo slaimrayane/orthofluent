@@ -453,6 +453,17 @@ public class Orthophoniste implements Serializable {
         return new ArrayList<>(exercisesSet);
     }
 
+    public List<Atelier> getAteliers() {
+        return agenda.getAtelierList();
+    }
+    public List<Consultation> getConsultations() {
+        return agenda.getConsultationList();
+    }
+    public List<Suivi> getSuivis() {
+        return agenda.getSuiviList();
+    }
+
+
 
 
 
