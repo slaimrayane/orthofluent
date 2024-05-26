@@ -73,7 +73,7 @@ public class PatientEnfantListController extends ListController {
         homeNavigation();
 
         ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterPatientEnfant.fxml", ajouterToggleButton));
-
+        modifierToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/ModifierPatientEnfant.fxml", modifierToggleButton));
         supprimerToggleButton.setOnAction(event -> {
             PatientEnfant selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
             if (selectedPatient != null) {

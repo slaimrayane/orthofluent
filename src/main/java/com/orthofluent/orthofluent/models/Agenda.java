@@ -18,4 +18,48 @@ public class Agenda implements Serializable {
             return true;
         }
     }
+
+    public boolean supprimerRendezVous( RendezVous rendezVous){
+        if (RendezvousSet.contains(rendezVous)) {
+            RendezvousSet.remove(rendezVous);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public Boolean supprimerRendezVous( Atelier rendezVous){
+        if (RendezvousSet.contains(rendezVous)) {
+            RendezvousSet.remove(rendezVous);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public Boolean supprimerRendezVous(Consultation rendezVous){
+        if (RendezvousSet.contains(rendezVous)) {
+            RendezvousSet.remove(rendezVous);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean supprimerRendezVous(Suivi rendezVous){
+        if (RendezvousSet.contains(rendezVous)) {
+            RendezvousSet.remove(rendezVous);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public TreeSet<RendezVous> getRendezvousSet() {
+        return RendezvousSet;
+    }
+    public void setRendezvousSet(TreeSet<RendezVous> rendezvousSet) {
+        RendezvousSet = rendezvousSet;
+    }
+
+
 }

@@ -48,9 +48,11 @@ public class AnamneseAdulteListController extends ListController {
         questionAnamneseAdulteTableView.setItems(questionAnamneseAdulteObservableList);
 
         homeNavigation();
-        ajouterButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseAdulte.fxml", ajouterButton));
+        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseAdulte.fxml", ajouterButton));
 
-        supprimerButton.setOnAction(event -> {
+        modifierToggleButton.setOnAction(event-> navigateTo("/com/orthofluent/orthofluent/views/ModifierQuestAnamneseAdulte.fxml", modifierToggleButton));
+
+        supprimerToggleButton.setOnAction(event -> {
             QuestionAnamneseAdulte selectedItem = questionAnamneseAdulteTableView.getSelectionModel().getSelectedItem();
             if (selectedItem != null) {
                 questionAnamneseAdulteObservableList.remove(selectedItem);

@@ -1,9 +1,6 @@
 package com.orthofluent.orthofluent.models;
 
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDateInvalide;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDatePrise;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDossierExistant;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionQuestionAnamneseExistante;
+import com.orthofluent.orthofluent.models.exceptions.*;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -24,6 +21,7 @@ public class Orthophoniste implements Serializable {
     private Map<String,DossierPatient> dossierPatientMap;
     private Set<QuestionAnamnese> questionsAnamneseSet;
     private Set<Question> questionsSet;
+    private Set<Exercise> exercisesSet;
 
 
   //  private Test test; // pcq kayan des methodes hna ta3 changement de questions ecq but i'm still not
@@ -44,6 +42,7 @@ public class Orthophoniste implements Serializable {
         patientCounter = 0;
         questionsAnamneseSet = new HashSet<>();
         questionsSet = new HashSet<>();
+        exercisesSet = new HashSet<>();
     }
 
     public Orthophoniste() {
@@ -51,6 +50,7 @@ public class Orthophoniste implements Serializable {
         patientCounter=0;
         questionsAnamneseSet = new HashSet<>();
         questionsSet = new HashSet<>();
+        exercisesSet = new HashSet<>();
     }
 
 // Getters and Setters
@@ -152,6 +152,15 @@ public class Orthophoniste implements Serializable {
         this.questionsSet = questionsSet;
     }
 
+    public Set<Exercise> getExercisesSet() {
+        return exercisesSet;
+    }
+
+    public void setExercisesSet(Set<Exercise> exercisesSet) {
+        this.exercisesSet = exercisesSet;
+    }
+
+
 
 
     // Les methodes
@@ -250,6 +259,11 @@ public class Orthophoniste implements Serializable {
     }
     public void ProgrammerAtelier(){
     }
+
+    public void supprimerRendezVous(Atelier atelier){
+        agenda.supprimerRendezVous(atelier);
+    }
+
     //a revoir apres la logique de la BO
     public void initialiserPatient(PatientEnfant patientEnfant)throws ExceptionDossierExistant{
         DossierPatient dossierPatient = new DossierPatient(patientEnfant,String.valueOf(patientCounter++));
@@ -332,17 +346,33 @@ public class Orthophoniste implements Serializable {
         return new ArrayList<>(questionsAnamneseSet);
     }
 
-    public void ajouterQuestion(Question question){
-        questionsSet.add(question);
+    public void ajouterQuestion(Question question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QCM question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QCM question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QCU question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QCU question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QuestionLibre question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QuestionLibre question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
 
     public void supprimerQuestion(Question question){
@@ -369,6 +399,22 @@ public class Orthophoniste implements Serializable {
     }
     public List<QuestionLibre> getQuestionsLibres() {
         return questionsSet.stream().filter(QuestionLibre.class::isInstance).map(QuestionLibre.class::cast).collect(Collectors.toList());
+    }
+
+    public void ajouterExercice(Exercise exercise) throws ExceptionEvaluableExistant {
+        if (exercisesSet.contains(exercise)) {
+            throw new ExceptionEvaluableExistant("Exercise already exists");
+        }else {
+            exercisesSet.add(exercise);
+        }
+    }
+
+    public void supprimerExercice(Exercise exercise){
+        exercisesSet.remove(exercise);
+    }
+
+    public List<Exercise> getExercises(){
+        return new ArrayList<>(exercisesSet);
     }
 
 
