@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.rendezvous.ConsultationListController">
     <children>
         <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
@@ -116,17 +116,17 @@
                 <Font name="System Bold" size="33.0" />
             </font>
         </Text>
-      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation" layoutX="715.0" layoutY="153.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
+      <ToggleButton id="SupprimerConsultation" fx:id="ajouterToggleButton" layoutX="566.0" layoutY="153.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Ajouter">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </ToggleButton>
-      <ToggleButton id="ModifierConsultation" fx:id="ModifierConsultation" layoutX="639.0" layoutY="153.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Modifier">
+      <ToggleButton id="SupprimerConsultation" fx:id="modifierToggleButton" layoutX="639.0" layoutY="153.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Modifier">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </ToggleButton>
-      <ToggleButton id="AjoutConsultation" fx:id="AjoutConsultation" layoutX="567.0" layoutY="153.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" text="Ajouter">
+      <ToggleButton id="SupprimerConsultation" fx:id="supprimerToggleButton" layoutX="721.0" layoutY="151.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
