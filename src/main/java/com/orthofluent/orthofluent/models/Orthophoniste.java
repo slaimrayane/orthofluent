@@ -437,6 +437,29 @@ public class Orthophoniste implements Serializable {
         return questionsSet.stream().filter(QuestionLibre.class::isInstance).map(QuestionLibre.class::cast).collect(Collectors.toList());
     }
 
+    public void modifierQuestion(QCM qcm, String newEnonce, List<Proposition> newPropositions) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(qcm)) {
+                // Update QCM object
+                qcm.setEnonce(newEnonce);
+                qcm.setPropositionsList(newPropositions);
+                break;
+            }
+        }
+    }
+    public void modifierQuestion(QCU qcu, String newEnonce, List<Proposition> newPropositions) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(qcu)) {
+                // Update QCM object
+                qcu.setEnonce(newEnonce);
+                qcu.setPropositionsList(newPropositions);
+                break;
+            }
+        }
+    }
+
     public void ajouterExercice(Exercise exercise) throws ExceptionEvaluableExistant {
         if (exercisesSet.contains(exercise)) {
             throw new ExceptionEvaluableExistant("Exercise already exists");

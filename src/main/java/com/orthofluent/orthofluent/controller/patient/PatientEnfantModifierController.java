@@ -63,7 +63,7 @@ public class PatientEnfantModifierController extends AjoutModifierController {
     }
 
     @FXML
-    private void handleConfirmeButton() {
+    private void handleConfirmerButton() {
         try {
             updatePatientAdulte();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/PatientAdulte.fxml"));

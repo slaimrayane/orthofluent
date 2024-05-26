@@ -102,26 +102,26 @@
                 <Image url="@../images/quest.png" />
             </image>
         </ImageView>
-        <Button layoutX="369.0" layoutY="455.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <TextField layoutX="326.0" layoutY="228.0" prefHeight="35.0" prefWidth="390.0" style="-fx-border-color: #76C2AF;" />
+        <Button fx:id="confirmerButton" layoutX="369.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleConfirmerButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <TextField fx:id="questionField" layoutX="326.0" layoutY="228.0" prefHeight="35.0" prefWidth="390.0" style="-fx-border-color: #76C2AF;" />
         <Text layoutX="253.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
             <font>
                 <Font size="14.0" />
             </font>
         </Text>
-      <CheckBox layoutX="328.0" layoutY="302.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+      <CheckBox fx:id="proposition1CheckBox" layoutX="328.0" layoutY="302.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
          <graphic>
-            <TextField prefHeight="27.0" prefWidth="230.0" promptText="Proposition1--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+            <TextField fx:id="proposition1Field" prefHeight="27.0" prefWidth="230.0" promptText="Proposition1--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
          </graphic>
       </CheckBox>
-      <CheckBox layoutX="328.0" layoutY="375.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+      <CheckBox fx:id="proposition3CheckBox" layoutX="328.0" layoutY="375.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
          <graphic>
-            <TextField prefHeight="25.0" prefWidth="221.0" promptText="Proposition3--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+            <TextField fx:id="proposition3Field" prefHeight="25.0" prefWidth="221.0" promptText="Proposition3--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
          </graphic>
       </CheckBox>
-      <CheckBox layoutX="328.0" layoutY="338.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
+      <CheckBox fx:id="proposition2CheckBox" layoutX="328.0" layoutY="338.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="346.0">
          <graphic>
-            <TextField prefHeight="27.0" prefWidth="307.0" promptText="Proposition2--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+            <TextField fx:id="proposition2Field" prefHeight="27.0" prefWidth="307.0" promptText="Proposition2--" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
          </graphic>
       </CheckBox>
       <Text layoutX="320.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intégrez des QCM variés pour une évaluation complète!" wrappingWidth="376.7999267578125">
