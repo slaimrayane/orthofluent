@@ -1,4 +1,6 @@
 package com.orthofluent.orthofluent.controller.rendezvous;
 
-public class AtelierAjouterController {
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
+
+public class AtelierAjouterController extends AjoutModifierController {
 }

@@ -1,4 +1,6 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
-public class QuestionLibreAjouterController {
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
+
+public class QuestionLibreAjouterController extends AjoutModifierController {
 }

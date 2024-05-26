@@ -1,4 +1,6 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
-public class AnamneseAdulteModifierController {
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
+
+public class AnamneseAdulteModifierController extends AjoutModifierController {
 }

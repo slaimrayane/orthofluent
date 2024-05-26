@@ -1,4 +1,6 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
-public class QCMModifierController {
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
+
+public class QCMModifierController extends AjoutModifierController {
 }

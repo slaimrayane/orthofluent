@@ -1,6 +1,7 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
 
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
 import com.orthofluent.orthofluent.controller.BaseController;
 import com.orthofluent.orthofluent.models.QuestionAnamneseEnfant;
 import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AnamneseEnfantAjouterController extends BaseController {
+public class AnamneseEnfantAjouterController extends AjoutModifierController {
     @FXML
     private ComboBox<TypeQuestionAnamnese> typeQuestionAnamneseComboBox;
     @FXML

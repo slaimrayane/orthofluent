@@ -1,4 +1,6 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
-public class ExerciceModifierController {
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
+
+public class ExerciceModifierController extends AjoutModifierController {
 }

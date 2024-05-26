@@ -1,6 +1,7 @@
 package com.orthofluent.orthofluent.controller.patient;
 
 
+import com.orthofluent.orthofluent.controller.AjoutModifierController;
 import com.orthofluent.orthofluent.controller.BaseController;
 import com.orthofluent.orthofluent.models.PatientEnfant;
 import com.orthofluent.orthofluent.models.enumerations.TypePatient;
@@ -19,7 +20,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Date;
 
-public class PatientEnfantAjouterController extends BaseController {
+public class PatientEnfantAjouterController extends AjoutModifierController {
     @FXML
     private TextField nomField;
     @FXML
