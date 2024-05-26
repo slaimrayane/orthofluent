@@ -1,10 +1,12 @@
 package com.orthofluent.orthofluent.services;
 
 import com.orthofluent.orthofluent.models.Orthophoniste;
+import com.orthofluent.orthofluent.models.Patient;
 
 public class DataManager {
     private static DataManager instance;
     private Orthophoniste orthophoniste;
+    private Patient patient;
 
     private DataManager() {
         // Private constructor to prevent instantiation
@@ -22,5 +24,13 @@ public class DataManager {
 
     public Orthophoniste getOrthophoniste() {
         return orthophoniste;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Patient getPatient(){
+        return patient;
     }
 }

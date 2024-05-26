@@ -23,10 +23,7 @@ public class AnamneseAdulteListController extends ListController {
 
     private ObservableList<QuestionAnamneseAdulte> questionAnamneseAdulteObservableList = FXCollections.observableArrayList();
 
-    @FXML
-    private Button ajouterButton;
-    @FXML
-    private Button supprimerButton;
+
     @FXML
     public void initialize() {
         enonceColumn.setCellValueFactory(new PropertyValueFactory<>("enonce"));
@@ -48,7 +45,7 @@ public class AnamneseAdulteListController extends ListController {
         questionAnamneseAdulteTableView.setItems(questionAnamneseAdulteObservableList);
 
         homeNavigation();
-        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseAdulte.fxml", ajouterButton));
+        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseAdulte.fxml", ajouterToggleButton));
 
         modifierToggleButton.setOnAction(event-> navigateTo("/com/orthofluent/orthofluent/views/ModifierQuestAnamneseAdulte.fxml", modifierToggleButton));
 

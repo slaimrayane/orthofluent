@@ -44,7 +44,7 @@ public class PatientAdulteAjouterController extends AjoutModifierController {
 
     @FXML
     private void initialize() {
-        //homeNavigation();
+        homeNavigation();
     }
 
     private void addPatientAdulte() throws ExceptionCreationImpossible {

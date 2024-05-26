@@ -3,7 +3,7 @@ package com.orthofluent.orthofluent.models;
 import com.orthofluent.orthofluent.models.enumerations.TypePatient;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 public class PatientAdulte extends Patient implements Serializable {
     private String profession;
     private String diplome;

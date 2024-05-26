@@ -6,6 +6,7 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.sql.Date;
 
 //hna dossierPatirnt w patient map yak?
 public class Orthophoniste implements Serializable {
@@ -306,11 +307,46 @@ public class Orthophoniste implements Serializable {
         dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientEnfant));
     }
 
-        public void supprimerDossierPatient(PatientAdulte patientAdulte) {
-            dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientAdulte));
+    public void supprimerDossierPatient(PatientAdulte patientAdulte) {
+        dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientAdulte));
+    }
+    public void modifierDossierPatient(PatientAdulte patientAdulte, String newNom, String newPrenom, int newAge, Date newDateNaissance, String newAdresse, String newTelephone, String newProfession, String newDiplome, String newTelephoneSecondaire) {
+        // Iterate over the map to find and replace the patient
+        for (Map.Entry<String, DossierPatient> entry : dossierPatientMap.entrySet()) {
+            if (entry.getValue().getPatient().equals(patientAdulte)) {
+                // Update patientAdulte object
+                patientAdulte.setNom(newNom);
+                patientAdulte.setPrenom(newPrenom);
+                patientAdulte.setAge(newAge);
+                patientAdulte.setDateNaissance(newDateNaissance);
+                patientAdulte.setAddresse(newAdresse);
+                patientAdulte.setTelephone(newTelephone);
+                patientAdulte.setProfession(newProfession);
+                patientAdulte.setDiplome(newDiplome);
+                patientAdulte.setTelephoneSecondaire(newTelephoneSecondaire);
+                entry.getValue().setPatient(patientAdulte);
+                break;
+            }
         }
-    public void modifierPatient() {
+    }
 
+    public void modifierDossierPatient(PatientEnfant patientEnfant, String newNom, String newPrenom, int newAge, Date newDateNaissance, String newAdresse, String newTelephone, String newClasseEtude , String newTelephoneParent) {
+        // Iterate over the map to find and replace the patient
+        for (Map.Entry<String, DossierPatient> entry : dossierPatientMap.entrySet()) {
+            if (entry.getValue().getPatient().equals(patientEnfant)) {
+                // Update patientAdulte object
+                patientEnfant.setNom(newNom);
+                patientEnfant.setPrenom(newPrenom);
+                patientEnfant.setAge(newAge);
+                patientEnfant.setDateNaissance(newDateNaissance);
+                patientEnfant.setAddresse(newAdresse);
+                patientEnfant.setTelephone(newTelephone);
+                patientEnfant.setClassEtude(newClasseEtude);
+                patientEnfant.setTelephoneparent(newTelephoneParent);
+                entry.getValue().setPatient(patientEnfant);
+                break;
+            }
+        }
     }
 
 
