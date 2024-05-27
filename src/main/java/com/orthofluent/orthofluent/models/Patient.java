@@ -93,7 +93,6 @@ public abstract class Patient implements Serializable {
 public boolean equals(Object obj) {
     Patient patient = (Patient) obj;
     return (this.nom.equals(patient.nom) && this.prenom.equals(patient.prenom)); //If the objects are the same stance
-
 }
 
 @Override

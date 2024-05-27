@@ -71,7 +71,7 @@ public class QCMAjouterController extends AjoutModifierController {
     private void handleConfirmerButton() {
         try {
             addQCM();
-            Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QCMList.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QCM.fxml"));
             Stage stage = (Stage) confirmerButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (ExceptionCreationImpossible e) {

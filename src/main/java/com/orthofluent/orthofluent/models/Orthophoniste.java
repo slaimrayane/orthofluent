@@ -283,7 +283,6 @@ public class Orthophoniste implements Serializable {
         throw new ExceptionDossierExistant("Le dossier patient existe déjà");
     }
         dossierPatientMap.put(dossierPatient.getNumeroDossier(), dossierPatient);
-
 }
     public List<PatientEnfant> getPatientsEnfants(){
             return dossierPatientMap.values().stream().filter(DossierPatient::isEnfant).map(dossier -> (PatientEnfant) dossier.getPatient()).collect(Collectors.toList());
