@@ -10,6 +10,7 @@ public class DataManager {
     private QuestionAnamnese questionAnamnese;
     private Exercise exercise;
     private DossierPatient dossierPatient;
+    private RendezVous rendezVous;
 
     private DataManager() {
         // Private constructor to prevent instantiation
@@ -59,6 +60,12 @@ public class DataManager {
     }
     public DossierPatient getDossierPatient() {
         return dossierPatient;
+    }
+    public void setRendezVous(RendezVous rendezVous) {
+        this.rendezVous = rendezVous;
+    }
+    public RendezVous getRendezVous() {
+        return rendezVous;
     }
 
 }

@@ -262,6 +262,13 @@ public class Orthophoniste implements Serializable {
     public void ProgrammerAtelier(){
     }
 
+    public void supprimerRendezVous(Consultation consultation){
+        agenda.supprimerRendezVous(consultation);
+    }
+    public void supprimerRendezVous(Suivi suivi){
+        agenda.supprimerRendezVous(suivi);
+    }
+
     public void supprimerRendezVous(Atelier atelier){
         agenda.supprimerRendezVous(atelier);
     }

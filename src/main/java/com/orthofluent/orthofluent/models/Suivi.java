@@ -3,14 +3,15 @@ package com.orthofluent.orthofluent.models;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Set;
 public class Suivi extends RendezVous implements Serializable {
 private String numDossierPatient;
 private boolean presentiel;
 private Set<Objectif> objectifs;
 
-public Suivi(Duration duree, String observation, LocalDateTime date,String numDossierPatient, boolean presentiel, Set<Objectif> objectifs){
-    super(Duration.ofMinutes(60), observation, date);
+public Suivi(Duration duree, String observation, LocalDateTime date, LocalTime heureDebut, String numDossierPatient, boolean presentiel, Set<Objectif> objectifs){
+    super(Duration.ofMinutes(60), observation, date,heureDebut);
     this.numDossierPatient = numDossierPatient;
     this.presentiel = presentiel;
     this.objectifs = objectifs;
@@ -44,6 +45,6 @@ public Set<Objectif> getObjectifs() {
 public void setObjectifs(Set<Objectif> objectifs) {
     this.objectifs = objectifs;
 }
-}
+
 
 
