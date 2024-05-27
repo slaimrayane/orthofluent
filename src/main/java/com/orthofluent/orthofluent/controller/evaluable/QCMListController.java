@@ -27,6 +27,8 @@ public class QCMListController extends ListController {
     private TableColumn<QCM, String> proposition2Column;
     @FXML
     private TableColumn<QCM, String> proposition3Column;
+    @FXML
+    private TableColumn<QCM,Integer> noteColumn;
 
 
     @FXML
@@ -46,6 +48,7 @@ public class QCMListController extends ListController {
             List<Proposition> propositions = cellData.getValue().getPropositionsList();
             return new SimpleStringProperty(propositions.size() > 2 ? propositions.get(2).toString() : "Default Value");
         });
+        noteColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("note"));
         qcmObservableList.addAll(DataManager.getInstance().getOrthophoniste().getQCM());
         qcmTableView.setItems(qcmObservableList);
 

@@ -2,7 +2,6 @@ package com.orthofluent.orthofluent.controller.evaluable;
 
 import com.orthofluent.orthofluent.controller.ListController;
 import com.orthofluent.orthofluent.models.Proposition;
-import com.orthofluent.orthofluent.models.QCM;
 import com.orthofluent.orthofluent.models.QCU;
 import com.orthofluent.orthofluent.services.DataManager;
 import javafx.beans.property.SimpleStringProperty;
@@ -28,6 +27,8 @@ public class QCUListController extends ListController {
     private TableColumn<QCU, String> proposition2Column;
     @FXML
     private TableColumn<QCU, String> proposition3Column;
+    @FXML
+    private TableColumn<QCU,Integer> noteColumn;
 
 
     @FXML
@@ -35,7 +36,7 @@ public class QCUListController extends ListController {
         questionColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEnonce()));
         proposition1Column.setCellValueFactory(cellData -> {
            List<Proposition> propositions = cellData.getValue().getPropositionsList();
-           return new SimpleStringProperty(propositions.size() > 0 ? propositions.get(0).toString() : "Default Value");
+           return new SimpleStringProperty(!propositions.isEmpty() ? propositions.get(0).toString() : "Default Value");
         });
 
         proposition2Column.setCellValueFactory(cellData -> {
@@ -47,6 +48,7 @@ public class QCUListController extends ListController {
             List<Proposition> propositions = cellData.getValue().getPropositionsList();
             return new SimpleStringProperty(propositions.size() > 2 ? propositions.get(2).toString() : "Default Value");
         });
+        noteColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("note"));
         qcuObservableList.addAll(DataManager.getInstance().getOrthophoniste().getQCU());
         qcuTableView.setItems(qcuObservableList);
 

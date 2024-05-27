@@ -26,8 +26,6 @@ public class AnamneseEnfantAjouterController extends AjoutModifierController {
     private ComboBox<TypeQuestionAnamnese> typeQuestionAnamneseComboBox;
     @FXML
     private TextField enonceTextField;
-    @FXML
-    private Button confirmButton;
 
     @FXML
     private void initialize() {
@@ -49,11 +47,11 @@ public class AnamneseEnfantAjouterController extends AjoutModifierController {
         }
     }
     @FXML
-    private void handleConfirmeButton() {
+    private void handleConfirmerButton() {
         try {
             addQuestionAnamneseAdulte();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QuestAnamneseEnfant.fxml"));
-            Stage stage = (Stage) confirmButton.getScene().getWindow();
+            Stage stage = (Stage) confirmerButton.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (ExceptionCreationImpossible e) {
             e.printStackTrace();

@@ -90,10 +90,13 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView cache="true" layoutX="188.0" layoutY="194.0" prefHeight="343.0" prefWidth="626.0">
+        <TableView fx:id="qcuTableView" cache="true" layoutX="188.0" layoutY="194.0" prefHeight="343.0" prefWidth="626.0">
             <columns>
-                <TableColumn prefWidth="505.60011291503906" sortable="false" text="Questions/Propositions" />
-                <TableColumn prefWidth="119.9998779296875" text="Note" />
+                <TableColumn fx:id="questionColumn" prefWidth="163.3333282470703" sortable="false" text="Questions" />
+            <TableColumn fx:id="proposition1Column" prefWidth="78.6666259765625" sortable="false" text="Proposition 1" />
+            <TableColumn fx:id="proposition2Column" prefWidth="102.66671752929688" sortable="false" text="Proposition 2" />
+            <TableColumn fx:id="proposition3Column" prefWidth="163.3333282470703" sortable="false" text="Proposition 3" />
+            <TableColumn fx:id="noteColumn" prefWidth="85.3333740234375" sortable="false" text="note" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

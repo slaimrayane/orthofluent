@@ -9,6 +9,11 @@ import java.util.ArrayList;
 public class QCU extends Question implements Serializable {
     private List<Proposition> propositionsList;
 
+    public QCU(String enonce, List<Proposition> propositionsList, int note) {
+        super(enonce, QuestionType.QCU);
+        this.propositionsList = propositionsList;
+        setNote(note);
+    }
     public QCU(String enonce, List<Proposition> propositionsList) {
         super(enonce, QuestionType.QCU);
         this.propositionsList = propositionsList;

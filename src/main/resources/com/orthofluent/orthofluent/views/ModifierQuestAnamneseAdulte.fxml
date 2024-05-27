@@ -109,15 +109,9 @@
                 <Image url="@../images/quest.png" />
             </image>
         </ImageView>
-        <Button layoutX="329.0" layoutY="494.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <TextField layoutX="327.0" layoutY="290.0" prefHeight="74.0" prefWidth="304.0" style="-fx-border-color: #76C2AF;" />
-        <TextField layoutX="327.0" layoutY="387.0" prefHeight="60.0" prefWidth="304.0" style="-fx-border-color: #76C2AF;" />
-        <Text layoutX="266.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <ComboBox layoutX="327.0" layoutY="238.0" prefHeight="27.0" prefWidth="304.0" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;">
+        <Button fx:id="confirmerButton" layoutX="329.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleConfirmeButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <TextField fx:id="enonceTextField" layoutX="327.0" layoutY="290.0" prefHeight="74.0" prefWidth="304.0" style="-fx-border-color: #76C2AF;" />
+        <ComboBox fx:id="typeQuestionAnamneseComboBox" layoutX="327.0" layoutY="238.0" prefHeight="27.0" prefWidth="304.0" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Histoire de la maladie" />

@@ -1,7 +1,7 @@
 package com.orthofluent.orthofluent.controller.evaluable;
 
 import com.orthofluent.orthofluent.controller.AjoutModifierController;
-import com.orthofluent.orthofluent.controller.BaseController;
+
 import com.orthofluent.orthofluent.models.QuestionAnamneseAdulte;
 import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
 import com.orthofluent.orthofluent.models.exceptions.ExceptionCreationImpossible;
@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -26,8 +25,6 @@ public class AnamneseAdulteAjouterController extends AjoutModifierController {
     private ComboBox<TypeQuestionAnamnese> typeQuestionAnamneseComboBox;
     @FXML
     private TextField enonceTextField;
-    @FXML
-    private Button confirmButton;
 
     @FXML
     private void initialize() {
@@ -53,11 +50,9 @@ public class AnamneseAdulteAjouterController extends AjoutModifierController {
         try {
             addQuestionAnamneseAdulte();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QuestAnamneseAdulte.fxml"));
-            Stage stage = (Stage) confirmButton.getScene().getWindow();
+            Stage stage = (Stage) confirmerButton.getScene().getWindow();
             stage.setScene(new Scene(root));
-        } catch (ExceptionCreationImpossible e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ExceptionCreationImpossible | IOException e) {
             e.printStackTrace();
         }
     }

@@ -96,6 +96,7 @@
             <TableColumn fx:id="proposition1Column" prefWidth="100.66668701171875" sortable="false" text="Proposition 1" />
             <TableColumn fx:id="proposition2Column" prefWidth="85.3333740234375" sortable="false" text="Proposition 2" />
             <TableColumn fx:id="proposition3Column" prefWidth="85.3333740234375" sortable="false" text="Proposition 3" />
+            <TableColumn fx:id="noteColumn" prefWidth="85.3333740234375" sortable="false" text="note" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

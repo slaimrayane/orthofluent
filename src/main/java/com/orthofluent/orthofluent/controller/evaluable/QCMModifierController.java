@@ -31,6 +31,8 @@ public class QCMModifierController extends AjoutModifierController {
     private CheckBox proposition2CheckBox;
     @FXML
     private CheckBox proposition3CheckBox;
+    @FXML
+    private TextField noteField;
 
     QCM qcm;
 
@@ -43,13 +45,14 @@ public class QCMModifierController extends AjoutModifierController {
         setPropositionFieldAndCheckBox(proposition1Field, proposition1CheckBox, 0);
         setPropositionFieldAndCheckBox(proposition2Field, proposition2CheckBox, 1);
         setPropositionFieldAndCheckBox(proposition3Field, proposition3CheckBox, 2);
+        noteField.setText(String.valueOf(qcm.getNote()));
 
 
     }
     private void setPropositionFieldAndCheckBox(TextField propositionField, CheckBox propositionCheckBox, int index) {
         if (qcm.getPropositionsList().size() > index) {
             String proposition = qcm.getPropositionsList().get(index).toString();
-            if (proposition.length() > 0) {
+            if (!proposition.isEmpty()) {
                 propositionField.setText(proposition);
                 propositionCheckBox.setSelected(true);
             } else {
@@ -69,6 +72,7 @@ public class QCMModifierController extends AjoutModifierController {
         boolean proposition1Ajout = proposition1CheckBox.isSelected();
         boolean proposition2Ajout = proposition2CheckBox.isSelected();
         boolean proposition3Ajout = proposition3CheckBox.isSelected();
+        int note = Integer.parseInt(noteField.getText());
         List<Proposition> propositions = new ArrayList<>();
 
         if(proposition1Ajout){
@@ -80,10 +84,10 @@ public class QCMModifierController extends AjoutModifierController {
         if(proposition3Ajout){
             propositions.add(new Proposition(proposition3));
         }
-        DataManager.getInstance().getOrthophoniste().modifierQuestion(qcm, question, propositions);
+        DataManager.getInstance().getOrthophoniste().modifierQuestion(qcm, question,note, propositions);
     }
     @FXML
-    private void handleConfirmerButton() {
+    public void handleConfirmerButton() {
         try {
             updateQCM();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QCM.fxml"));

@@ -24,10 +24,7 @@ public class AnamneseEnfantListController extends ListController {
 
     private ObservableList<QuestionAnamneseEnfant> questionAnamneseEnfantObservableList = FXCollections.observableArrayList();
 
-    @FXML
-    private Button ajouterButton;
-    @FXML
-    private Button supprimerButton;
+
     @FXML
     public void initialize() {
         enonceColumn.setCellValueFactory(new PropertyValueFactory<>("enonce"));
@@ -49,10 +46,15 @@ public class AnamneseEnfantListController extends ListController {
         questionAnamneseEnfantTableView.setItems(questionAnamneseEnfantObservableList);
 
         homeNavigation();
-        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseEnfant.fxml", ajouterButton));
+        ajouterToggleButton.setOnAction(event -> navigateTo("/com/orthofluent/orthofluent/views/AjouterQuestAnamneseEnfant.fxml", ajouterToggleButton));
 
-        modifierToggleButton.setOnAction(event-> navigateTo("/com/orthofluent/orthofluent/views/ModifierQuestAnamneseEnfant.fxml", modifierToggleButton));
-
+        modifierToggleButton.setOnAction(event -> {
+            QuestionAnamneseEnfant selectedItem = questionAnamneseEnfantTableView.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                DataManager.getInstance().setQuestionAnamnese(selectedItem);
+                navigateTo("/com/orthofluent/orthofluent/views/ModifierQuestAnamneseEnfant.fxml", modifierToggleButton);
+            }
+        });
         supprimerToggleButton.setOnAction(event -> {
             QuestionAnamneseEnfant selectedItem = questionAnamneseEnfantTableView.getSelectionModel().getSelectedItem();
             if (selectedItem != null) {

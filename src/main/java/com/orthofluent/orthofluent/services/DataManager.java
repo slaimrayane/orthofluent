@@ -1,14 +1,14 @@
 package com.orthofluent.orthofluent.services;
 
-import com.orthofluent.orthofluent.models.Orthophoniste;
-import com.orthofluent.orthofluent.models.Patient;
-import com.orthofluent.orthofluent.models.Question;
+import com.orthofluent.orthofluent.models.*;
 
 public class DataManager {
     private static DataManager instance;
     private Orthophoniste orthophoniste;
     private Patient patient;
     private Question question;
+    private QuestionAnamnese questionAnamnese;
+    private Exercise exercise;
 
     private DataManager() {
         // Private constructor to prevent instantiation
@@ -40,5 +40,17 @@ public class DataManager {
     }
     public Question getQuestion() {
         return question;
+    }
+    public void setQuestionAnamnese(QuestionAnamnese questionAnamnese) {
+        this.questionAnamnese = questionAnamnese;
+    }
+    public QuestionAnamnese getQuestionAnamnese() {
+        return questionAnamnese;
+    }
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+    public Exercise getExercise() {
+        return exercise;
     }
 }

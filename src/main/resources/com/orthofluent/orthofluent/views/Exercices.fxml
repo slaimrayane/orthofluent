@@ -90,11 +90,11 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView layoutX="189.0" layoutY="173.0" prefHeight="371.0" prefWidth="622.0">
+        <TableView fx:id="exerciceTableView" layoutX="189.0" layoutY="173.0" prefHeight="371.0" prefWidth="622.0">
             <columns>
-                <TableColumn prefWidth="294.3999481201172" text="Enonce" />
-                <TableColumn prefWidth="211.199951171875" text="Materiel" />
-                <TableColumn prefWidth="116.00003662109373" text="Note" />
+                <TableColumn fx:id="enonceColumn" prefWidth="294.3999481201172" text="Enonce" />
+                <TableColumn fx:id="materielColumn" prefWidth="211.199951171875" text="Materiel" />
+                <TableColumn fx:id="noteColumn" prefWidth="116.00003662109373" text="Note" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

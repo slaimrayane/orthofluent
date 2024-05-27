@@ -16,6 +16,11 @@ public abstract class Question extends Evaluable implements Serializable {
     }
     public Question() {
     }
+    public Question(String enonce, QuestionType questionType, int note) {
+        this.enonce = enonce;
+        this.questionType = questionType;
+        setNote(note);
+    }
 
     public String getEnonce() {
         return enonce;
@@ -33,11 +38,11 @@ public abstract class Question extends Evaluable implements Serializable {
         this.questionType = type;
     }
 
-    public void evaluer(int note) throws ExceptionScoreErronee {
-        if (note < 0 || note > 10) {
+    public void evaluer(int score) throws ExceptionScoreErronee {
+        if (score < 0 || score > getNote()) {
             throw new ExceptionScoreErronee("La note doit être 0 ou 1");
         }
-        setNote(note);
+        setScore(score);
     }
 }
 

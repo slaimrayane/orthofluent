@@ -8,6 +8,11 @@ import com.orthofluent.orthofluent.models.enumerations.QuestionType;
 public class QCM extends Question implements Serializable {
     private List<Proposition> propositionsList;
 
+    public QCM(String enonce, List<Proposition> propositionsList, int note) {
+        super(enonce, QuestionType.QCM);
+        this.propositionsList = propositionsList;
+        setNote(note);
+    }
     public QCM(String enonce, List<Proposition> propositionsList) {
         super(enonce, QuestionType.QCM);
         this.propositionsList = propositionsList;

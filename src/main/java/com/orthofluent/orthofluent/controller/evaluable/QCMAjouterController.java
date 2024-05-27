@@ -31,6 +31,8 @@ public class QCMAjouterController extends AjoutModifierController {
     private CheckBox proposition2CheckBox;
     @FXML
     private CheckBox proposition3CheckBox;
+    @FXML
+    private TextField noteField;
 
     @FXML
     private void initialize() {
@@ -45,8 +47,10 @@ public class QCMAjouterController extends AjoutModifierController {
         boolean proposition1Ajout = proposition1CheckBox.isSelected();
         boolean proposition2Ajout = proposition2CheckBox.isSelected();
         boolean proposition3Ajout = proposition3CheckBox.isSelected();
+        int note = Integer.parseInt(noteField.getText());
         QCM qcm = new QCM();
         qcm.setEnonce(question);
+        qcm.setNote(note);
         if(proposition1Ajout){
             qcm.ajouterProposition(new Proposition( proposition1));
         }

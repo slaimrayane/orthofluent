@@ -1,5 +1,6 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
 import com.orthofluent.orthofluent.models.exceptions.*;
 
 import java.io.*;
@@ -372,6 +373,32 @@ public class Orthophoniste implements Serializable {
     public void supprimerQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
         questionsAnamneseSet.remove(questionAnamnese);
     }
+    public void modifierQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese, String newEnonce, TypeQuestionAnamnese newTypeQuestionAnamnese) {
+        // Iterate over the set to find and replace the question
+        for (QuestionAnamnese question : questionsAnamneseSet) {
+            if (question.equals(questionAnamnese) && question instanceof QuestionAnamneseAdulte) {
+                // Cast to QuestionAnamneseAdulte and update object
+                QuestionAnamneseAdulte questionAnamneseAdulte = (QuestionAnamneseAdulte) question;
+                questionAnamneseAdulte.setEnonce(newEnonce);
+                questionAnamneseAdulte.setTypeQuestionAnamnese(newTypeQuestionAnamnese);
+                break;
+            }
+        }
+    }
+
+    public void modifierQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese, String newEnonce, TypeQuestionAnamnese newTypeQuestionAnamnese) {
+        // Iterate over the set to find and replace the question
+        for (QuestionAnamnese question : questionsAnamneseSet) {
+            if (question.equals(questionAnamnese) && question instanceof QuestionAnamneseEnfant) {
+                // Cast to QuestionAnamneseEnfant and update object
+                QuestionAnamneseEnfant questionAnamneseEnfant = (QuestionAnamneseEnfant) question;
+                questionAnamneseEnfant.setEnonce(newEnonce);
+                questionAnamneseEnfant.setTypeQuestionAnamnese(newTypeQuestionAnamnese);
+                break;
+            }
+        }
+    }
+
     public List<QuestionAnamneseAdulte> getQuestionsAnamneseAdulte(){
            return questionsAnamneseSet.stream().filter(QuestionAnamneseAdulte.class::isInstance).map(QuestionAnamneseAdulte.class::cast).collect(Collectors.toList());
     }
@@ -437,24 +464,39 @@ public class Orthophoniste implements Serializable {
         return questionsSet.stream().filter(QuestionLibre.class::isInstance).map(QuestionLibre.class::cast).collect(Collectors.toList());
     }
 
-    public void modifierQuestion(QCM qcm, String newEnonce, List<Proposition> newPropositions) {
+    public void modifierQuestion(QCM qcm, String newEnonce, int newNote, List<Proposition> newPropositions) {
         // Iterate over the set to find and replace the question
         for (Question question : questionsSet) {
-            if (question.equals(qcm)) {
-                // Update QCM object
-                qcm.setEnonce(newEnonce);
-                qcm.setPropositionsList(newPropositions);
+            if (question.equals(qcm) && question instanceof QCM) {
+                // Cast to QCM and update object
+                QCM qcmQuestion = (QCM) question;
+                qcmQuestion.setEnonce(newEnonce);
+                qcmQuestion.setPropositionsList(newPropositions);
+                qcmQuestion.setNote(newNote);
                 break;
             }
         }
     }
-    public void modifierQuestion(QCU qcu, String newEnonce, List<Proposition> newPropositions) {
+    public void modifierQuestion(QuestionLibre questionLibre, String newEnonce, int newNote) {
         // Iterate over the set to find and replace the question
         for (Question question : questionsSet) {
-            if (question.equals(qcu)) {
-                // Update QCM object
-                qcu.setEnonce(newEnonce);
-                qcu.setPropositionsList(newPropositions);
+            if (question.equals(questionLibre) && question instanceof QuestionLibre) {
+                // Cast to QuestionLibre and update object
+                QuestionLibre questionLibreQuestion = (QuestionLibre) question;
+                questionLibreQuestion.setEnonce(newEnonce);
+                questionLibreQuestion.setNote(newNote);
+                break;
+            }
+        }
+    }
+    public void modifierQuestion(QCU qcu, String newEnonce, int newNote, List<Proposition> newPropositions) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(qcu) && question instanceof QCU) {
+                // Cast to QCU and update object
+                QCU qcuQuestion = (QCU) question;
+                qcuQuestion.setEnonce(newEnonce);
+                qcuQuestion.setPropositionsList(newPropositions);
                 break;
             }
         }
@@ -470,6 +512,19 @@ public class Orthophoniste implements Serializable {
 
     public void supprimerExercice(Exercise exercise){
         exercisesSet.remove(exercise);
+    }
+
+    public void modifierExercice(Exercise exercise, String newEnonce, int newNote, String newMateriel) {
+        // Iterate over the set to find and replace the exercise
+        for (Exercise exercice : exercisesSet) {
+            if (exercice.equals(exercise)) {
+                // Update Exercise object
+                exercice.setEnonce(newEnonce);
+                exercice.setNote(newNote);
+                exercice.setMateriel(newMateriel);
+                break;
+            }
+        }
     }
 
     public List<Exercise> getExercises(){
@@ -490,109 +545,9 @@ public class Orthophoniste implements Serializable {
 
 
 
+    public void afficherPatients(){
 
-
-        public void AfficherAgenda() {
-
-
-        }
-
-        public void ModifierAgenda() {
-
-        }
-
-        public void AfficherBoPatient() {
-
-        }
-
-        public void AfficherEvaluationPatient() {
-
-        }
-
-        public void ChercherTroublePatient() {
-
-        }
-
-        public void CreerDossier() {
-
-        }
-
-        public void CreerTest() {
-
-        }
-
-        public void ModifierTest() {
-
-        }
-
-        public void SupprimerTest() {
-
-        }
-
-        public void CreerAnamnese() {
-
-        }
-
-
-        public void ModifierAnamnese() {
-
-        }
-
-        public void SupprimerAnamnese() {
-
-        }
-
-        public void CreerExercice() {
-
-        }
-
-        public void ModifierExercice() {
-
-        }
-
-        public void SupprimerExercice() {
-
-        }
-
-        public void CreerBilan() {
-
-        }
-
-        public void ModifierBilan() {
-
-        }
-
-        public void SupprimerBilan() {
-
-        }
-
-        public void CreerQuestion() {
-
-        }
-
-        public void ModifierQuestion() {
-
-        }
-
-        public void SupprimerQuestion() {
-
-        }
-
-        public void CreerReponse() {
-
-        }
-
-        public void ModifierReponse() {
-
-        }
-
-        public void SupprimerReponse() {
-
-        }
-
-        public void afficherPatients(){
-
-        }
+    }
 
 // Interface
     @Override

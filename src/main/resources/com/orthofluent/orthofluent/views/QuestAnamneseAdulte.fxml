@@ -90,10 +90,10 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView cache="true" layoutX="189.0" layoutY="191.0" prefHeight="354.0" prefWidth="622.0">
+        <TableView fx:id="questionAnamneseAdulteTableView" cache="true" layoutX="189.0" layoutY="191.0" prefHeight="354.0" prefWidth="622.0">
             <columns>
-                <TableColumn prefWidth="494.3999786376953" sortable="false" text="Questions/Propositions" />
-                <TableColumn prefWidth="127.20001220703125" text="Note" />
+                <TableColumn fx:id="enonceColumn" prefWidth="494.3999786376953" sortable="false" text="enonce" />
+                <TableColumn fx:id="typeQuestionColumn" prefWidth="127.20001220703125" text="Type question" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />
