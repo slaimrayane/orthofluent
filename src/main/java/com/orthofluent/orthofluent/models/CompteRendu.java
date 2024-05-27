@@ -8,10 +8,10 @@ import java.util.List;
 public class CompteRendu implements Serializable {
     private String conclusion;
     private String remarque;
-    private float score;
+    private int score;
     private HashMap<Evaluable, List<Integer>> exerciseScoresMap;
 
-    public CompteRendu(String conclusion, String remarque, float score, HashMap<Evaluable, List<Integer>> exerciseScoresMap) {
+    public CompteRendu(String conclusion, String remarque, int score, HashMap<Evaluable, List<Integer>> exerciseScoresMap) {
         this.conclusion = conclusion;
         this.remarque = remarque;
         this.score = score;
@@ -33,10 +33,10 @@ public class CompteRendu implements Serializable {
     public void setRemarque(String remarque) {
         this.remarque = remarque;
     }
-    public float getScore() {
+    public int getScore() {
         return score;
     }
-    public void setScore(float score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

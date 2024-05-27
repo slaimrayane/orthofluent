@@ -7,66 +7,33 @@ import java.util.List;
 import java.util.Set;
 
 public class EpreuveClinique implements Serializable {
-    private Set<ObservationClinique> observationCliniqueSet;
-    private Set<Test> testSet;
+    private ObservationClinique observationClinique;
+    private Test test;
 
-    public EpreuveClinique(Set<ObservationClinique> observationCliniqueSet, Set<Test> testSet){
-        this.observationCliniqueSet = observationCliniqueSet;
-        this.testSet = testSet;
+    public EpreuveClinique(ObservationClinique observationClinique, Test test){
+        this.observationClinique = observationClinique;
+        this.test = test;
     }
 
     public EpreuveClinique(){
-        observationCliniqueSet = new HashSet<>();
-        testSet = new HashSet<>();
     }
 
-    public Set<ObservationClinique> getObservationCliniqueSet(){
-        return observationCliniqueSet;
+    public ObservationClinique getObservationClinique(){
+        return this.observationClinique;
     }
 
-    public Set<Test> getTestSet(){
-        return testSet;
+    public Test getTest(){
+        return this.test;
     }
 
-    public void setObservationCliniqueSet(Set<ObservationClinique> observationCliniqueSet){
-        this.observationCliniqueSet = observationCliniqueSet;
+    public void setObservationClinique(ObservationClinique observationClinique){
+        this.observationClinique = observationClinique;
     }
 
-    public void setTestSet(Set<Test> testSet){
-        this.testSet = testSet;
+    public void setTest(Test test){
+        this.test = test;
     }
 
-    public void addObservationClinique(ObservationClinique observationClinique){
-        observationCliniqueSet.add(observationClinique);
-    }
-
-    public void addTest(Test test){
-        testSet.add(test);
-    }
-
-    public void removeObservationClinique(ObservationClinique observationClinique){
-        observationCliniqueSet.remove(observationClinique);
-    }
-
-    public void removeTest(Test test){
-        testSet.remove(test);
-    }
-
-    public void clearObservationClinique(){
-        observationCliniqueSet.clear();
-    }
-
-    public void clearTest(){
-        testSet.clear();
-    }
-
-    public List<ObservationClinique> getObservationCliniqueList(){
-        return new ArrayList<>(observationCliniqueSet);
-    }
-
-    public List<Test> getTestList(){
-        return new ArrayList<>(testSet);
-    }
 
 
 

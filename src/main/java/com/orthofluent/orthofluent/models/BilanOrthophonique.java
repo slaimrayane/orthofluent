@@ -1,26 +1,23 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BilanOrthophonique implements Serializable {
-    private List<EpreuveClinique> epreuvesCliniquesList;
+    private EpreuveClinique epreuveClinique;
     private Diagnostique diagnostique;
     private ProjetTherapeutique projetTherapeutique;
     // Constructor
-    public BilanOrthophonique(List<EpreuveClinique> epreuvesCliniquesList, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique){
-        this.epreuvesCliniquesList = epreuvesCliniquesList;
+    public BilanOrthophonique(EpreuveClinique epreuveClinique, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique){
+        this.epreuveClinique = epreuveClinique;
         this.diagnostique = diagnostique;
         this.projetTherapeutique = projetTherapeutique;
     }
 
     public BilanOrthophonique(){
-        epreuvesCliniquesList = new ArrayList<>();
     }
     // Getters and Setters
-    public List<EpreuveClinique> getEpreuvesCliniquesList(){
-        return this.epreuvesCliniquesList;
+    public EpreuveClinique getEpreuveClinique(){
+        return this.epreuveClinique;
     }
 
     public Diagnostique getDiagnostique(){
@@ -31,8 +28,8 @@ public class BilanOrthophonique implements Serializable {
         return this.projetTherapeutique;
     }
 
-    public void setEpreuvesCliniquesList(List<EpreuveClinique> epreuvesCliniquesList){
-        this.epreuvesCliniquesList = epreuvesCliniquesList;
+    public void setEpreuveClinique(EpreuveClinique epreuveClinique){
+        this.epreuveClinique = epreuveClinique;
     }
 
     public void setDiagnostique(Diagnostique diagnostique){
@@ -43,17 +40,6 @@ public class BilanOrthophonique implements Serializable {
         this.projetTherapeutique = projetTherapeutique;
     }
 
-    public void addEpreuveClinique(EpreuveClinique epreuveClinique){
-        epreuvesCliniquesList.add(epreuveClinique);
-    }
-
-    public void removeEpreuveClinique(EpreuveClinique epreuveClinique){
-        epreuvesCliniquesList.remove(epreuveClinique);
-    }
-
-    public void clearEpreuveClinique(){
-        epreuvesCliniquesList.clear();
-    }
 
 public boolean equals(Object obj){
         if(obj == null){
@@ -66,7 +52,7 @@ public boolean equals(Object obj){
             return false;
         }
         BilanOrthophonique bilanOrthophonique = (BilanOrthophonique) obj;
-        return this.epreuvesCliniquesList.equals(bilanOrthophonique.getEpreuvesCliniquesList()) && this.diagnostique.equals(bilanOrthophonique.getDiagnostique()) && this.projetTherapeutique.equals(bilanOrthophonique.getProjetTherapeutique());
+        return this.epreuveClinique.equals(bilanOrthophonique.getEpreuveClinique()) && this.diagnostique.equals(bilanOrthophonique.getDiagnostique()) && this.projetTherapeutique.equals(bilanOrthophonique.getProjetTherapeutique());
     }
 
 }

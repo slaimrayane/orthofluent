@@ -6,8 +6,8 @@ import java.util.List;
 public class BilanOrthophoniqueInitial extends BilanOrthophonique implements Serializable {
     private Anamnese anamnese;
 
-    public BilanOrthophoniqueInitial(List<EpreuveClinique> epreuvesCliniquesList, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique,Anamnese anamnese){
-        super(epreuvesCliniquesList, diagnostique, projetTherapeutique);
+    public BilanOrthophoniqueInitial(EpreuveClinique epreuveClinique, Diagnostique diagnostique, ProjetTherapeutique projetTherapeutique,Anamnese anamnese){
+        super(epreuveClinique, diagnostique, projetTherapeutique);
         this.anamnese = anamnese;
     }
 
@@ -20,6 +20,9 @@ public class BilanOrthophoniqueInitial extends BilanOrthophonique implements Ser
 
     public void setAnamnese(Anamnese anamnese){
         this.anamnese = anamnese;
+    }
+    public List<QuestionAnamnese> getQuestionAnamneseList(){
+        return anamnese.getQuestionsAnamneseList();
     }
 
 }

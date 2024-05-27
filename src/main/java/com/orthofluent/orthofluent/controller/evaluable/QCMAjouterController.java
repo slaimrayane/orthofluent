@@ -68,7 +68,7 @@ public class QCMAjouterController extends AjoutModifierController {
         }
     }
     @FXML
-    private void handleConfirmerButton() {
+    public void handleConfirmerButton() {
         try {
             addQCM();
             Parent root = FXMLLoader.load(getClass().getResource("/com/orthofluent/orthofluent/views/QCM.fxml"));

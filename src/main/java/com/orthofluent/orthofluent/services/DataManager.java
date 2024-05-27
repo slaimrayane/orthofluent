@@ -9,6 +9,7 @@ public class DataManager {
     private Question question;
     private QuestionAnamnese questionAnamnese;
     private Exercise exercise;
+    private DossierPatient dossierPatient;
 
     private DataManager() {
         // Private constructor to prevent instantiation
@@ -53,4 +54,11 @@ public class DataManager {
     public Exercise getExercise() {
         return exercise;
     }
+    public void setDossierPatient(DossierPatient dossierPatient) {
+        this.dossierPatient = dossierPatient;
+    }
+    public DossierPatient getDossierPatient() {
+        return dossierPatient;
+    }
+
 }

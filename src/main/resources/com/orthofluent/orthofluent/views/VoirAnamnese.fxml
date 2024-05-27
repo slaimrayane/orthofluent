@@ -5,8 +5,9 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.CompteController">
+<AnchorPane accessibleRole="CHECK_BOX" prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.DossierPatient.PatientVoirAnamneseController">
     <children>
         <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
@@ -43,7 +44,7 @@
                 <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
-        <HBox layoutX="-1.0" layoutY="64.0" prefHeight="496.0" prefWidth="169.0" style="-fx-background-color: #CDD5D8;">
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
                <children>
@@ -87,33 +88,32 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-      <AnchorPane layoutX="262.0" layoutY="144.0" prefHeight="378.0" prefWidth="254.0" style="-fx-border-color: #CDD5D8;">
-         <children>
-            <PasswordField fx:id="ancienMotDePasseTextField" layoutX="11.0" layoutY="280.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="ancienTelephoneTextField" layoutX="11.0" layoutY="237.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="ancienEmailTextField" layoutX="11.0" layoutY="195.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="ancienAdresseTextField" layoutX="11.0" layoutY="154.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <Text layoutX="61.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations du compte:" textAlignment="CENTER" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="528.0" layoutY="144.0" prefHeight="378.0" prefWidth="254.0" style="-fx-border-color: #CDD5D8;">
-         <children>
-            <PasswordField fx:id="nouveauMotDePasseTextField" layoutX="11.0" layoutY="278.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="nouveauTelephoneTextField" layoutX="11.0" layoutY="235.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="nouveauEmailTextField" layoutX="11.0" layoutY="192.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <TextField fx:id="nouveauAdresseTextField" layoutX="11.0" layoutY="150.0" prefHeight="34.0" prefWidth="231.0" style="-fx-border-color: #76C2AF;" />
-            <Text layoutX="57.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier vos informations:" textAlignment="CENTER" />
-            <Button fx:id="modifierButton" alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleConfirmationButton" style="-fx-background-color: #76C2AF;" text="Modifier" textAlignment="CENTER" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-      <Text layoutX="201.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" textAlignment="CENTER" wrappingWidth="54.0" />
-      <Text layoutX="201.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="54.0" />
-      <Text layoutX="194.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" textAlignment="CENTER" wrappingWidth="67.60003662109375" />
-      <Text layoutX="181.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" textAlignment="CENTER" wrappingWidth="76.4000244140625" />
-      <Text fontSmoothingType="LCD" layoutX="348.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon compte" textAlignment="CENTER" wrappingWidth="336.00004882812505">
+
+        <Text fontSmoothingType="LCD" layoutX="325.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bilan orthophonique" textAlignment="CENTER" wrappingWidth="352.7674560546875">
+            <font>
+                <Font name="System Bold" size="33.0" />
+            </font>
+        </Text>
+        <Text layoutX="348.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consulter le bilan orthophonique de votre patient">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Button fx:id="retourButton" layoutX="233.0" layoutY="511.0" mnemonicParsing="false" style="-fx-background-color: #76c2af;" text="Retour" textFill="WHITE" />
+      <Text layoutX="289.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anamnese:">
          <font>
-            <Font name="System Bold" size="33.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Text>
+      <TableView fx:id="questionAnamneseTableView" layoutX="262.0" layoutY="215.0" prefHeight="210.0" prefWidth="478.0">
+        <columns>
+          <TableColumn fx:id="typeQuestionColumn" prefWidth="128.00003051757812" text="Catégorie" />
+          <TableColumn fx:id="questionColumn" prefWidth="190.66671752929688" text="Question" />
+            <TableColumn fx:id="reponseColumn" prefWidth="162.66668701171875" text="Reponse" />
+        </columns>
+      </TableView>
+      <Button fx:id="continuerButton" layoutX="663.0" layoutY="511.0" mnemonicParsing="false" style="-fx-background-color: #76c2af;" text="Les epreuves cliniques" textFill="WHITE" />
+      <Text layoutX="262.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Observation:" />
+      <TextArea fx:id="observationTextArea" layoutX="342.0" layoutY="438.0" prefHeight="50.0" prefWidth="398.0" style="-fx-border-color: #ffffff;" />
     </children>
 </AnchorPane>

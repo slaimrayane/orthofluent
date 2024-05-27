@@ -100,9 +100,8 @@
                         <TableColumn id="TabType" fx:id="TabType" minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
                     </columns>
                 </TableColumn>
-                <TableColumn id="TabDate" fx:id="TabDate" prefWidth="107.19985961914062" text="Date" />
-                <TableColumn id="TabDurée" fx:id="TabDurée" prefWidth="75.99993896484375" text="Durée" />
-            <TableColumn id="TabObservation" fx:id="TabObservation" prefWidth="141.60000000000002" text="Observation" />
+                <TableColumn id="TabDate" fx:id="TabDate" prefWidth="199.33334350585938" text="Date" />
+                <TableColumn id="TabDurée" fx:id="TabDurée" prefWidth="124.66668701171875" text="Durée" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

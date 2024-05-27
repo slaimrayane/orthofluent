@@ -90,7 +90,7 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView layoutX="187.0" layoutY="158.0" prefHeight="390.0" prefWidth="626.0">
+        <TableView fx:id="suiviTableView" layoutX="187.0" layoutY="158.0" prefHeight="390.0" prefWidth="626.0">
             <columns>
                 <TableColumn prefWidth="294.3999481201172" text="Informations Patient">
                     <columns>
