@@ -92,17 +92,14 @@
         </ImageView>
         <TableView fx:id="suiviTableView" layoutX="187.0" layoutY="158.0" prefHeight="390.0" prefWidth="626.0">
             <columns>
-                <TableColumn prefWidth="294.3999481201172" text="Informations Patient">
+                <TableColumn prefWidth="165.99998474121094" text="Informations Patient">
                     <columns>
-                        <TableColumn prefWidth="56.79998779296875" text="Nom" />
-                        <TableColumn prefWidth="60.00006103515625" text="Prénom" />
-                        <TableColumn prefWidth="66.4000244140625" text="Numéro dossier" />
-                        <TableColumn minWidth="0.0" prefWidth="108.79998779296875" text="Type scéance" />
-                  <TableColumn prefWidth="66.4000244140625" text="Status" />
+                        <TableColumn fx:id="numeroDossierColumn" prefWidth="114.00001525878906" text="Numéro dossier" />
+                        <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="62.0" text="Type scéance" />
                     </columns>
                 </TableColumn>
-                <TableColumn prefWidth="180.7999267578125" text="Date" />
-                <TableColumn prefWidth="84.0" text="heure" />
+                <TableColumn fx:id="dateColumn" prefWidth="215.3333740234375" text="Date" />
+                <TableColumn fx:id="heureColumn" minWidth="0.0" prefWidth="230.00006103515625" text="heure" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />

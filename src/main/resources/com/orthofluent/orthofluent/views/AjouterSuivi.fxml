@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -92,17 +93,6 @@
                 <Font name="Arial" size="14.0" />
             </font>
         </Text>
-
-        <Text layoutX="290.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="270.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
         <Text layoutX="203.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro de dossier">
             <font>
                 <Font size="14.0" />
@@ -123,10 +113,7 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="327.0" layoutY="183.0" prefHeight="27.0" prefWidth="282.0" promptText="nom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="225.0" prefHeight="27.0" prefWidth="282.0" promptText="prenom--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="307.0" prefHeight="27.0" prefWidth="282.0" promptText="Présentielle/En ligne--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <TextField layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="282.0" promptText="numéro de dossier--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <TextField fx:id="numDossierPatientTextField" layoutX="327.0" layoutY="267.0" prefHeight="27.0" prefWidth="282.0" promptText="numéro de dossier--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
         <Text fontSmoothingType="LCD" layoutX="439.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suivi" textAlignment="CENTER" wrappingWidth="127.9674072265625">
             <font>
                 <Font name="System Bold" size="33.0" />
@@ -137,14 +124,9 @@
                 <Image url="@../images/AjouterSuivi.png" />
             </image>
         </ImageView>
-        <Button layoutX="532.0" layoutY="482.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <DatePicker layoutX="328.0" layoutY="387.0" prefHeight="27.0" prefWidth="282.0" promptText="date--" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" />
-        <TextField layoutX="328.0" layoutY="432.0" prefHeight="27.0" prefWidth="282.0" promptText="heure--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
-        <Text layoutX="286.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-      <TextField layoutX="328.0" layoutY="345.0" prefHeight="27.0" prefWidth="282.0" promptText="objectif atteint--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+        <Button fx:id="confirmerButton" layoutX="532.0" layoutY="482.0" mnemonicParsing="false" onAction="#HandleConfirmerButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <DatePicker fx:id="datePicker" layoutX="328.0" layoutY="387.0" prefHeight="27.0" prefWidth="282.0" promptText="date--" style="-fx-background-color: #ffffff; -fx-border-color: #76C2AF;" />
+        <TextField fx:id="heureTextField" layoutX="328.0" layoutY="432.0" prefHeight="27.0" prefWidth="282.0" promptText="heure--" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" />
+      <RadioButton fx:id="presentielRadio" layoutX="341.0" layoutY="312.0" mnemonicParsing="false" text="presentiel" />
     </children>
 </AnchorPane>

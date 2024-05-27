@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 public class SuiviListController extends ListController {
     @FXML
@@ -30,7 +31,7 @@ public class SuiviListController extends ListController {
     @FXML
     private TableColumn<Suivi, String> typeColumn;
 
-    private ObservableList<Suivi> suviObservableList = FXCollections.observableArrayList();
+    private ObservableList<Suivi> suiviObservableList = FXCollections.observableArrayList();
 
 
 
@@ -41,8 +42,8 @@ public class SuiviListController extends ListController {
         dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Suivi, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Suivi, String> param) {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                return new ReadOnlyStringWrapper(sdf.format(param.getValue().getDate()));
+                DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                return new ReadOnlyStringWrapper(param.getValue().getDate().format(sdf));
             }
         });
         heureColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Suivi, String>, ObservableValue<String>>() {
@@ -57,6 +58,8 @@ public class SuiviListController extends ListController {
                 return new ReadOnlyStringWrapper(param.getValue().isPresentiel() ? "presentiel" : "en ligne");
             }
         });
+        suiviObservableList.addAll(DataManager.getInstance().getOrthophoniste().getSuivis());
+        suiviTableView.setItems(suiviObservableList);
 
 
         homeNavigation();
@@ -70,7 +73,7 @@ public class SuiviListController extends ListController {
         });
         supprimerToggleButton.setOnAction(event -> {
             Suivi suivi = suiviTableView.getSelectionModel().getSelectedItem();
-            suviObservableList.remove(suivi);
+            suiviObservableList.remove(suivi);
             // Here you can also add the code to delete the patient from the database
             DataManager.getInstance().getOrthophoniste().supprimerRendezVous(suivi);
         });

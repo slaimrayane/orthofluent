@@ -1,10 +1,12 @@
 package com.orthofluent.orthofluent.models;
 
+import com.orthofluent.orthofluent.models.enumerations.ThematiqueAtelier;
 import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
 import com.orthofluent.orthofluent.models.exceptions.*;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.sql.Date;
@@ -40,6 +42,7 @@ public class Orthophoniste implements Serializable {
         this.numTel = numTel;
         this.AdresseMail = AdresseMail;
         this.motDePasse = motDePasse;
+        agenda = new Agenda();
         dossierPatientMap = new HashMap<>();
         patientCounter = 0;
         questionsAnamneseSet = new HashSet<>();
@@ -50,6 +53,7 @@ public class Orthophoniste implements Serializable {
     public Orthophoniste() {
         dossierPatientMap=new HashMap<>();
         patientCounter=0;
+        agenda = new Agenda();
         questionsAnamneseSet = new HashSet<>();
         questionsSet = new HashSet<>();
         exercisesSet = new HashSet<>();
@@ -166,101 +170,82 @@ public class Orthophoniste implements Serializable {
 
 
     // Les methodes
-    public void ProgrammerConsultationAdulte() {
-            ConsultationAdulte rendezvous = new ConsultationAdulte();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le nom du patient");
-                rendezvous.setNom(scanner.nextLine());
-                System.out.println("veuillez indiquer le prenom du patient");
-                rendezvous.setPrenom(scanner.nextLine());
-                System.out.println("veuillez indiquer l'age du patient");
-                rendezvous.setAge(scanner.nextLine()); 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmée avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
+    public void programmerConsultationAdulte(LocalDateTime dateTime, LocalTime heureDebut, String nom, String prenom, String age) throws ExceptionDateInvalide, ExceptionDatePrise {
+        ConsultationAdulte rendezvous = new ConsultationAdulte();
+        System.out.println("Programmer Consultation Adulte");
 
-    }
-    public void ProgrammerConsultationEnfant() {
-            ConsultationAdulte rendezvous = new ConsultationAdulte();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le nom du patient");
-                rendezvous.setNom(scanner.nextLine());
-                System.out.println("veuillez indiquer le prenom du patient");
-                rendezvous.setPrenom(scanner.nextLine());
-                System.out.println("veuillez indiquer l'age du patient");
-                rendezvous.setAge(scanner.nextLine()); 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmée avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
-    }
-    public void ProgrammerSuivi(){
-            Suivi rendezvous = new Suivi();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le numero de dossier du patient");
-                rendezvous.setNumDossierPatient(scanner.nextLine());
-                System.out.println("Est-ce que la consultation est en presentiel? (oui/non)");
-                String response = scanner.nextLine();
-                boolean isPresentiel = response.equalsIgnoreCase("oui");
-                rendezvous.setPresentiel(isPresentiel);
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNom(nom);
+        rendezvous.setPrenom(prenom);
+        rendezvous.setAge(age);
+        rendezvous.setHeureDebut(heureDebut);
 
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmee avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
+        System.out.println("Consultation programmée avec succès");
     }
-    public void ProgrammerAtelier(){
+    public void programmerConsultationEnfant(LocalDateTime dateTime, LocalTime heureDebut, String nom, String prenom, String age) throws ExceptionDateInvalide, ExceptionDatePrise {
+        ConsultationEnfant rendezvous = new ConsultationEnfant();
+        System.out.println("Programmer Consultation Enfant");
+
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNom(nom);
+        rendezvous.setPrenom(prenom);
+        rendezvous.setHeureDebut(heureDebut);
+        rendezvous.setAge(age);
+
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
+
+        System.out.println("Consultation programmée avec succès");
     }
+    public void programmerSuivi(LocalDateTime dateTime, LocalTime heureDebut, String numDossierPatient, boolean isPresentiel) throws ExceptionDateInvalide, ExceptionDatePrise {
+        Suivi rendezvous = new Suivi();
+        System.out.println("Programmer Consultation Adulte");
+
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNumDossierPatient(numDossierPatient);
+        rendezvous.setPresentiel(isPresentiel);
+        rendezvous.setHeureDebut(heureDebut);
+
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
+
+        System.out.println("Consultation programmee avec succès");
+    }
+
+    public void programmerAtelier(LocalDateTime dateTime,LocalTime heureDebut ,List<String> numDossierPatients, ThematiqueAtelier theme) throws ExceptionDateInvalide, ExceptionDatePrise {
+    Atelier atelier = new Atelier();
+    System.out.println("Programmer Atelier");
+
+    atelier.setDate(dateTime);
+    if (atelier.getDate().isBefore(LocalDateTime.now())) {
+        throw new ExceptionDateInvalide("La date de l'atelier est invalide");
+    }
+    atelier.setThematiqueAtelier(theme);
+
+    atelier.setNumeroDossier(numDossierPatients);
+    atelier.setHeureDebut(heureDebut);
+
+    if (!agenda.ajouterRendezVous(atelier)) {
+        throw new ExceptionDatePrise("La date de l'atelier est déjà prise");
+    }
+
+    System.out.println("Atelier programmé avec succès");
+}
 
     public void supprimerRendezVous(Consultation consultation){
         agenda.supprimerRendezVous(consultation);
