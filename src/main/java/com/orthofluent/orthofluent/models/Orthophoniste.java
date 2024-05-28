@@ -282,6 +282,22 @@ public class Orthophoniste implements Serializable {
     public List<PatientAdulte> getPatientsAdultes(){
         return dossierPatientMap.values().stream().filter(DossierPatient::isAdulte).map(dossier -> (PatientAdulte) dossier.getPatient()).collect(Collectors.toList());
     }
+    public DossierPatient getPatients(PatientAdulte patientAdulte){
+        for (DossierPatient dossier : dossierPatientMap.values()) {
+            if (dossier.getPatient().equals(patientAdulte)) {
+                return dossier;
+            }
+        }
+        return null;
+    }
+    public DossierPatient getPatients(PatientEnfant patientEnfant){
+        for (DossierPatient dossier : dossierPatientMap.values()) {
+            if (dossier.getPatient().equals(patientEnfant)) {
+                return dossier;
+            }
+        }
+        return null;
+    }
 
     public void supprimerDossierPatient(String numeroDossier){
         dossierPatientMap.remove(numeroDossier);

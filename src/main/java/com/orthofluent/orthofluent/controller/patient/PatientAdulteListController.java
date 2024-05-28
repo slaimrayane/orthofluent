@@ -1,6 +1,7 @@
 package com.orthofluent.orthofluent.controller.patient;
 
 import com.orthofluent.orthofluent.controller.ListController;
+import com.orthofluent.orthofluent.models.DossierPatient;
 import com.orthofluent.orthofluent.models.PatientAdulte;
 import com.orthofluent.orthofluent.services.DataManager;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -10,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
@@ -38,6 +40,9 @@ public class PatientAdulteListController extends ListController {
     private TableColumn<PatientAdulte, String> professionColumn;
     @FXML
     private TableColumn<PatientAdulte, String> diplomeColumn;
+
+    @FXML
+    private ToggleButton voirToggleButton;
 
     @FXML
     public void initialize() {
@@ -87,6 +92,16 @@ public class PatientAdulteListController extends ListController {
                 DataManager.getInstance().getOrthophoniste().supprimerDossierPatient(selectedPatient);
             }
         });
+        voirToggleButton.setOnAction(event -> {
+            PatientAdulte selectedPatient = patientTableView.getSelectionModel().getSelectedItem();
+            if (selectedPatient != null) {
+                DataManager.getInstance().setPatient(selectedPatient);
+                DossierPatient dossierPatient = DataManager.getInstance().getOrthophoniste().getPatients(selectedPatient);
+                DataManager.getInstance().setDossierPatient(dossierPatient);
+                navigateTo("/com/orthofluent/orthofluent/views/DossierAdulte.fxml", voirToggleButton);
+            }
+        });
+
     }
 
 }

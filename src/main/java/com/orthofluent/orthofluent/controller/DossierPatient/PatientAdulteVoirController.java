@@ -52,10 +52,6 @@ public class PatientAdulteVoirController extends BaseController {
         adresseTextField.setText(patientAdulte.getAddresse());
         diplomeTextField.setText(patientAdulte.getDiplome());
         numeroDossierTextField.setText(dossierPatient.getNumeroDossier());
-
-        ListeFicheButton.setOnAction(event -> {navigateTo("/com/orthofluent/orthofluent/views/Home.fxml",ListeFicheButton);});
-        ListeBilanButton.setOnAction(event -> {navigateTo("/com/orthofluent/orthofluent/views/VoirAnamnese.fxml",ListeBilanButton);});
-        ListeRDVButton.setOnAction(event -> {navigateTo("/com/orthofluent/orthofluent/views/Home.fxml",ListeRDVButton);});
     }
 
 

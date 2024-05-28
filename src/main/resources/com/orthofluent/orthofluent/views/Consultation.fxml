@@ -90,18 +90,17 @@
                 <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView id="TabConsultation" fx:id="TabConsultation" layoutX="189.0" layoutY="193.0" prefHeight="356.0" prefWidth="621.0">
+        <TableView id="TabConsultation" fx:id="consultationTableView" layoutX="189.0" layoutY="193.0" prefHeight="356.0" prefWidth="621.0">
             <columns>
                 <TableColumn prefWidth="292.0" text="Rendez vous">
                     <columns>
-                        <TableColumn id="TabNom" fx:id="TabNom" prefWidth="72.79997253417969" text="Nom" />
-                        <TableColumn id="TabPrenom" fx:id="TabPrenom" prefWidth="73.60003662109375" text="Prénom" />
-                        <TableColumn id="TabAge" fx:id="TabAge" prefWidth="55.20001220703125" text="age" />
-                        <TableColumn id="TabType" fx:id="TabType" minWidth="0.0" prefWidth="92.7999267578125" text="Type patient" />
+                        <TableColumn id="TabNom" fx:id="nomColumn" prefWidth="72.79997253417969" text="Nom" />
+                        <TableColumn id="TabPrenom" fx:id="prenomColumn" prefWidth="73.60003662109375" text="Prénom" />
+                        <TableColumn id="TabAge" fx:id="ageColumn" prefWidth="55.20001220703125" text="age" />
                     </columns>
                 </TableColumn>
-                <TableColumn id="TabDate" fx:id="TabDate" prefWidth="199.33334350585938" text="Date" />
-                <TableColumn id="TabDurée" fx:id="TabDurée" prefWidth="124.66668701171875" text="Durée" />
+                <TableColumn id="TabDate" fx:id="dateColumn" prefWidth="199.33334350585938" text="Date" />
+                <TableColumn id="TabDurée" fx:id="heureColumn" prefWidth="124.66668701171875" text="Durée" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />
