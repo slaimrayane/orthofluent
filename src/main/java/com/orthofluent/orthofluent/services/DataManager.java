@@ -1,10 +1,16 @@
 package com.orthofluent.orthofluent.services;
 
-import com.orthofluent.orthofluent.models.Orthophoniste;
+import com.orthofluent.orthofluent.models.*;
 
 public class DataManager {
     private static DataManager instance;
     private Orthophoniste orthophoniste;
+    private Patient patient;
+    private Question question;
+    private QuestionAnamnese questionAnamnese;
+    private Exercise exercise;
+    private DossierPatient dossierPatient;
+    private RendezVous rendezVous;
 
     private DataManager() {
         // Private constructor to prevent instantiation
@@ -23,4 +29,43 @@ public class DataManager {
     public Orthophoniste getOrthophoniste() {
         return orthophoniste;
     }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Patient getPatient(){
+        return patient;
+    }
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+    public Question getQuestion() {
+        return question;
+    }
+    public void setQuestionAnamnese(QuestionAnamnese questionAnamnese) {
+        this.questionAnamnese = questionAnamnese;
+    }
+    public QuestionAnamnese getQuestionAnamnese() {
+        return questionAnamnese;
+    }
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+    public Exercise getExercise() {
+        return exercise;
+    }
+    public void setDossierPatient(DossierPatient dossierPatient) {
+        this.dossierPatient = dossierPatient;
+    }
+    public DossierPatient getDossierPatient() {
+        return dossierPatient;
+    }
+    public void setRendezVous(RendezVous rendezVous) {
+        this.rendezVous = rendezVous;
+    }
+    public RendezVous getRendezVous() {
+        return rendezVous;
+    }
+
 }

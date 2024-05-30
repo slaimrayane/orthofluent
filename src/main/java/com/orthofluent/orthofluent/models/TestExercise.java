@@ -55,13 +55,13 @@ public class TestExercise extends Test implements  Serializable {
             exerciseScores.get(exercise).add(exercise.getNote());
         }
 
-        float totalScore = 0;
+        int totalScore = 0;
         for (List<Integer> scores : exerciseScores.values()) {
-            float sum = 0;
+            int sum = 0;
             for (int score : scores) {
                 sum += score;
             }
-            totalScore += sum / scores.size();
+            totalScore += sum /scores.size();
         }
 
         getCompteRendu().setScore(totalScore);

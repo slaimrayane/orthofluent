@@ -1,6 +1,7 @@
 package com.orthofluent.orthofluent.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -56,6 +57,10 @@ public class Anamnese implements Serializable {
                 question.setReponse(null);
             }
         }
+    }
+
+    public List<QuestionAnamnese> getQuestionsAnamneseList(){
+        return new ArrayList<>(questionsAnamnese);
     }
 
 }

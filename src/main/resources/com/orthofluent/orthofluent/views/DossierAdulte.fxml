@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="642.0" prefWidth="797.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.DossierPatient.PatientAdulteVoirController">
+    <children>
+        <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="795.0" style="-fx-background-color: #CDD5D8;">
+            <menus>
+                <Menu mnemonicParsing="false" text="&#10;Accueil">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                    <graphic>
+                        <Region prefHeight="200.0" prefWidth="66.0" />
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false" text="&#10;Mon compte">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                    <graphic>
+                        <Region prefHeight="50.0" prefWidth="563.0" />
+                    </graphic>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/logoFinal.png" />
+            </image>
+        </ImageView>
+        <HBox layoutX="-1.0" layoutY="61.0" prefHeight="581.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="619.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
+                        <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
+                        <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
+                        <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
+                        <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
+                        <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
+                        <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
+                        <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
+                        <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                        <MenuItem fx:id="ressourcePedagogiqueItem" mnemonicParsing="false" text="Ressources pédagogiques" />
+                     </items>
+                  </MenuButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+        </HBox>
+        <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/iconUser.png" />
+            </image>
+        </ImageView>
+        <Text fontSmoothingType="LCD" layoutX="327.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dossier patient" textAlignment="CENTER" wrappingWidth="319.96746826171875">
+            <font>
+                <Font name="System Bold" size="33.0" />
+            </font>
+        </Text>
+        <Text layoutX="342.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro de dossier :">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="numeroDossierTextField" layoutX="482.0" layoutY="124.0" />
+        <AnchorPane layoutX="275.0" layoutY="160.0" prefHeight="415.0" prefWidth="454.0" style="-fx-border-color: #76C2AF;">
+            <children>
+                <Text layoutX="146.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations du patient:" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="21.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="19.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="24.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="22.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="20.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="23.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profession:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text layoutX="21.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diplome:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="nomTextField" layoutX="67.0" layoutY="95.0" prefHeight="26.0" prefWidth="356.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField fx:id="prenomTextField" layoutX="72.0" layoutY="131.0" prefHeight="26.0" prefWidth="346.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField fx:id="ageTextField" layoutX="55.0" layoutY="166.0" prefHeight="26.0" prefWidth="366.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField fx:id="dateNaissanceTextField" layoutX="137.0" layoutY="199.0" prefHeight="26.0" prefWidth="284.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField fx:id="telephoneTextField" layoutX="95.0" layoutY="237.0" prefHeight="26.0" prefWidth="327.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField fx:id="professionTextField" layoutX="139.0" layoutY="275.0" prefHeight="27.0" prefWidth="284.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <TextField layoutX="114.0" layoutY="310.0" prefHeight="27.0" prefWidth="311.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+                <ImageView fitHeight="42.0" fitWidth="34.0" layoutX="112.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/userIcon.png" />
+                    </image>
+                </ImageView>
+            <Text layoutX="21.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="diplomeTextField" layoutX="123.0" layoutY="310.0" prefHeight="27.0" prefWidth="311.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+            <TextField fx:id="adresseTextField" layoutX="82.0" layoutY="350.0" prefHeight="27.0" prefWidth="311.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" />
+            </children>
+        </AnchorPane>
+        <ToggleButton fx:id="" layoutX="244.0" layoutY="592.0" mnemonicParsing="false" style="-fx-border-color: #76c2af; -fx-background-color: #ffffff;" text="Voir Rendez-vous" />
+        <ToggleButton fx:id="" layoutX="413.0" layoutY="592.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76c2af;" text="Voir Bilan orthophonique" />
+        <ToggleButton fx:id="" layoutX="615.0" layoutY="592.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #76c2af;" text="Voir Fiche de suivi" />
+    </children>
+</AnchorPane>

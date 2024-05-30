@@ -130,6 +130,22 @@ public class DossierPatient implements Comparable<DossierPatient> , Serializable
     public List<FicheSuivi> getFichesSuivi(){
         return new ArrayList<>(fichesSuiviSet);
     }
+    public List<QuestionAnamnese> getQuestionOrthophoniqueList(){
+        for(BilanOrthophonique bilan : bilansOrthophoniquesSet){
+            if(bilan instanceof BilanOrthophoniqueInitial){
+                return ((BilanOrthophoniqueInitial) bilan).getQuestionAnamneseList();
+            }
+        }
+        return null; // or return new ArrayList<>(); if you prefer to return an empty list
+    }
+
+    public List<EpreuveClinique> getEpreuveCliniqueList(){
+        List<EpreuveClinique> epreuvesCliniquesLists = new ArrayList<>();
+        for(BilanOrthophonique bilan : bilansOrthophoniquesSet){
+            epreuvesCliniquesLists.add(bilan.getEpreuveClinique());
+        }
+        return epreuvesCliniquesLists; // or return new ArrayList<>(); if you prefer to return an empty list
+    }
 
 
 

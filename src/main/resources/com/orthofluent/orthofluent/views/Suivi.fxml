@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="559.0" prefWidth="757.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.rendezvous.SuiviListController">
     <children>
         <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
@@ -43,66 +43,63 @@
         </MenuBar>
         <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoFinal.png" />
+                <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="61.0" prefHeight="502.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
-                    <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Consultation" />
-                                <MenuItem mnemonicParsing="false" text="Suivi" />
-                                <MenuItem mnemonicParsing="false" text="Atelier" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="QCM" />
-                                <MenuItem mnemonicParsing="false" text="QCU" />
-                                <MenuItem mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Adulte" />
-                                <MenuItem mnemonicParsing="false" text="Enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Mon compte" />
-                                <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
-                            </items>
-                        </MenuButton>
-                        <Region prefHeight="200.0" prefWidth="200.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" stylesheets="@styles.css" text="Déconnexion" textAlignment="CENTER" />
-                    </children>
-                </VBox>
-            </children>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
+                        <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
+                        <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
+                        <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
+                        <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
+                        <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
+                        <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
+                        <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
+                        <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                        <MenuItem fx:id="ressourcePedagogiqueItem" mnemonicParsing="false" text="Ressources pédagogiques" />
+                     </items>
+                  </MenuButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
         </HBox>
         <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/iconUser.png" />
+                <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
-        <TableView layoutX="187.0" layoutY="158.0" prefHeight="390.0" prefWidth="626.0">
+        <TableView fx:id="suiviTableView" layoutX="187.0" layoutY="158.0" prefHeight="390.0" prefWidth="626.0">
             <columns>
-                <TableColumn prefWidth="294.3999481201172" text="Informations Patient">
+                <TableColumn prefWidth="165.99998474121094" text="Informations Patient">
                     <columns>
-                        <TableColumn prefWidth="56.79998779296875" text="Nom" />
-                        <TableColumn prefWidth="60.00006103515625" text="Prénom" />
-                        <TableColumn prefWidth="66.4000244140625" text="Numéro dossier" />
-                        <TableColumn minWidth="0.0" prefWidth="108.79998779296875" text="Type scéance" />
-                  <TableColumn prefWidth="66.4000244140625" text="Status" />
+                        <TableColumn fx:id="numeroDossierColumn" prefWidth="114.00001525878906" text="Numéro dossier" />
+                        <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="62.0" text="Type scéance" />
                     </columns>
                 </TableColumn>
-                <TableColumn prefWidth="180.7999267578125" text="Date" />
-                <TableColumn prefWidth="84.0" text="heure" />
+                <TableColumn fx:id="dateColumn" prefWidth="215.3333740234375" text="Date" />
+                <TableColumn fx:id="heureColumn" minWidth="0.0" prefWidth="230.00006103515625" text="heure" />
             </columns>
             <cursor>
                 <Cursor fx:constant="DISAPPEAR" />
@@ -116,17 +113,17 @@
                 <Font name="System Bold" size="33.0" />
             </font>
         </Text>
-      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation" layoutX="727.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
+      <ToggleButton id="SupprimerConsultation" fx:id="ajouterToggleButton" layoutX="579.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Ajouter">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </ToggleButton>
-      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation1" layoutX="651.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Modifier">
+      <ToggleButton id="SupprimerConsultation" fx:id="modifierToggleButton" layoutX="651.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Modifier">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </ToggleButton>
-      <ToggleButton id="SupprimerConsultation" fx:id="SupprimerConsultation11" layoutX="582.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Ajouter">
+      <ToggleButton id="SupprimerConsultation" fx:id="supprimerToggleButton" layoutX="733.0" layoutY="119.0" mnemonicParsing="false" style="-fx-border-color: #76C2AF; -fx-background-color: #ffffff;" text="Supprimer">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

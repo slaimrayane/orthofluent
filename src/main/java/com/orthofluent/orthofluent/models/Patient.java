@@ -3,7 +3,7 @@ package com.orthofluent.orthofluent.models;
 import com.orthofluent.orthofluent.models.enumerations.TypePatient;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 
 public abstract class Patient implements Serializable {
@@ -93,7 +93,6 @@ public abstract class Patient implements Serializable {
 public boolean equals(Object obj) {
     Patient patient = (Patient) obj;
     return (this.nom.equals(patient.nom) && this.prenom.equals(patient.prenom)); //If the objects are the same stance
-
 }
 
 @Override

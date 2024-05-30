@@ -24,7 +24,7 @@ public class TestQuestion extends Test implements  Serializable {
 
     @Override
     public void evaluerTest(String conclusion, String remarque) {
-        float totalScore = 0;
+        int totalScore = 0;
         for (Question question : questionsSet) {
             totalScore += question.getNote();
             getCompteRendu().ajouterScore(question, question.getNote());

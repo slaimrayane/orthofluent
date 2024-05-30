@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="602.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="602.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orthofluent.orthofluent.controller.evaluable.QCUModifierController">
     <children>
         <MenuBar layoutX="-1.0" layoutY="-5.0" prefHeight="70.0" prefWidth="820.0" style="-fx-background-color: #CDD5D8;">
             <menus>
@@ -40,51 +40,51 @@
         </MenuBar>
         <ImageView fitHeight="70.0" fitWidth="73.0" layoutX="4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/logoFinal.png" />
+                <Image url="@../images/logoFinal.png" />
             </image>
         </ImageView>
         <HBox layoutX="-1.0" layoutY="61.0" prefHeight="543.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
-                    <children>
-                        <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Consultation" />
-                                <MenuItem mnemonicParsing="false" text="Suivi" />
-                                <MenuItem mnemonicParsing="false" text="Atelier" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="QCM" />
-                                <MenuItem mnemonicParsing="false" text="QCU" />
-                                <MenuItem mnemonicParsing="false" text="Questions libres" />
-                                <MenuItem mnemonicParsing="false" text="Exercices" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese adulte" />
-                                <MenuItem mnemonicParsing="false" text="Anamnese enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Adulte" />
-                                <MenuItem mnemonicParsing="false" text="Enfant" />
-                            </items>
-                        </MenuButton>
-                        <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Mon compte" />
-                                <MenuItem mnemonicParsing="false" text="Ressources pédagogiques" />
-                            </items>
-                        </MenuButton>
-                        <Region prefHeight="249.0" prefWidth="183.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
-                    </children>
-                </VBox>
-            </children>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="183.0" styleClass="gradient-button" stylesheets="@styles.css">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #CDD5D8;" text="       Rendez vous" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="consultationItem" mnemonicParsing="false" text="Consultation" />
+                        <MenuItem fx:id="suiviItem" mnemonicParsing="false" text="Suivi" />
+                        <MenuItem fx:id="atelierItem" mnemonicParsing="false" text="Atelier" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Gestion tests" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="qcmItem" mnemonicParsing="false" text="QCM" />
+                        <MenuItem fx:id="qcuItem" mnemonicParsing="false" text="QCU" />
+                        <MenuItem fx:id="questionLibreItem" mnemonicParsing="false" text="Questions libres" />
+                        <MenuItem fx:id="exerciseItem" mnemonicParsing="false" text="Exercices" />
+                        <MenuItem fx:id="anamneseAdulteItem" mnemonicParsing="false" text="Anamnese adulte" />
+                        <MenuItem fx:id="anamneseEnfantItem" mnemonicParsing="false" text="Anamnese enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Patient" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="patientAdulteItem" mnemonicParsing="false" text="Adulte" />
+                        <MenuItem fx:id="patientEnfantItem" mnemonicParsing="false" text="Enfant" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" style="-fx-background-color: #CDD5D8;" text="       Parametres" textAlignment="RIGHT">
+                     <items>
+                        <MenuItem fx:id="compteItem" mnemonicParsing="false" text="Mon compte" />
+                        <MenuItem fx:id="ressourcePedagogiqueItem" mnemonicParsing="false" text="Ressources pédagogiques" />
+                     </items>
+                  </MenuButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="DeconnexionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Déconnexion" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
         </HBox>
         <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="663.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/iconUser.png" />
+                <Image url="@../images/iconUser.png" />
             </image>
         </ImageView>
         <Text layoutX="245.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Propositions">
@@ -99,11 +99,11 @@
         </Text>
         <ImageView fitHeight="232.0" fitWidth="239.0" layoutX="588.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/quest.png" />
+                <Image url="@../images/quest.png" />
             </image>
         </ImageView>
-        <Button layoutX="369.0" layoutY="455.0" mnemonicParsing="false" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
-        <TextField layoutX="326.0" layoutY="228.0" prefHeight="35.0" prefWidth="390.0" style="-fx-border-color: #76C2AF;" />
+        <Button fx:id="confirmerButton" layoutX="369.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleConfirmerButton" style="-fx-background-color: #76C2AF;" text="Confirmer" textFill="WHITE" />
+        <TextField fx:id="questionField" layoutX="326.0" layoutY="228.0" prefHeight="35.0" prefWidth="390.0" style="-fx-border-color: #76C2AF;" />
         <Text layoutX="253.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
             <font>
                 <Font size="14.0" />
@@ -114,21 +114,27 @@
                 <Font name="Arial" size="14.0" />
             </font>
         </Text>
-        <RadioButton layoutX="327.0" layoutY="302.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="338.0">
+        <RadioButton fx:id="proposition1CheckBox" layoutX="327.0" layoutY="302.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="338.0">
             <graphic>
-                <TextField prefHeight="27.0" prefWidth="301.0" promptText="Proposition1--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
+                <TextField fx:id="proposition1Field" prefHeight="27.0" prefWidth="301.0" promptText="Proposition1--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
             </graphic>
         </RadioButton>
-        <RadioButton layoutX="327.0" layoutY="338.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="338.0">
+        <RadioButton fx:id="proposition2CheckBox" layoutX="327.0" layoutY="338.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="338.0">
             <graphic>
-                <TextField prefHeight="27.0" prefWidth="371.0" promptText="Proposition2--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
+                <TextField fx:id="proposition2Field" prefHeight="27.0" prefWidth="371.0" promptText="Proposition2--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
             </graphic>
         </RadioButton>
-        <RadioButton layoutX="327.0" layoutY="376.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="337.0">
+        <RadioButton fx:id="proposition3CheckBox" layoutX="327.0" layoutY="376.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="337.0">
             <graphic>
-                <TextField promptText="Proposition3--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
+                <TextField fx:id="proposition3Field" promptText="Proposition3--" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
             </graphic>
         </RadioButton>
+      <TextField fx:id="noteField" layoutX="318.0" layoutY="404.0" prefHeight="35.0" prefWidth="211.0" style="-fx-border-color: #76C2AF;" />
+      <Text layoutX="245.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
 
     </children>
 </AnchorPane>

@@ -1,14 +1,15 @@
 package com.orthofluent.orthofluent.models;
 
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDateInvalide;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDatePrise;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionDossierExistant;
-import com.orthofluent.orthofluent.models.exceptions.ExceptionQuestionAnamneseExistante;
+import com.orthofluent.orthofluent.models.enumerations.ThematiqueAtelier;
+import com.orthofluent.orthofluent.models.enumerations.TypeQuestionAnamnese;
+import com.orthofluent.orthofluent.models.exceptions.*;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.sql.Date;
 
 //hna dossierPatirnt w patient map yak?
 public class Orthophoniste implements Serializable {
@@ -24,6 +25,7 @@ public class Orthophoniste implements Serializable {
     private Map<String,DossierPatient> dossierPatientMap;
     private Set<QuestionAnamnese> questionsAnamneseSet;
     private Set<Question> questionsSet;
+    private Set<Exercise> exercisesSet;
 
 
   //  private Test test; // pcq kayan des methodes hna ta3 changement de questions ecq but i'm still not
@@ -40,17 +42,21 @@ public class Orthophoniste implements Serializable {
         this.numTel = numTel;
         this.AdresseMail = AdresseMail;
         this.motDePasse = motDePasse;
+        agenda = new Agenda();
         dossierPatientMap = new HashMap<>();
         patientCounter = 0;
         questionsAnamneseSet = new HashSet<>();
         questionsSet = new HashSet<>();
+        exercisesSet = new HashSet<>();
     }
 
     public Orthophoniste() {
         dossierPatientMap=new HashMap<>();
         patientCounter=0;
+        agenda = new Agenda();
         questionsAnamneseSet = new HashSet<>();
         questionsSet = new HashSet<>();
+        exercisesSet = new HashSet<>();
     }
 
 // Getters and Setters
@@ -152,104 +158,106 @@ public class Orthophoniste implements Serializable {
         this.questionsSet = questionsSet;
     }
 
+    public Set<Exercise> getExercisesSet() {
+        return exercisesSet;
+    }
+
+    public void setExercisesSet(Set<Exercise> exercisesSet) {
+        this.exercisesSet = exercisesSet;
+    }
+
+
 
 
     // Les methodes
-    public void ProgrammerConsultationAdulte() {
-            ConsultationAdulte rendezvous = new ConsultationAdulte();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le nom du patient");
-                rendezvous.setNom(scanner.nextLine());
-                System.out.println("veuillez indiquer le prenom du patient");
-                rendezvous.setPrenom(scanner.nextLine());
-                System.out.println("veuillez indiquer l'age du patient");
-                rendezvous.setAge(scanner.nextLine()); 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmée avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
+    public void programmerConsultationAdulte(LocalDateTime dateTime, LocalTime heureDebut, String nom, String prenom, String age) throws ExceptionDateInvalide, ExceptionDatePrise {
+        ConsultationAdulte rendezvous = new ConsultationAdulte();
+        System.out.println("Programmer Consultation Adulte");
 
-    }
-    public void ProgrammerConsultationEnfant() {
-            ConsultationAdulte rendezvous = new ConsultationAdulte();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le nom du patient");
-                rendezvous.setNom(scanner.nextLine());
-                System.out.println("veuillez indiquer le prenom du patient");
-                rendezvous.setPrenom(scanner.nextLine());
-                System.out.println("veuillez indiquer l'age du patient");
-                rendezvous.setAge(scanner.nextLine()); 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmée avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
-    }
-    public void ProgrammerSuivi(){
-            Suivi rendezvous = new Suivi();
-            System.out.println("Programmer Consultation Adulte");
-            try (Scanner scanner = new Scanner(System.in)) {
-                System.out.println("veuillez indiquer la date de la consultation");
-                String date = scanner.nextLine();
-                LocalDateTime dateTime = LocalDateTime.parse(date); // Convert string to LocalDateTime
-                rendezvous.setDate(dateTime);
-                if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
-                    throw new ExceptionDateInvalide("La date de la consultation est invalide");
-                }
-                System.out.println("veuillez indiquer le numero de dossier du patient");
-                rendezvous.setNumDossierPatient(scanner.nextLine());
-                System.out.println("Est-ce que la consultation est en presentiel? (oui/non)");
-                String response = scanner.nextLine();
-                boolean isPresentiel = response.equalsIgnoreCase("oui");
-                rendezvous.setPresentiel(isPresentiel);
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNom(nom);
+        rendezvous.setPrenom(prenom);
+        rendezvous.setAge(age);
+        rendezvous.setHeureDebut(heureDebut);
 
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
 
-                if (agenda.ajouterRendezVous(rendezvous)) {
-                    System.out.println("Consultation programmee avec succès");
-                } else {
-                    throw new ExceptionDatePrise("La date de la consultation est déjà prise");
-                }
-                
-            }catch (ExceptionDateInvalide e) {
-                System.out.println(e.getMessage());
-            }
-            catch (Exception e) {
-                System.out.println("Erreur lors de la saisie de la date");
-            }
+        System.out.println("Consultation programmée avec succès");
     }
-    public void ProgrammerAtelier(){
+    public void programmerConsultationEnfant(LocalDateTime dateTime, LocalTime heureDebut, String nom, String prenom, String age) throws ExceptionDateInvalide, ExceptionDatePrise {
+        ConsultationEnfant rendezvous = new ConsultationEnfant();
+        System.out.println("Programmer Consultation Enfant");
+
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNom(nom);
+        rendezvous.setPrenom(prenom);
+        rendezvous.setHeureDebut(heureDebut);
+        rendezvous.setAge(age);
+
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
+
+        System.out.println("Consultation programmée avec succès");
     }
+    public void programmerSuivi(LocalDateTime dateTime, LocalTime heureDebut, String numDossierPatient, boolean isPresentiel) throws ExceptionDateInvalide, ExceptionDatePrise {
+        Suivi rendezvous = new Suivi();
+        System.out.println("Programmer Consultation Adulte");
+
+        rendezvous.setDate(dateTime);
+        if (rendezvous.getDate().isBefore(LocalDateTime.now())) {
+            throw new ExceptionDateInvalide("La date de la consultation est invalide");
+        }
+        rendezvous.setNumDossierPatient(numDossierPatient);
+        rendezvous.setPresentiel(isPresentiel);
+        rendezvous.setHeureDebut(heureDebut);
+
+        if (!agenda.ajouterRendezVous(rendezvous)) {
+            throw new ExceptionDatePrise("La date de la consultation est déjà prise");
+        }
+
+        System.out.println("Consultation programmee avec succès");
+    }
+
+    public void programmerAtelier(LocalDateTime dateTime,LocalTime heureDebut ,List<String> numDossierPatients, ThematiqueAtelier theme) throws ExceptionDateInvalide, ExceptionDatePrise {
+    Atelier atelier = new Atelier();
+    System.out.println("Programmer Atelier");
+
+    atelier.setDate(dateTime);
+    if (atelier.getDate().isBefore(LocalDateTime.now())) {
+        throw new ExceptionDateInvalide("La date de l'atelier est invalide");
+    }
+    atelier.setThematiqueAtelier(theme);
+
+    atelier.setNumeroDossier(numDossierPatients);
+    atelier.setHeureDebut(heureDebut);
+
+    if (!agenda.ajouterRendezVous(atelier)) {
+        throw new ExceptionDatePrise("La date de l'atelier est déjà prise");
+    }
+
+    System.out.println("Atelier programmé avec succès");
+}
+
+    public void supprimerRendezVous(Consultation consultation){
+        agenda.supprimerRendezVous(consultation);
+    }
+    public void supprimerRendezVous(Suivi suivi){
+        agenda.supprimerRendezVous(suivi);
+    }
+
+    public void supprimerRendezVous(Atelier atelier){
+        agenda.supprimerRendezVous(atelier);
+    }
+
     //a revoir apres la logique de la BO
     public void initialiserPatient(PatientEnfant patientEnfant)throws ExceptionDossierExistant{
         DossierPatient dossierPatient = new DossierPatient(patientEnfant,String.valueOf(patientCounter++));
@@ -267,13 +275,28 @@ public class Orthophoniste implements Serializable {
         throw new ExceptionDossierExistant("Le dossier patient existe déjà");
     }
         dossierPatientMap.put(dossierPatient.getNumeroDossier(), dossierPatient);
-
 }
     public List<PatientEnfant> getPatientsEnfants(){
             return dossierPatientMap.values().stream().filter(DossierPatient::isEnfant).map(dossier -> (PatientEnfant) dossier.getPatient()).collect(Collectors.toList());
     }
     public List<PatientAdulte> getPatientsAdultes(){
         return dossierPatientMap.values().stream().filter(DossierPatient::isAdulte).map(dossier -> (PatientAdulte) dossier.getPatient()).collect(Collectors.toList());
+    }
+    public DossierPatient getPatients(PatientAdulte patientAdulte){
+        for (DossierPatient dossier : dossierPatientMap.values()) {
+            if (dossier.getPatient().equals(patientAdulte)) {
+                return dossier;
+            }
+        }
+        return null;
+    }
+    public DossierPatient getPatients(PatientEnfant patientEnfant){
+        for (DossierPatient dossier : dossierPatientMap.values()) {
+            if (dossier.getPatient().equals(patientEnfant)) {
+                return dossier;
+            }
+        }
+        return null;
     }
 
     public void supprimerDossierPatient(String numeroDossier){
@@ -292,11 +315,46 @@ public class Orthophoniste implements Serializable {
         dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientEnfant));
     }
 
-        public void supprimerDossierPatient(PatientAdulte patientAdulte) {
-            dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientAdulte));
+    public void supprimerDossierPatient(PatientAdulte patientAdulte) {
+        dossierPatientMap.values().removeIf(dossierPatient -> dossierPatient.getPatient().equals(patientAdulte));
+    }
+    public void modifierDossierPatient(PatientAdulte patientAdulte, String newNom, String newPrenom, int newAge, Date newDateNaissance, String newAdresse, String newTelephone, String newProfession, String newDiplome, String newTelephoneSecondaire) {
+        // Iterate over the map to find and replace the patient
+        for (Map.Entry<String, DossierPatient> entry : dossierPatientMap.entrySet()) {
+            if (entry.getValue().getPatient().equals(patientAdulte)) {
+                // Update patientAdulte object
+                patientAdulte.setNom(newNom);
+                patientAdulte.setPrenom(newPrenom);
+                patientAdulte.setAge(newAge);
+                patientAdulte.setDateNaissance(newDateNaissance);
+                patientAdulte.setAddresse(newAdresse);
+                patientAdulte.setTelephone(newTelephone);
+                patientAdulte.setProfession(newProfession);
+                patientAdulte.setDiplome(newDiplome);
+                patientAdulte.setTelephoneSecondaire(newTelephoneSecondaire);
+                entry.getValue().setPatient(patientAdulte);
+                break;
+            }
         }
-    public void modifierPatient() {
+    }
 
+    public void modifierDossierPatient(PatientEnfant patientEnfant, String newNom, String newPrenom, int newAge, Date newDateNaissance, String newAdresse, String newTelephone, String newClasseEtude , String newTelephoneParent) {
+        // Iterate over the map to find and replace the patient
+        for (Map.Entry<String, DossierPatient> entry : dossierPatientMap.entrySet()) {
+            if (entry.getValue().getPatient().equals(patientEnfant)) {
+                // Update patientAdulte object
+                patientEnfant.setNom(newNom);
+                patientEnfant.setPrenom(newPrenom);
+                patientEnfant.setAge(newAge);
+                patientEnfant.setDateNaissance(newDateNaissance);
+                patientEnfant.setAddresse(newAdresse);
+                patientEnfant.setTelephone(newTelephone);
+                patientEnfant.setClassEtude(newClasseEtude);
+                patientEnfant.setTelephoneparent(newTelephoneParent);
+                entry.getValue().setPatient(patientEnfant);
+                break;
+            }
+        }
     }
 
 
@@ -322,6 +380,32 @@ public class Orthophoniste implements Serializable {
     public void supprimerQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese){
         questionsAnamneseSet.remove(questionAnamnese);
     }
+    public void modifierQuestionAnamnese(QuestionAnamneseAdulte questionAnamnese, String newEnonce, TypeQuestionAnamnese newTypeQuestionAnamnese) {
+        // Iterate over the set to find and replace the question
+        for (QuestionAnamnese question : questionsAnamneseSet) {
+            if (question.equals(questionAnamnese) && question instanceof QuestionAnamneseAdulte) {
+                // Cast to QuestionAnamneseAdulte and update object
+                QuestionAnamneseAdulte questionAnamneseAdulte = (QuestionAnamneseAdulte) question;
+                questionAnamneseAdulte.setEnonce(newEnonce);
+                questionAnamneseAdulte.setTypeQuestionAnamnese(newTypeQuestionAnamnese);
+                break;
+            }
+        }
+    }
+
+    public void modifierQuestionAnamnese(QuestionAnamneseEnfant questionAnamnese, String newEnonce, TypeQuestionAnamnese newTypeQuestionAnamnese) {
+        // Iterate over the set to find and replace the question
+        for (QuestionAnamnese question : questionsAnamneseSet) {
+            if (question.equals(questionAnamnese) && question instanceof QuestionAnamneseEnfant) {
+                // Cast to QuestionAnamneseEnfant and update object
+                QuestionAnamneseEnfant questionAnamneseEnfant = (QuestionAnamneseEnfant) question;
+                questionAnamneseEnfant.setEnonce(newEnonce);
+                questionAnamneseEnfant.setTypeQuestionAnamnese(newTypeQuestionAnamnese);
+                break;
+            }
+        }
+    }
+
     public List<QuestionAnamneseAdulte> getQuestionsAnamneseAdulte(){
            return questionsAnamneseSet.stream().filter(QuestionAnamneseAdulte.class::isInstance).map(QuestionAnamneseAdulte.class::cast).collect(Collectors.toList());
     }
@@ -332,17 +416,33 @@ public class Orthophoniste implements Serializable {
         return new ArrayList<>(questionsAnamneseSet);
     }
 
-    public void ajouterQuestion(Question question){
-        questionsSet.add(question);
+    public void ajouterQuestion(Question question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QCM question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QCM question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QCU question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QCU question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
-    public void ajouterQuestion(QuestionLibre question){
-        questionsSet.add(question);
+    public void ajouterQuestion(QuestionLibre question) throws ExceptionQuestionExistante{
+        if (questionsSet.contains(question)) {
+            throw new ExceptionQuestionExistante("Question already exists");
+        }else {
+            questionsSet.add(question);
+        }
     }
 
     public void supprimerQuestion(Question question){
@@ -371,112 +471,90 @@ public class Orthophoniste implements Serializable {
         return questionsSet.stream().filter(QuestionLibre.class::isInstance).map(QuestionLibre.class::cast).collect(Collectors.toList());
     }
 
-
-
-
-
-
-        public void AfficherAgenda() {
-
-
+    public void modifierQuestion(QCM qcm, String newEnonce, int newNote, List<Proposition> newPropositions) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(qcm) && question instanceof QCM) {
+                // Cast to QCM and update object
+                QCM qcmQuestion = (QCM) question;
+                qcmQuestion.setEnonce(newEnonce);
+                qcmQuestion.setPropositionsList(newPropositions);
+                qcmQuestion.setNote(newNote);
+                break;
+            }
         }
-
-        public void ModifierAgenda() {
-
+    }
+    public void modifierQuestion(QuestionLibre questionLibre, String newEnonce, int newNote) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(questionLibre) && question instanceof QuestionLibre) {
+                // Cast to QuestionLibre and update object
+                QuestionLibre questionLibreQuestion = (QuestionLibre) question;
+                questionLibreQuestion.setEnonce(newEnonce);
+                questionLibreQuestion.setNote(newNote);
+                break;
+            }
         }
-
-        public void AfficherBoPatient() {
-
+    }
+    public void modifierQuestion(QCU qcu, String newEnonce, int newNote, List<Proposition> newPropositions) {
+        // Iterate over the set to find and replace the question
+        for (Question question : questionsSet) {
+            if (question.equals(qcu) && question instanceof QCU) {
+                // Cast to QCU and update object
+                QCU qcuQuestion = (QCU) question;
+                qcuQuestion.setEnonce(newEnonce);
+                qcuQuestion.setPropositionsList(newPropositions);
+                break;
+            }
         }
+    }
 
-        public void AfficherEvaluationPatient() {
-
+    public void ajouterExercice(Exercise exercise) throws ExceptionEvaluableExistant {
+        if (exercisesSet.contains(exercise)) {
+            throw new ExceptionEvaluableExistant("Exercise already exists");
+        }else {
+            exercisesSet.add(exercise);
         }
+    }
 
-        public void ChercherTroublePatient() {
+    public void supprimerExercice(Exercise exercise){
+        exercisesSet.remove(exercise);
+    }
 
+    public void modifierExercice(Exercise exercise, String newEnonce, int newNote, String newMateriel) {
+        // Iterate over the set to find and replace the exercise
+        for (Exercise exercice : exercisesSet) {
+            if (exercice.equals(exercise)) {
+                // Update Exercise object
+                exercice.setEnonce(newEnonce);
+                exercice.setNote(newNote);
+                exercice.setMateriel(newMateriel);
+                break;
+            }
         }
+    }
 
-        public void CreerDossier() {
+    public List<Exercise> getExercises(){
+        return new ArrayList<>(exercisesSet);
+    }
 
-        }
-
-        public void CreerTest() {
-
-        }
-
-        public void ModifierTest() {
-
-        }
-
-        public void SupprimerTest() {
-
-        }
-
-        public void CreerAnamnese() {
-
-        }
+    public List<Atelier> getAteliers() {
+        return agenda.getAtelierList();
+    }
+    public List<Consultation> getConsultations() {
+        return agenda.getConsultationList();
+    }
+    public List<Suivi> getSuivis() {
+        return agenda.getSuiviList();
+    }
 
 
-        public void ModifierAnamnese() {
 
-        }
 
-        public void SupprimerAnamnese() {
 
-        }
+    public void afficherPatients(){
 
-        public void CreerExercice() {
-
-        }
-
-        public void ModifierExercice() {
-
-        }
-
-        public void SupprimerExercice() {
-
-        }
-
-        public void CreerBilan() {
-
-        }
-
-        public void ModifierBilan() {
-
-        }
-
-        public void SupprimerBilan() {
-
-        }
-
-        public void CreerQuestion() {
-
-        }
-
-        public void ModifierQuestion() {
-
-        }
-
-        public void SupprimerQuestion() {
-
-        }
-
-        public void CreerReponse() {
-
-        }
-
-        public void ModifierReponse() {
-
-        }
-
-        public void SupprimerReponse() {
-
-        }
-
-        public void afficherPatients(){
-
-        }
+    }
 
 // Interface
     @Override

@@ -3,6 +3,8 @@ package com.orthofluent.orthofluent.models;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public abstract class Consultation extends RendezVous implements Serializable {
     //might change this to just patient but i am not sure
     //kaoutar if you pass here send a message we need to talk about this
@@ -11,8 +13,8 @@ public abstract class Consultation extends RendezVous implements Serializable {
     private String prenom;
     private String age;
 // Constructor
-    public Consultation(Duration duree, String observation, LocalDateTime date,String nom, String prenom, String age){
-        super(duree, observation, date);
+    public Consultation(Duration duree, String observation, LocalDateTime date,LocalTime heureDebut,String nom, String prenom, String age){
+        super(duree, observation, date, heureDebut);
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;

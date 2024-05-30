@@ -12,7 +12,11 @@ public class Exercise extends Evaluable implements Serializable {
         this.enonce = enonce;
         this.materiel = materiel;
     }
-
+    public Exercise(String enonce, int note, String materiel) {
+        this.enonce = enonce;
+        this.materiel = materiel;
+        setNote(note);
+    }
     public Exercise() {
     }
 
@@ -32,10 +36,10 @@ public class Exercise extends Evaluable implements Serializable {
         this.materiel = materiel;
     }
 
-    public void evaluer(int note) throws ExceptionScoreErronee {
-        if (note < 0 || note > 10) {
+    public void evaluer(int score) throws ExceptionScoreErronee {
+        if (score < 0 || score > getNote()) {
             throw new ExceptionScoreErronee("La note doit être 0 ou 1");
         }
-        setNote(note);
+        setScore(score);
     }
 }
