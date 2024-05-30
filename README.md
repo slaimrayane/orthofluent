@@ -1,14 +1,6 @@
 # OrthoFluent
 welcome to Orthofluent, an all java management software for orthophonist this project was made as a part of our final project for oop module
 
-## TO DO
-- redifine compare equals and hashcode for a lot of attrbut in Orthophoniste
-- implement the integration logic for the first pages(inscription, connexion , appointement booking)(URGENT)(2/3)
-- fix the code by importing the used classes rather than using the absolute adresse(PAS IMPORTANT)
-- finish the rest of the backend logic implementation(URGENT)
-- continue working on the frontend of the pages(INTERMEDIARIE)
-- comment the code to make more understandable(PAS IMPORTANT)
-
 ## Support
 
 For support, email mr_slaim@esi.com or hit me up on linkedin.
